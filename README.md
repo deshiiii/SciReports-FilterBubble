@@ -1,8 +1,8 @@
-# SciReports-FilterBubble
+# Reframing the Filter Bubble: Suporting Code
 
 Repo to acompany the Scientific Reports publication: "Reframing the filter bubble through diverse scale effects in online music consumption".
 
-Link to publication preprint: todo :) 
+Link to publication preprint: <mark>todo</mark>
 
 
 
@@ -31,5 +31,5 @@ https://github.com/tsakim/bicm
 All credits for this code go to these authors. 
 
 ## Citing 
-If you make use of this project please cite the follow article: todo:
+If you make use of this project please cite the follow article: <mark>todo</mark>:
 
