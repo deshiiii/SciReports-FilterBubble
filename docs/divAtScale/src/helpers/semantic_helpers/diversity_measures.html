@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>divAtScale.src.helpers.semantic_helpers.diversity_measures API documentation</title>
+<meta name="description" content="Spatial disparity helper functions" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>divAtScale.src.helpers.semantic_helpers.diversity_measures</code></h1>
+</header>
+<section id="section-intro">
+<p>Spatial disparity helper functions</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+Spatial disparity helper functions
+
+&#34;&#34;&#34;
+
+
+import numpy as np
+from collections import Counter
+from sklearn.metrics.pairwise import cosine_similarity
+from scipy.spatial.distance import cosine as cos_dis
+from tqdm import tqdm
+import random
+
+
+def comp_w_centroid(s, e, aid2mid):
+    &#34;&#34;&#34;
+    Compute a sessions activity weighted centroid in embedding space
+
+    Args:
+        s (list) : session (artist ids)
+        e (numpy.array) : embedding matrix
+        aid2mid (dict) : matrix index lookup
+
+    Returns:
+        numpy.array : centroid
+    &#34;&#34;&#34;
+    S_len = len(s)
+    w = dict(Counter(s))
+    a_unique = list(set(s))
+    e_all = np.array([e[int(aid2mid[aid])] for aid in a_unique])
+    e_w = [e * w[aid] for e, aid in zip(e_all, a_unique)]
+    w_centroid = np.sum(e_w, axis=0) / S_len
+    return w_centroid
+
+
+def gs_score(s, e, aid2mid):
+    &#34;&#34;&#34;
+    Compute Anderson et al.&#39;s GS-score
+
+    Args:
+        s (list): session
+        e (numpy.array): embedding matrix
+        aid2mid (dict): matrix index lookup
+
+    Returns:
+        float : gs_score for a given session
+    &#34;&#34;&#34;
+    S_len = len(s)
+    w = dict(Counter(s))
+    a_unique = list(set(s))
+    w_vec = np.array([w[aid] for aid in a_unique])
+    e_all = np.array([e[int(aid2mid[aid])] for aid in a_unique])
+    e_w = [e * w[aid] for e, aid in zip(e_all, a_unique)]
+    w_centroid = np.sum(e_w, axis=0) / S_len
+
+    sim = cosine_similarity([w_centroid], e_all)[0]
+    sim = sim * w_vec
+    gs = sum(sim) / S_len
+    return gs
+
+
+def gs_score_inter_sess(S, e, aid2mid):
+    &#34;&#34;&#34;
+    Compute Anderson et al.&#39;s GS-score between multiple sessions
+
+    Args:
+        S (list): list of sessions (artist ids)
+        e (numpy.array) : embedding matrix
+        aid2mid (dict) : matrix index lookup
+
+    Returns:
+        float : gs_score over all sessions
+    &#34;&#34;&#34;
+
+    sess_rep = [comp_w_centroid(s, e, aid2mid) for s in S]
+    centroid = np.mean(sess_rep, axis=0)
+    sim = cosine_similarity([centroid], sess_rep)[0]
+    gs = np.mean(sim)
+    return gs
+
+
+def sim_inter_aff(S1, S2, e, aid2mid):
+    &#34;&#34;&#34;
+    Compute cosine similarity between avg. rep of two session centroids
+    generated from two distinct affordances.
+
+    Args:
+        S (list): list of sessions (artist ids)
+        e (numpy.array) : embedding matrix
+        aid2mid (dict): matrix index lookup
+
+    Returns:
+        float : cosine similarity between two affordances
+    &#34;&#34;&#34;
+
+    sess_rep1 = [comp_w_centroid(s, e, aid2mid) for s in S1]
+    centroid1 = np.mean(sess_rep1, axis=0)
+
+    sess_rep2 = [comp_w_centroid(s, e, aid2mid) for s in S2]
+    centroid2 = np.mean(sess_rep2, axis=0)
+
+    sim = 1 - cos_dis(centroid1, centroid2)
+    return sim
+
+
+def filter_niche_sessions(sess, u_df, subset_a, pop_thresh=0.8):
+    &#34;&#34;&#34;
+    Remove sessions with too much long tail.
+    Do not have good structural rep. for these artists.
+
+    Args:
+        sess (list) : collection of sesssions
+        u_df (pandas.DataFrame) : listening history df
+        subset_a (list) : pop artists to keep
+
+    Returns:
+        list : filtered sessions
+    &#34;&#34;&#34;
+
+    streamed_artists = u_df.artist_id.unique()
+    pop_a = set(streamed_artists).intersection(set(subset_a))
+    S_filt = []
+    for s in sess:
+        pop_a_in_s = pop_a.intersection(set(s))
+        p_pop_in_session = len(pop_a_in_s) / len(set(s))
+        if p_pop_in_session &gt; pop_thresh:
+            S_filt.append(list(pop_a_in_s))
+    return S_filt
+
+
+def comp_gs_intra_or_inter_fs2(lh_df, e, aid2mid, n_sample=-1, scale=&#39;intra&#39;, subset_a=[], sess_thresh=3):
+    &#34;&#34;&#34;
+    Top level function to compute gs-scores between (inter)
+    or wihtin (intra) sessions w.r.t. fs2 filtering.
+
+    Args:
+        lh_df (pandas.DataFrame): listening event df
+        e (numpy.array) : embedding matrix
+        aid2mid (dict): matrix index lookup for e
+        n_sample (int) : if != -1 sample n_sample users at random
+        scale (str) : &#39;intra&#39; OR &#39;inter&#39;
+
+    Returns:
+        list : all users gs scores in Q,P,A,E. Each row corresponds to a user
+    &#34;&#34;&#34;
+    pdis_res = []
+    n_failed = 0
+    P_of_sess_pop = []
+    uids_keep = []
+
+    uids = list(lh_df.anon_user_id.unique())
+
+    if n_sample != -1:
+        uids = random.sample(uids, n_sample)
+
+    for uid in tqdm(uids):
+        spread_os = -1
+        spread_op = -1
+        spread_a = -1
+        spread_e = -1
+
+        u_df = lh_df[lh_df.anon_user_id == uid]
+
+        sess_os = [list(s) for s in list(u_df[u_df.affordance == &#39;o_s&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+        sess_op = [list(s) for s in list(u_df[u_df.affordance == &#39;o_pl&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+        sess_a = [list(s) for s in list(u_df[u_df.affordance == &#39;a&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+        sess_e = [list(s) for s in list(u_df[u_df.affordance == &#39;e&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+
+        if len(subset_a) != 0:
+            sess_os_filt = filter_niche_sessions(sess_os, u_df, subset_a)
+            p_pop_os = len(sess_os_filt) / len(sess_os)
+            sess_os = sess_os_filt
+
+            sess_op_filt = filter_niche_sessions(sess_op, u_df, subset_a)
+            p_pop_op = len(sess_op_filt) / len(sess_op)
+            sess_op = sess_op_filt
+
+            sess_a_filt = filter_niche_sessions(sess_a, u_df, subset_a)
+            p_pop_a = len(sess_a_filt) / len(sess_a)
+            sess_a = sess_a_filt
+
+            sess_e_filt = filter_niche_sessions(sess_e, u_df, subset_a)
+            p_pop_e = len(sess_e_filt) / len(sess_e)
+            sess_e = sess_e_filt
+
+
+        if scale == &#34;intra&#34;:
+            if len(sess_os) &gt;= sess_thresh:
+                spread_os = np.mean([gs_score(aids, e, aid2mid) for aids in sess_os])
+
+            if len(sess_op) &gt;= sess_thresh:
+                spread_op = np.mean([gs_score(aids, e, aid2mid) for aids in sess_op])
+
+            if len(sess_a) &gt;= sess_thresh:
+                spread_a = np.mean([gs_score(aids, e, aid2mid) for aids in sess_a])
+
+            if len(sess_e) &gt;= sess_thresh:
+                spread_e = np.mean([gs_score(aids, e, aid2mid) for aids in sess_e])
+
+        elif scale == &#34;inter&#34;:
+            if len(sess_os) &gt;= sess_thresh:
+                spread_os = gs_score_inter_sess(sess_os, e, aid2mid)
+
+            if len(sess_op) &gt;= sess_thresh:
+                spread_op = gs_score_inter_sess(sess_op, e, aid2mid)
+
+            if len(sess_a) &gt;= sess_thresh:
+                spread_a = gs_score_inter_sess(sess_a, e, aid2mid)
+
+            if len(sess_e) &gt;= sess_thresh:
+                spread_e = gs_score_inter_sess(sess_e, e, aid2mid)
+
+        all_spreads = [spread_os, spread_op, spread_a, spread_e]
+
+        if (-1 in all_spreads) == False:
+            pdis_res.append([spread_os, spread_op, spread_a, spread_e])
+            P_of_sess_pop.append([p_pop_os, p_pop_op, p_pop_a, p_pop_e])
+            uids_keep.append(uid)
+
+        else:
+            n_failed += 1
+
+    avg_sess_left_post_niche_filt = np.mean(P_of_sess_pop, axis=0)
+    pdis_res = np.array(pdis_res)
+    p_failed = n_failed / len(uids)
+    return pdis_res, p_failed, avg_sess_left_post_niche_filt, uids_keep
+
+
+def comp_gs_intra_or_inter_fs1(monad_df_filt, e, aid2mid, scale=&#34;intra&#34;, subset_a=[], sess_thresh=3):
+    &#34;&#34;&#34;
+    Top level function to compute gs-scores between (inter) or wihtin (intra) sessions w.r.t. fs1 filtering.
+
+    Args:
+        monad_df_filt (pandas.DataFrame): listening history for monadic sessions (i.e. either P|Q|A|E)
+        e (numpy.array): embedding matrix
+        aid2mid (dict): matrix index lookup for e
+
+    Returns:
+        list : gs for all users. rows correspond to users
+    &#34;&#34;&#34;
+    uids = list(monad_df_filt.anon_user_id.unique())
+    n_failed = 0
+
+    GS_all = []
+    P_of_sess_pop = []
+
+    for uid in tqdm(uids):
+        GS_avg = -1
+        u_df = monad_df_filt[monad_df_filt.anon_user_id == uid]
+
+        sess = [list(s) for s in list(u_df.groupby(&#39;session_n&#39;).artist_id.apply(list))]
+
+        if len(subset_a) != 0:
+            sess_filt = filter_niche_sessions(sess, u_df, subset_a)
+            p_sess_post_filt = len(sess_filt) / len(sess)
+            sess = sess_filt
+
+        if scale == &#34;intra&#34;:
+            # asssert we stll have some sessions to work with...
+            if len(sess) &gt;= sess_thresh:
+                GS_avg = np.mean([gs_score(s, e, aid2mid) for s in sess])
+
+        elif scale == &#34;inter&#34;:
+            if len(sess) &gt;= sess_thresh:
+                GS_avg = gs_score_inter_sess(sess, e, aid2mid)
+
+        if GS_avg != -1:
+            GS_all.append(GS_avg)
+            P_of_sess_pop.append(p_sess_post_filt)
+
+        else:
+            n_failed +=1
+
+    p_failed = n_failed / len(uids)
+    return GS_all, p_failed, np.mean(P_of_sess_pop)
+
+
+def get_sim_between_aff(le_df, e, aid2mid, subset_a=[]):
+    &#34;&#34;&#34;
+    Top level function to compute semantic (cosine) similarity between all affordances for all users.
+
+    Args:
+        le_df (pandas.DataFrame): listening  history df
+        e (numpy.array): embedding matrix
+        aid2mid (dict):  matrix index lookup for e
+
+    Returns:
+        list :similarity for [Q-P, Q-A, Q-E, P-A, P-E, A-E]. Rows correspond to users
+    &#34;&#34;&#34;
+    psim_res = []
+    uids = le_df.anon_user_id.unique()
+    n_failed = 0
+
+
+    for uid in tqdm(uids):
+        u_df = le_df[le_df.anon_user_id == uid]
+        sess_os = [list(s) for s in list(u_df[u_df.affordance == &#39;o_s&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+        sess_op = [list(s) for s in list(u_df[u_df.affordance == &#39;o_pl&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+        sess_a = [list(s) for s in list(u_df[u_df.affordance == &#39;a&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+        sess_e = [list(s) for s in list(u_df[u_df.affordance == &#39;e&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+
+        if len(subset_a) != 0:
+            sess_os = filter_niche_sessions(sess_os, u_df, subset_a)
+            sess_op = filter_niche_sessions(sess_op, u_df, subset_a)
+            sess_a = filter_niche_sessions(sess_a, u_df, subset_a)
+            sess_e = filter_niche_sessions(sess_e, u_df, subset_a)
+
+        if (len(sess_op) &gt; 0) &amp; (len(sess_os) &gt; 0) &amp; (len(sess_a) &gt; 0) &amp; (len(sess_e) &gt; 0):
+            sim_Q_P = sim_inter_aff(sess_os, sess_op, e, aid2mid)
+            sim_Q_A = sim_inter_aff(sess_os, sess_a, e, aid2mid)
+            sim_Q_E = sim_inter_aff(sess_os, sess_e, e, aid2mid)
+            sim_P_A = sim_inter_aff(sess_op, sess_a, e, aid2mid)
+            sim_P_E = sim_inter_aff(sess_op, sess_e, e, aid2mid)
+            sim_A_E = sim_inter_aff(sess_a, sess_e, e, aid2mid)
+
+            avg_sim = np.mean([sim_Q_P, sim_Q_A, sim_Q_E, sim_P_A, sim_P_E, sim_A_E])
+            std_sim = np.std([sim_Q_P, sim_Q_A, sim_Q_E, sim_P_A, sim_P_E, sim_A_E])
+
+            sim_vec = np.array([sim_Q_P, sim_Q_A, sim_Q_E, sim_P_A, sim_P_E, sim_A_E])
+
+            # znorm vec
+            sim_vec = (sim_vec - avg_sim) / std_sim
+
+            psim_res.append(sim_vec)
+        else:
+            n_failed += 1
+    p_failed = n_failed / len(uids)
+    return psim_res, p_failed</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="divAtScale.src.helpers.semantic_helpers.diversity_measures.comp_gs_intra_or_inter_fs1"><code class="name flex">
+<span>def <span class="ident">comp_gs_intra_or_inter_fs1</span></span>(<span>monad_df_filt, e, aid2mid, scale='intra', subset_a=[], sess_thresh=3)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Top level function to compute gs-scores between (inter) or wihtin (intra) sessions w.r.t. fs1 filtering.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>monad_df_filt</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>listening history for monadic sessions (i.e. either P|Q|A|E)</dd>
+<dt><strong><code>e</code></strong> :&ensp;<code>numpy.array</code></dt>
+<dd>embedding matrix</dd>
+<dt><strong><code>aid2mid</code></strong> :&ensp;<code>dict</code></dt>
+<dd>matrix index lookup for e</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list </code></dt>
+<dd>gs for all users. rows correspond to users</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def comp_gs_intra_or_inter_fs1(monad_df_filt, e, aid2mid, scale=&#34;intra&#34;, subset_a=[], sess_thresh=3):
+    &#34;&#34;&#34;
+    Top level function to compute gs-scores between (inter) or wihtin (intra) sessions w.r.t. fs1 filtering.
+
+    Args:
+        monad_df_filt (pandas.DataFrame): listening history for monadic sessions (i.e. either P|Q|A|E)
+        e (numpy.array): embedding matrix
+        aid2mid (dict): matrix index lookup for e
+
+    Returns:
+        list : gs for all users. rows correspond to users
+    &#34;&#34;&#34;
+    uids = list(monad_df_filt.anon_user_id.unique())
+    n_failed = 0
+
+    GS_all = []
+    P_of_sess_pop = []
+
+    for uid in tqdm(uids):
+        GS_avg = -1
+        u_df = monad_df_filt[monad_df_filt.anon_user_id == uid]
+
+        sess = [list(s) for s in list(u_df.groupby(&#39;session_n&#39;).artist_id.apply(list))]
+
+        if len(subset_a) != 0:
+            sess_filt = filter_niche_sessions(sess, u_df, subset_a)
+            p_sess_post_filt = len(sess_filt) / len(sess)
+            sess = sess_filt
+
+        if scale == &#34;intra&#34;:
+            # asssert we stll have some sessions to work with...
+            if len(sess) &gt;= sess_thresh:
+                GS_avg = np.mean([gs_score(s, e, aid2mid) for s in sess])
+
+        elif scale == &#34;inter&#34;:
+            if len(sess) &gt;= sess_thresh:
+                GS_avg = gs_score_inter_sess(sess, e, aid2mid)
+
+        if GS_avg != -1:
+            GS_all.append(GS_avg)
+            P_of_sess_pop.append(p_sess_post_filt)
+
+        else:
+            n_failed +=1
+
+    p_failed = n_failed / len(uids)
+    return GS_all, p_failed, np.mean(P_of_sess_pop)</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.semantic_helpers.diversity_measures.comp_gs_intra_or_inter_fs2"><code class="name flex">
+<span>def <span class="ident">comp_gs_intra_or_inter_fs2</span></span>(<span>lh_df, e, aid2mid, n_sample=-1, scale='intra', subset_a=[], sess_thresh=3)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Top level function to compute gs-scores between (inter)
+or wihtin (intra) sessions w.r.t. fs2 filtering.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>lh_df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>listening event df</dd>
+<dt>e (numpy.array) : embedding matrix</dt>
+<dt><strong><code>aid2mid</code></strong> :&ensp;<code>dict</code></dt>
+<dd>matrix index lookup for e</dd>
+</dl>
+<p>n_sample (int) : if != -1 sample n_sample users at random
+scale (str) : 'intra' OR 'inter'</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list </code></dt>
+<dd>all users gs scores in Q,P,A,E. Each row corresponds to a user</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def comp_gs_intra_or_inter_fs2(lh_df, e, aid2mid, n_sample=-1, scale=&#39;intra&#39;, subset_a=[], sess_thresh=3):
+    &#34;&#34;&#34;
+    Top level function to compute gs-scores between (inter)
+    or wihtin (intra) sessions w.r.t. fs2 filtering.
+
+    Args:
+        lh_df (pandas.DataFrame): listening event df
+        e (numpy.array) : embedding matrix
+        aid2mid (dict): matrix index lookup for e
+        n_sample (int) : if != -1 sample n_sample users at random
+        scale (str) : &#39;intra&#39; OR &#39;inter&#39;
+
+    Returns:
+        list : all users gs scores in Q,P,A,E. Each row corresponds to a user
+    &#34;&#34;&#34;
+    pdis_res = []
+    n_failed = 0
+    P_of_sess_pop = []
+    uids_keep = []
+
+    uids = list(lh_df.anon_user_id.unique())
+
+    if n_sample != -1:
+        uids = random.sample(uids, n_sample)
+
+    for uid in tqdm(uids):
+        spread_os = -1
+        spread_op = -1
+        spread_a = -1
+        spread_e = -1
+
+        u_df = lh_df[lh_df.anon_user_id == uid]
+
+        sess_os = [list(s) for s in list(u_df[u_df.affordance == &#39;o_s&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+        sess_op = [list(s) for s in list(u_df[u_df.affordance == &#39;o_pl&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+        sess_a = [list(s) for s in list(u_df[u_df.affordance == &#39;a&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+        sess_e = [list(s) for s in list(u_df[u_df.affordance == &#39;e&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+
+        if len(subset_a) != 0:
+            sess_os_filt = filter_niche_sessions(sess_os, u_df, subset_a)
+            p_pop_os = len(sess_os_filt) / len(sess_os)
+            sess_os = sess_os_filt
+
+            sess_op_filt = filter_niche_sessions(sess_op, u_df, subset_a)
+            p_pop_op = len(sess_op_filt) / len(sess_op)
+            sess_op = sess_op_filt
+
+            sess_a_filt = filter_niche_sessions(sess_a, u_df, subset_a)
+            p_pop_a = len(sess_a_filt) / len(sess_a)
+            sess_a = sess_a_filt
+
+            sess_e_filt = filter_niche_sessions(sess_e, u_df, subset_a)
+            p_pop_e = len(sess_e_filt) / len(sess_e)
+            sess_e = sess_e_filt
+
+
+        if scale == &#34;intra&#34;:
+            if len(sess_os) &gt;= sess_thresh:
+                spread_os = np.mean([gs_score(aids, e, aid2mid) for aids in sess_os])
+
+            if len(sess_op) &gt;= sess_thresh:
+                spread_op = np.mean([gs_score(aids, e, aid2mid) for aids in sess_op])
+
+            if len(sess_a) &gt;= sess_thresh:
+                spread_a = np.mean([gs_score(aids, e, aid2mid) for aids in sess_a])
+
+            if len(sess_e) &gt;= sess_thresh:
+                spread_e = np.mean([gs_score(aids, e, aid2mid) for aids in sess_e])
+
+        elif scale == &#34;inter&#34;:
+            if len(sess_os) &gt;= sess_thresh:
+                spread_os = gs_score_inter_sess(sess_os, e, aid2mid)
+
+            if len(sess_op) &gt;= sess_thresh:
+                spread_op = gs_score_inter_sess(sess_op, e, aid2mid)
+
+            if len(sess_a) &gt;= sess_thresh:
+                spread_a = gs_score_inter_sess(sess_a, e, aid2mid)
+
+            if len(sess_e) &gt;= sess_thresh:
+                spread_e = gs_score_inter_sess(sess_e, e, aid2mid)
+
+        all_spreads = [spread_os, spread_op, spread_a, spread_e]
+
+        if (-1 in all_spreads) == False:
+            pdis_res.append([spread_os, spread_op, spread_a, spread_e])
+            P_of_sess_pop.append([p_pop_os, p_pop_op, p_pop_a, p_pop_e])
+            uids_keep.append(uid)
+
+        else:
+            n_failed += 1
+
+    avg_sess_left_post_niche_filt = np.mean(P_of_sess_pop, axis=0)
+    pdis_res = np.array(pdis_res)
+    p_failed = n_failed / len(uids)
+    return pdis_res, p_failed, avg_sess_left_post_niche_filt, uids_keep</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.semantic_helpers.diversity_measures.comp_w_centroid"><code class="name flex">
+<span>def <span class="ident">comp_w_centroid</span></span>(<span>s, e, aid2mid)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute a sessions activity weighted centroid in embedding space</p>
+<h2 id="args">Args</h2>
+<p>s (list) : session (artist ids)
+e (numpy.array) : embedding matrix
+aid2mid (dict) : matrix index lookup</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>numpy.array </code></dt>
+<dd>centroid</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def comp_w_centroid(s, e, aid2mid):
+    &#34;&#34;&#34;
+    Compute a sessions activity weighted centroid in embedding space
+
+    Args:
+        s (list) : session (artist ids)
+        e (numpy.array) : embedding matrix
+        aid2mid (dict) : matrix index lookup
+
+    Returns:
+        numpy.array : centroid
+    &#34;&#34;&#34;
+    S_len = len(s)
+    w = dict(Counter(s))
+    a_unique = list(set(s))
+    e_all = np.array([e[int(aid2mid[aid])] for aid in a_unique])
+    e_w = [e * w[aid] for e, aid in zip(e_all, a_unique)]
+    w_centroid = np.sum(e_w, axis=0) / S_len
+    return w_centroid</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.semantic_helpers.diversity_measures.filter_niche_sessions"><code class="name flex">
+<span>def <span class="ident">filter_niche_sessions</span></span>(<span>sess, u_df, subset_a, pop_thresh=0.8)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove sessions with too much long tail.
+Do not have good structural rep. for these artists.</p>
+<h2 id="args">Args</h2>
+<p>sess (list) : collection of sesssions
+u_df (pandas.DataFrame) : listening history df
+subset_a (list) : pop artists to keep</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list </code></dt>
+<dd>filtered sessions</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_niche_sessions(sess, u_df, subset_a, pop_thresh=0.8):
+    &#34;&#34;&#34;
+    Remove sessions with too much long tail.
+    Do not have good structural rep. for these artists.
+
+    Args:
+        sess (list) : collection of sesssions
+        u_df (pandas.DataFrame) : listening history df
+        subset_a (list) : pop artists to keep
+
+    Returns:
+        list : filtered sessions
+    &#34;&#34;&#34;
+
+    streamed_artists = u_df.artist_id.unique()
+    pop_a = set(streamed_artists).intersection(set(subset_a))
+    S_filt = []
+    for s in sess:
+        pop_a_in_s = pop_a.intersection(set(s))
+        p_pop_in_session = len(pop_a_in_s) / len(set(s))
+        if p_pop_in_session &gt; pop_thresh:
+            S_filt.append(list(pop_a_in_s))
+    return S_filt</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.semantic_helpers.diversity_measures.get_sim_between_aff"><code class="name flex">
+<span>def <span class="ident">get_sim_between_aff</span></span>(<span>le_df, e, aid2mid, subset_a=[])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Top level function to compute semantic (cosine) similarity between all affordances for all users.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>le_df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>listening
+history df</dd>
+<dt><strong><code>e</code></strong> :&ensp;<code>numpy.array</code></dt>
+<dd>embedding matrix</dd>
+<dt><strong><code>aid2mid</code></strong> :&ensp;<code>dict</code></dt>
+<dd>matrix index lookup for e</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>list :similarity for [Q-P, Q-A, Q-E, P-A, P-E, A-E]. Rows correspond to users</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_sim_between_aff(le_df, e, aid2mid, subset_a=[]):
+    &#34;&#34;&#34;
+    Top level function to compute semantic (cosine) similarity between all affordances for all users.
+
+    Args:
+        le_df (pandas.DataFrame): listening  history df
+        e (numpy.array): embedding matrix
+        aid2mid (dict):  matrix index lookup for e
+
+    Returns:
+        list :similarity for [Q-P, Q-A, Q-E, P-A, P-E, A-E]. Rows correspond to users
+    &#34;&#34;&#34;
+    psim_res = []
+    uids = le_df.anon_user_id.unique()
+    n_failed = 0
+
+
+    for uid in tqdm(uids):
+        u_df = le_df[le_df.anon_user_id == uid]
+        sess_os = [list(s) for s in list(u_df[u_df.affordance == &#39;o_s&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+        sess_op = [list(s) for s in list(u_df[u_df.affordance == &#39;o_pl&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+        sess_a = [list(s) for s in list(u_df[u_df.affordance == &#39;a&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+        sess_e = [list(s) for s in list(u_df[u_df.affordance == &#39;e&#39;].groupby(&#39;session_n&#39;).artist_id.apply(list))]
+
+        if len(subset_a) != 0:
+            sess_os = filter_niche_sessions(sess_os, u_df, subset_a)
+            sess_op = filter_niche_sessions(sess_op, u_df, subset_a)
+            sess_a = filter_niche_sessions(sess_a, u_df, subset_a)
+            sess_e = filter_niche_sessions(sess_e, u_df, subset_a)
+
+        if (len(sess_op) &gt; 0) &amp; (len(sess_os) &gt; 0) &amp; (len(sess_a) &gt; 0) &amp; (len(sess_e) &gt; 0):
+            sim_Q_P = sim_inter_aff(sess_os, sess_op, e, aid2mid)
+            sim_Q_A = sim_inter_aff(sess_os, sess_a, e, aid2mid)
+            sim_Q_E = sim_inter_aff(sess_os, sess_e, e, aid2mid)
+            sim_P_A = sim_inter_aff(sess_op, sess_a, e, aid2mid)
+            sim_P_E = sim_inter_aff(sess_op, sess_e, e, aid2mid)
+            sim_A_E = sim_inter_aff(sess_a, sess_e, e, aid2mid)
+
+            avg_sim = np.mean([sim_Q_P, sim_Q_A, sim_Q_E, sim_P_A, sim_P_E, sim_A_E])
+            std_sim = np.std([sim_Q_P, sim_Q_A, sim_Q_E, sim_P_A, sim_P_E, sim_A_E])
+
+            sim_vec = np.array([sim_Q_P, sim_Q_A, sim_Q_E, sim_P_A, sim_P_E, sim_A_E])
+
+            # znorm vec
+            sim_vec = (sim_vec - avg_sim) / std_sim
+
+            psim_res.append(sim_vec)
+        else:
+            n_failed += 1
+    p_failed = n_failed / len(uids)
+    return psim_res, p_failed</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.semantic_helpers.diversity_measures.gs_score"><code class="name flex">
+<span>def <span class="ident">gs_score</span></span>(<span>s, e, aid2mid)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute Anderson et al.'s GS-score</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>s</code></strong> :&ensp;<code>list</code></dt>
+<dd>session</dd>
+<dt><strong><code>e</code></strong> :&ensp;<code>numpy.array</code></dt>
+<dd>embedding matrix</dd>
+<dt><strong><code>aid2mid</code></strong> :&ensp;<code>dict</code></dt>
+<dd>matrix index lookup</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float </code></dt>
+<dd>gs_score for a given session</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def gs_score(s, e, aid2mid):
+    &#34;&#34;&#34;
+    Compute Anderson et al.&#39;s GS-score
+
+    Args:
+        s (list): session
+        e (numpy.array): embedding matrix
+        aid2mid (dict): matrix index lookup
+
+    Returns:
+        float : gs_score for a given session
+    &#34;&#34;&#34;
+    S_len = len(s)
+    w = dict(Counter(s))
+    a_unique = list(set(s))
+    w_vec = np.array([w[aid] for aid in a_unique])
+    e_all = np.array([e[int(aid2mid[aid])] for aid in a_unique])
+    e_w = [e * w[aid] for e, aid in zip(e_all, a_unique)]
+    w_centroid = np.sum(e_w, axis=0) / S_len
+
+    sim = cosine_similarity([w_centroid], e_all)[0]
+    sim = sim * w_vec
+    gs = sum(sim) / S_len
+    return gs</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.semantic_helpers.diversity_measures.gs_score_inter_sess"><code class="name flex">
+<span>def <span class="ident">gs_score_inter_sess</span></span>(<span>S, e, aid2mid)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute Anderson et al.'s GS-score between multiple sessions</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>S</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of sessions (artist ids)</dd>
+</dl>
+<p>e (numpy.array) : embedding matrix
+aid2mid (dict) : matrix index lookup</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float </code></dt>
+<dd>gs_score over all sessions</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def gs_score_inter_sess(S, e, aid2mid):
+    &#34;&#34;&#34;
+    Compute Anderson et al.&#39;s GS-score between multiple sessions
+
+    Args:
+        S (list): list of sessions (artist ids)
+        e (numpy.array) : embedding matrix
+        aid2mid (dict) : matrix index lookup
+
+    Returns:
+        float : gs_score over all sessions
+    &#34;&#34;&#34;
+
+    sess_rep = [comp_w_centroid(s, e, aid2mid) for s in S]
+    centroid = np.mean(sess_rep, axis=0)
+    sim = cosine_similarity([centroid], sess_rep)[0]
+    gs = np.mean(sim)
+    return gs</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.semantic_helpers.diversity_measures.sim_inter_aff"><code class="name flex">
+<span>def <span class="ident">sim_inter_aff</span></span>(<span>S1, S2, e, aid2mid)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute cosine similarity between avg. rep of two session centroids
+generated from two distinct affordances.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>S</code></strong> :&ensp;<code>list</code></dt>
+<dd>list of sessions (artist ids)</dd>
+<dt>e (numpy.array) : embedding matrix</dt>
+<dt><strong><code>aid2mid</code></strong> :&ensp;<code>dict</code></dt>
+<dd>matrix index lookup</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float </code></dt>
+<dd>cosine similarity between two affordances</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sim_inter_aff(S1, S2, e, aid2mid):
+    &#34;&#34;&#34;
+    Compute cosine similarity between avg. rep of two session centroids
+    generated from two distinct affordances.
+
+    Args:
+        S (list): list of sessions (artist ids)
+        e (numpy.array) : embedding matrix
+        aid2mid (dict): matrix index lookup
+
+    Returns:
+        float : cosine similarity between two affordances
+    &#34;&#34;&#34;
+
+    sess_rep1 = [comp_w_centroid(s, e, aid2mid) for s in S1]
+    centroid1 = np.mean(sess_rep1, axis=0)
+
+    sess_rep2 = [comp_w_centroid(s, e, aid2mid) for s in S2]
+    centroid2 = np.mean(sess_rep2, axis=0)
+
+    sim = 1 - cos_dis(centroid1, centroid2)
+    return sim</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="divAtScale.src.helpers.semantic_helpers" href="index.html">divAtScale.src.helpers.semantic_helpers</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="divAtScale.src.helpers.semantic_helpers.diversity_measures.comp_gs_intra_or_inter_fs1" href="#divAtScale.src.helpers.semantic_helpers.diversity_measures.comp_gs_intra_or_inter_fs1">comp_gs_intra_or_inter_fs1</a></code></li>
+<li><code><a title="divAtScale.src.helpers.semantic_helpers.diversity_measures.comp_gs_intra_or_inter_fs2" href="#divAtScale.src.helpers.semantic_helpers.diversity_measures.comp_gs_intra_or_inter_fs2">comp_gs_intra_or_inter_fs2</a></code></li>
+<li><code><a title="divAtScale.src.helpers.semantic_helpers.diversity_measures.comp_w_centroid" href="#divAtScale.src.helpers.semantic_helpers.diversity_measures.comp_w_centroid">comp_w_centroid</a></code></li>
+<li><code><a title="divAtScale.src.helpers.semantic_helpers.diversity_measures.filter_niche_sessions" href="#divAtScale.src.helpers.semantic_helpers.diversity_measures.filter_niche_sessions">filter_niche_sessions</a></code></li>
+<li><code><a title="divAtScale.src.helpers.semantic_helpers.diversity_measures.get_sim_between_aff" href="#divAtScale.src.helpers.semantic_helpers.diversity_measures.get_sim_between_aff">get_sim_between_aff</a></code></li>
+<li><code><a title="divAtScale.src.helpers.semantic_helpers.diversity_measures.gs_score" href="#divAtScale.src.helpers.semantic_helpers.diversity_measures.gs_score">gs_score</a></code></li>
+<li><code><a title="divAtScale.src.helpers.semantic_helpers.diversity_measures.gs_score_inter_sess" href="#divAtScale.src.helpers.semantic_helpers.diversity_measures.gs_score_inter_sess">gs_score_inter_sess</a></code></li>
+<li><code><a title="divAtScale.src.helpers.semantic_helpers.diversity_measures.sim_inter_aff" href="#divAtScale.src.helpers.semantic_helpers.diversity_measures.sim_inter_aff">sim_inter_aff</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

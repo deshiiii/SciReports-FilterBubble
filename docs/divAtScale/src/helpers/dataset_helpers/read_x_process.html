@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>divAtScale.src.helpers.dataset_helpers.read_x_process API documentation</title>
+<meta name="description" content="Helper functions for reading &amp; processing session based datasets" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>divAtScale.src.helpers.dataset_helpers.read_x_process</code></h1>
+</header>
+<section id="section-intro">
+<p>Helper functions for reading &amp; processing session based datasets</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+Helper functions for reading &amp; processing session based datasets 
+
+&#34;&#34;&#34;
+
+import pandas as pd
+import json
+import random
+
+
+def u_activity_2_sessions(df, s_interval_thresh=20.0):
+    &#34;&#34;&#34;
+    Segment users list. hist into sessions based on inter-stream thresh
+
+
+    Args:
+        df (pandas.DataFrame): listening history dataframe
+        s_interval_thresh (float): inter-stream thresh to define new sess
+
+    Returns:
+        pandas df : one user&#39;s listening histories with a new col which indicates session num.
+    &#34;&#34;&#34;
+
+    # Calculate the time differences between consecutive rows
+    time_diff = df[&#39;ts_listen&#39;].diff()
+
+    # Identify the rows where the time difference exceeds the threshold
+    session_start_indices = time_diff.gt(pd.Timedelta(minutes=s_interval_thresh))
+
+    # Create a &#39;Session&#39; column indicating the session number
+    df[&#39;session&#39;] = session_start_indices.cumsum()
+    df[&#39;ts_listen&#39;] = df.ts_listen.apply(lambda x: str(x))
+    return df
+
+def grab_sess(lh_df):
+    &#34;&#34;&#34;
+    Get sessions from listening hist. df
+
+    Args:
+        lh_df (pandas.DataFrame): listening history df
+
+    Returns:
+        list : sessions
+    &#34;&#34;&#34;
+
+    # updated to have group keys
+    S = lh_df.groupby([&#34;anon_user_id&#34;, &#39;session_n&#39;], group_keys=False).artist_id.apply(list).to_frame().artist_id.values
+    S = [list(s) for s in S]
+    return S
+
+
+def read_config(file_path):
+    &#34;&#34;&#34;
+    Read configuration file used to run all experiments
+
+
+    Args:
+        file_path (str): path to config
+
+    Returns:
+        dict : config data
+    &#34;&#34;&#34;
+    with open(file_path, &#39;r&#39;) as file:
+        config_data = json.load(file)
+    return config_data
+
+
+def reformat_2022(sess_df):
+    &#34;&#34;&#34;
+    Reformat to match 2018 year
+
+
+    Args:
+        sess_df (pandas.DataFrame): listening hist df
+
+    Returns:
+        pandas.DataFrame : formatted listening hist df
+    &#34;&#34;&#34;
+    sess_df = sess_df.drop(&#39;ts_listen&#39;, axis=1)
+
+    # Update the &#39;Age&#39; column for rows where &#39;IsStudent&#39; is True
+    sess_df.loc[(sess_df.context_type == &#39;playlist_page&#39;) &amp; (sess_df.context_4 == &#39;organic&#39;), &#39;context_4&#39;] = &#39;P&#39;
+
+    sess_df.rename(columns={&#39;context_type&#39;: &#39;sub_affordance&#39;, &#39;context_4&#39;: &#39;affordance&#39;,
+                            &#39;hashed_uid&#39;: &#39;anon_user_id&#39;, &#39;session&#39;: &#39;session_n&#39;}, inplace=True)
+
+    # parse other affordance
+    sess_df = sess_df[sess_df.affordance != &#39;ext&#39;]
+    sess_df = sess_df[sess_df.affordance != &#39;other&#39;]
+
+    aff_map = {&#39;organic&#39;: &#39;o_s&#39;, &#39;P&#39;: &#39;o_pl&#39;, &#39;reco_algo&#39;: &#39;a&#39;, &#39;edito&#39;: &#39;e&#39;}
+    sess_df[&#39;affordance&#39;] = sess_df.affordance.apply(lambda x: aff_map[x])
+    return sess_df
+
+
+def filter_u_with_less_than_thresh_sess(sess_df, thresh=3):
+    &#34;&#34;&#34;
+    Subset df to only consider users who have &gt; thresh sessions
+
+
+    Args:
+        sess_df (pandas.DataFrame): listening history df
+        thresh (int): thresh indicates min number of sessions per. user
+
+    Returns:
+        pandas.DataFrame : filtered listening hist df.
+    &#34;&#34;&#34;
+    n_sess_per_aff = sess_df.groupby([&#39;anon_user_id&#39;]).session_n.nunique().to_frame().reset_index()
+    uids = n_sess_per_aff[n_sess_per_aff.session_n &gt;= thresh].anon_user_id.values
+    sess_df = sess_df[sess_df.anon_user_id.isin(uids)]
+    return sess_df
+
+
+def sess_meta_data(sess_df):
+    &#34;&#34;&#34;
+    Generate meta data: i.e. per (uid, sess) type: number of artists (n_a), session length (sess_l)
+
+
+    Args:
+        sess_df (pandas.DataFrame): listening history df
+
+    Returns:
+        pandas.DataFrame : meta_data df.
+    &#34;&#34;&#34;
+    l_df = sess_df.groupby([&#39;anon_user_id&#39;, &#39;session_n&#39;]).artist_id.count().to_frame().rename(
+        columns={&#39;artist_id&#39;: &#39;sess_l&#39;})
+    unique_a_df = sess_df.groupby([&#39;anon_user_id&#39;, &#39;session_n&#39;]).artist_id.nunique().to_frame().rename(
+        columns={&#39;artist_id&#39;: &#39;n_a&#39;})
+    sess_meta_data = pd.merge(l_df, unique_a_df, left_index=True, right_index=True)
+    # sess_meta_data[&#39;R&#39;] = 1 - (sess_meta_data.n_a / sess_meta_data.sess_l)
+    sess_meta_data.reset_index(inplace=True)
+    return sess_meta_data
+
+
+def print_le_stats(u_sess_df):
+    &#34;&#34;&#34;
+    Print low level measures w.r.t listening history set
+
+
+    Args:
+        u_sess_df (pandas.DataFrame): listening history df
+    &#34;&#34;&#34;
+    uids = u_sess_df.anon_user_id.unique()
+    a_ids = u_sess_df.artist_id.unique()
+    n_sessions = u_sess_df[[&#39;anon_user_id&#39;, &#39;session_n&#39;]].drop_duplicates().shape[0]
+
+    n_users = len(uids)
+    n_artists = len(a_ids)
+    n_le = len(u_sess_df)
+    print(&#39;* n users:&#39;, n_users)
+    print(&#39;* n artists:&#39;, n_artists)
+    print(&#39;* n sessions:&#39;, n_sessions)
+    print(&#39;* n le:&#39;, n_le)
+    print(&#39;&#39;)
+
+
+def load_fs1(data_path):
+    &#34;&#34;&#34;
+    Load all 4 fs1 datasets
+
+
+    Args:
+        data_path (str): optional, path to data_dir
+
+    Returns:
+        pandas.DataFrame : P,Q,A,E monadic, non-fandom sessions.
+
+    &#34;&#34;&#34;
+
+    P = pd.read_csv(data_path + &#34;/FS1/P&#34;, index_col=0)
+    Q = pd.read_csv(data_path + &#34;/FS1/Q&#34;, index_col=0)
+    A = pd.read_csv(data_path + &#34;/FS1/A&#34;, index_col=0)
+    E = pd.read_csv(data_path + &#34;/FS1/E&#34;, index_col=0)
+    return P, Q, A, E
+
+
+def sub_sample_lh_df(le_df, n_sample, seed):
+    &#34;&#34;&#34;
+    Filter df to only contain n randomly sampled users
+
+    Args:
+        le_df (pandas.DataFrame) : listening history df
+        n_sample (int) : n. users to sample
+        seed (int) : random_seed
+
+    Returns:
+        pandas.DataFrame : sampled listening hist df.
+    &#34;&#34;&#34;
+    random.seed(seed)
+    uids = list(le_df.anon_user_id.unique())
+    uids_sample = random.sample(uids, n_sample)
+    le_df = le_df[le_df.anon_user_id.isin(uids_sample)]
+    return le_df
+
+
+def load_fs2_inter_condition(data_path=&#34;../../data/&#34;, thresh=3):
+    &#34;&#34;&#34;
+    Load fs2 (multi-affordance u) dataset
+    sub-sample based on users having &gt; thresh sessions in each affordance.
+
+
+    Args:
+        y (int): year of listening hist.
+        data_path (str) : path to fs2 dataset
+        thresh (int):  thresh+1 indicates min number of sessions per. user
+
+    Returns:
+        pandas.DataFrame : filtered lh dataset for given affordance.
+    &#34;&#34;&#34;
+    print(&#39;** loading df:&#39;)
+    multi_a_sess = pd.read_csv(data_path + &#34;/FS2/PQAE&#34;, index_col=0)
+    n_sess_per_aff = multi_a_sess.groupby([&#39;anon_user_id&#39;, &#39;affordance&#39;]).session_n.nunique().to_frame().reset_index()
+
+    # must have at least 3 sessions per affordance
+    n_multiple_aff_sess = n_sess_per_aff[n_sess_per_aff.session_n &gt;= thresh].groupby(
+        &#39;anon_user_id&#39;).affordance.nunique().to_frame()
+    keep_uids = list(n_multiple_aff_sess[n_multiple_aff_sess.affordance == 4].index)
+    multi_a_sess = multi_a_sess[multi_a_sess.anon_user_id.isin(keep_uids)]
+    return multi_a_sess
+
+
+def load_session_df(data_path, y=2023, release=False):
+    &#34;&#34;&#34;
+    Load sess df which contains all sess (monad,dyad,triad,tetrad) in March y
+
+    Args:
+        y (int): year to load
+
+    Returns:
+        pandas.DataFrame : listening hist df
+    &#34;&#34;&#34;
+
+    if y == 2018:
+        sess_df = pd.read_csv(data_path + &#34;/u_session_df_2018&#34;, index_col=0)[[&#39;anon_user_id&#39;, &#39;artist_id&#39;,
+                                                                                           &#39;ts_listen&#39;, &#39;affordance&#39;,
+                                                                                           &#39;session_n&#39;]]
+    elif y == 2022:
+        sess_df = pd.read_csv(data_path + &#39;/u_session_df_2022&#39;, index_col=0)
+        if release == False:
+            sess_df = reformat_2022(sess_df)
+        else:
+            sess_df.rename(columns={&#34;session&#34;: &#34;session_n&#34;}, inplace=True)
+
+    elif y == 2023:
+        sess_df = pd.read_csv(data_path + &#39;/u_session_df_2023&#39;, index_col=0)
+        sess_df.rename(columns={&#34;session&#34;: &#34;session_n&#34;}, inplace=True)
+        #print(&#39;do something!&#39;)
+    return sess_df</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="divAtScale.src.helpers.dataset_helpers.read_x_process.filter_u_with_less_than_thresh_sess"><code class="name flex">
+<span>def <span class="ident">filter_u_with_less_than_thresh_sess</span></span>(<span>sess_df, thresh=3)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Subset df to only consider users who have &gt; thresh sessions</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>sess_df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>listening history df</dd>
+<dt><strong><code>thresh</code></strong> :&ensp;<code>int</code></dt>
+<dd>thresh indicates min number of sessions per. user</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pandas.DataFrame </code></dt>
+<dd>filtered listening hist df.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_u_with_less_than_thresh_sess(sess_df, thresh=3):
+    &#34;&#34;&#34;
+    Subset df to only consider users who have &gt; thresh sessions
+
+
+    Args:
+        sess_df (pandas.DataFrame): listening history df
+        thresh (int): thresh indicates min number of sessions per. user
+
+    Returns:
+        pandas.DataFrame : filtered listening hist df.
+    &#34;&#34;&#34;
+    n_sess_per_aff = sess_df.groupby([&#39;anon_user_id&#39;]).session_n.nunique().to_frame().reset_index()
+    uids = n_sess_per_aff[n_sess_per_aff.session_n &gt;= thresh].anon_user_id.values
+    sess_df = sess_df[sess_df.anon_user_id.isin(uids)]
+    return sess_df</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.dataset_helpers.read_x_process.grab_sess"><code class="name flex">
+<span>def <span class="ident">grab_sess</span></span>(<span>lh_df)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get sessions from listening hist. df</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>lh_df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>listening history df</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list </code></dt>
+<dd>sessions</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def grab_sess(lh_df):
+    &#34;&#34;&#34;
+    Get sessions from listening hist. df
+
+    Args:
+        lh_df (pandas.DataFrame): listening history df
+
+    Returns:
+        list : sessions
+    &#34;&#34;&#34;
+
+    # updated to have group keys
+    S = lh_df.groupby([&#34;anon_user_id&#34;, &#39;session_n&#39;], group_keys=False).artist_id.apply(list).to_frame().artist_id.values
+    S = [list(s) for s in S]
+    return S</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.dataset_helpers.read_x_process.load_fs1"><code class="name flex">
+<span>def <span class="ident">load_fs1</span></span>(<span>data_path)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load all 4 fs1 datasets</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>data_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>optional, path to data_dir</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pandas.DataFrame </code></dt>
+<dd>P,Q,A,E monadic, non-fandom sessions.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_fs1(data_path):
+    &#34;&#34;&#34;
+    Load all 4 fs1 datasets
+
+
+    Args:
+        data_path (str): optional, path to data_dir
+
+    Returns:
+        pandas.DataFrame : P,Q,A,E monadic, non-fandom sessions.
+
+    &#34;&#34;&#34;
+
+    P = pd.read_csv(data_path + &#34;/FS1/P&#34;, index_col=0)
+    Q = pd.read_csv(data_path + &#34;/FS1/Q&#34;, index_col=0)
+    A = pd.read_csv(data_path + &#34;/FS1/A&#34;, index_col=0)
+    E = pd.read_csv(data_path + &#34;/FS1/E&#34;, index_col=0)
+    return P, Q, A, E</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.dataset_helpers.read_x_process.load_fs2_inter_condition"><code class="name flex">
+<span>def <span class="ident">load_fs2_inter_condition</span></span>(<span>data_path='../../data/', thresh=3)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load fs2 (multi-affordance u) dataset
+sub-sample based on users having &gt; thresh sessions in each affordance.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>y</code></strong> :&ensp;<code>int</code></dt>
+<dd>year of listening hist.</dd>
+<dt>data_path (str) : path to fs2 dataset</dt>
+<dt><strong><code>thresh</code></strong> :&ensp;<code>int</code></dt>
+<dd>thresh+1 indicates min number of sessions per. user</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pandas.DataFrame </code></dt>
+<dd>filtered lh dataset for given affordance.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_fs2_inter_condition(data_path=&#34;../../data/&#34;, thresh=3):
+    &#34;&#34;&#34;
+    Load fs2 (multi-affordance u) dataset
+    sub-sample based on users having &gt; thresh sessions in each affordance.
+
+
+    Args:
+        y (int): year of listening hist.
+        data_path (str) : path to fs2 dataset
+        thresh (int):  thresh+1 indicates min number of sessions per. user
+
+    Returns:
+        pandas.DataFrame : filtered lh dataset for given affordance.
+    &#34;&#34;&#34;
+    print(&#39;** loading df:&#39;)
+    multi_a_sess = pd.read_csv(data_path + &#34;/FS2/PQAE&#34;, index_col=0)
+    n_sess_per_aff = multi_a_sess.groupby([&#39;anon_user_id&#39;, &#39;affordance&#39;]).session_n.nunique().to_frame().reset_index()
+
+    # must have at least 3 sessions per affordance
+    n_multiple_aff_sess = n_sess_per_aff[n_sess_per_aff.session_n &gt;= thresh].groupby(
+        &#39;anon_user_id&#39;).affordance.nunique().to_frame()
+    keep_uids = list(n_multiple_aff_sess[n_multiple_aff_sess.affordance == 4].index)
+    multi_a_sess = multi_a_sess[multi_a_sess.anon_user_id.isin(keep_uids)]
+    return multi_a_sess</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.dataset_helpers.read_x_process.load_session_df"><code class="name flex">
+<span>def <span class="ident">load_session_df</span></span>(<span>data_path, y=2023, release=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load sess df which contains all sess (monad,dyad,triad,tetrad) in March y</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>y</code></strong> :&ensp;<code>int</code></dt>
+<dd>year to load</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pandas.DataFrame </code></dt>
+<dd>listening hist df</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_session_df(data_path, y=2023, release=False):
+    &#34;&#34;&#34;
+    Load sess df which contains all sess (monad,dyad,triad,tetrad) in March y
+
+    Args:
+        y (int): year to load
+
+    Returns:
+        pandas.DataFrame : listening hist df
+    &#34;&#34;&#34;
+
+    if y == 2018:
+        sess_df = pd.read_csv(data_path + &#34;/u_session_df_2018&#34;, index_col=0)[[&#39;anon_user_id&#39;, &#39;artist_id&#39;,
+                                                                                           &#39;ts_listen&#39;, &#39;affordance&#39;,
+                                                                                           &#39;session_n&#39;]]
+    elif y == 2022:
+        sess_df = pd.read_csv(data_path + &#39;/u_session_df_2022&#39;, index_col=0)
+        if release == False:
+            sess_df = reformat_2022(sess_df)
+        else:
+            sess_df.rename(columns={&#34;session&#34;: &#34;session_n&#34;}, inplace=True)
+
+    elif y == 2023:
+        sess_df = pd.read_csv(data_path + &#39;/u_session_df_2023&#39;, index_col=0)
+        sess_df.rename(columns={&#34;session&#34;: &#34;session_n&#34;}, inplace=True)
+        #print(&#39;do something!&#39;)
+    return sess_df</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.dataset_helpers.read_x_process.print_le_stats"><code class="name flex">
+<span>def <span class="ident">print_le_stats</span></span>(<span>u_sess_df)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Print low level measures w.r.t listening history set</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>u_sess_df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>listening history df</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_le_stats(u_sess_df):
+    &#34;&#34;&#34;
+    Print low level measures w.r.t listening history set
+
+
+    Args:
+        u_sess_df (pandas.DataFrame): listening history df
+    &#34;&#34;&#34;
+    uids = u_sess_df.anon_user_id.unique()
+    a_ids = u_sess_df.artist_id.unique()
+    n_sessions = u_sess_df[[&#39;anon_user_id&#39;, &#39;session_n&#39;]].drop_duplicates().shape[0]
+
+    n_users = len(uids)
+    n_artists = len(a_ids)
+    n_le = len(u_sess_df)
+    print(&#39;* n users:&#39;, n_users)
+    print(&#39;* n artists:&#39;, n_artists)
+    print(&#39;* n sessions:&#39;, n_sessions)
+    print(&#39;* n le:&#39;, n_le)
+    print(&#39;&#39;)</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.dataset_helpers.read_x_process.read_config"><code class="name flex">
+<span>def <span class="ident">read_config</span></span>(<span>file_path)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Read configuration file used to run all experiments</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>file_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to config</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict </code></dt>
+<dd>config data</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_config(file_path):
+    &#34;&#34;&#34;
+    Read configuration file used to run all experiments
+
+
+    Args:
+        file_path (str): path to config
+
+    Returns:
+        dict : config data
+    &#34;&#34;&#34;
+    with open(file_path, &#39;r&#39;) as file:
+        config_data = json.load(file)
+    return config_data</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.dataset_helpers.read_x_process.reformat_2022"><code class="name flex">
+<span>def <span class="ident">reformat_2022</span></span>(<span>sess_df)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reformat to match 2018 year</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>sess_df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>listening hist df</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pandas.DataFrame </code></dt>
+<dd>formatted listening hist df</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reformat_2022(sess_df):
+    &#34;&#34;&#34;
+    Reformat to match 2018 year
+
+
+    Args:
+        sess_df (pandas.DataFrame): listening hist df
+
+    Returns:
+        pandas.DataFrame : formatted listening hist df
+    &#34;&#34;&#34;
+    sess_df = sess_df.drop(&#39;ts_listen&#39;, axis=1)
+
+    # Update the &#39;Age&#39; column for rows where &#39;IsStudent&#39; is True
+    sess_df.loc[(sess_df.context_type == &#39;playlist_page&#39;) &amp; (sess_df.context_4 == &#39;organic&#39;), &#39;context_4&#39;] = &#39;P&#39;
+
+    sess_df.rename(columns={&#39;context_type&#39;: &#39;sub_affordance&#39;, &#39;context_4&#39;: &#39;affordance&#39;,
+                            &#39;hashed_uid&#39;: &#39;anon_user_id&#39;, &#39;session&#39;: &#39;session_n&#39;}, inplace=True)
+
+    # parse other affordance
+    sess_df = sess_df[sess_df.affordance != &#39;ext&#39;]
+    sess_df = sess_df[sess_df.affordance != &#39;other&#39;]
+
+    aff_map = {&#39;organic&#39;: &#39;o_s&#39;, &#39;P&#39;: &#39;o_pl&#39;, &#39;reco_algo&#39;: &#39;a&#39;, &#39;edito&#39;: &#39;e&#39;}
+    sess_df[&#39;affordance&#39;] = sess_df.affordance.apply(lambda x: aff_map[x])
+    return sess_df</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.dataset_helpers.read_x_process.sess_meta_data"><code class="name flex">
+<span>def <span class="ident">sess_meta_data</span></span>(<span>sess_df)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generate meta data: i.e. per (uid, sess) type: number of artists (n_a), session length (sess_l)</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>sess_df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>listening history df</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pandas.DataFrame </code></dt>
+<dd>meta_data df.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sess_meta_data(sess_df):
+    &#34;&#34;&#34;
+    Generate meta data: i.e. per (uid, sess) type: number of artists (n_a), session length (sess_l)
+
+
+    Args:
+        sess_df (pandas.DataFrame): listening history df
+
+    Returns:
+        pandas.DataFrame : meta_data df.
+    &#34;&#34;&#34;
+    l_df = sess_df.groupby([&#39;anon_user_id&#39;, &#39;session_n&#39;]).artist_id.count().to_frame().rename(
+        columns={&#39;artist_id&#39;: &#39;sess_l&#39;})
+    unique_a_df = sess_df.groupby([&#39;anon_user_id&#39;, &#39;session_n&#39;]).artist_id.nunique().to_frame().rename(
+        columns={&#39;artist_id&#39;: &#39;n_a&#39;})
+    sess_meta_data = pd.merge(l_df, unique_a_df, left_index=True, right_index=True)
+    # sess_meta_data[&#39;R&#39;] = 1 - (sess_meta_data.n_a / sess_meta_data.sess_l)
+    sess_meta_data.reset_index(inplace=True)
+    return sess_meta_data</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.dataset_helpers.read_x_process.sub_sample_lh_df"><code class="name flex">
+<span>def <span class="ident">sub_sample_lh_df</span></span>(<span>le_df, n_sample, seed)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Filter df to only contain n randomly sampled users</p>
+<h2 id="args">Args</h2>
+<p>le_df (pandas.DataFrame) : listening history df
+n_sample (int) : n. users to sample
+seed (int) : random_seed</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pandas.DataFrame </code></dt>
+<dd>sampled listening hist df.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sub_sample_lh_df(le_df, n_sample, seed):
+    &#34;&#34;&#34;
+    Filter df to only contain n randomly sampled users
+
+    Args:
+        le_df (pandas.DataFrame) : listening history df
+        n_sample (int) : n. users to sample
+        seed (int) : random_seed
+
+    Returns:
+        pandas.DataFrame : sampled listening hist df.
+    &#34;&#34;&#34;
+    random.seed(seed)
+    uids = list(le_df.anon_user_id.unique())
+    uids_sample = random.sample(uids, n_sample)
+    le_df = le_df[le_df.anon_user_id.isin(uids_sample)]
+    return le_df</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.helpers.dataset_helpers.read_x_process.u_activity_2_sessions"><code class="name flex">
+<span>def <span class="ident">u_activity_2_sessions</span></span>(<span>df, s_interval_thresh=20.0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Segment users list. hist into sessions based on inter-stream thresh</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>listening history dataframe</dd>
+<dt><strong><code>s_interval_thresh</code></strong> :&ensp;<code>float</code></dt>
+<dd>inter-stream thresh to define new sess</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pandas df </code></dt>
+<dd>one user's listening histories with a new col which indicates session num.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def u_activity_2_sessions(df, s_interval_thresh=20.0):
+    &#34;&#34;&#34;
+    Segment users list. hist into sessions based on inter-stream thresh
+
+
+    Args:
+        df (pandas.DataFrame): listening history dataframe
+        s_interval_thresh (float): inter-stream thresh to define new sess
+
+    Returns:
+        pandas df : one user&#39;s listening histories with a new col which indicates session num.
+    &#34;&#34;&#34;
+
+    # Calculate the time differences between consecutive rows
+    time_diff = df[&#39;ts_listen&#39;].diff()
+
+    # Identify the rows where the time difference exceeds the threshold
+    session_start_indices = time_diff.gt(pd.Timedelta(minutes=s_interval_thresh))
+
+    # Create a &#39;Session&#39; column indicating the session number
+    df[&#39;session&#39;] = session_start_indices.cumsum()
+    df[&#39;ts_listen&#39;] = df.ts_listen.apply(lambda x: str(x))
+    return df</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="divAtScale.src.helpers.dataset_helpers" href="index.html">divAtScale.src.helpers.dataset_helpers</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="divAtScale.src.helpers.dataset_helpers.read_x_process.filter_u_with_less_than_thresh_sess" href="#divAtScale.src.helpers.dataset_helpers.read_x_process.filter_u_with_less_than_thresh_sess">filter_u_with_less_than_thresh_sess</a></code></li>
+<li><code><a title="divAtScale.src.helpers.dataset_helpers.read_x_process.grab_sess" href="#divAtScale.src.helpers.dataset_helpers.read_x_process.grab_sess">grab_sess</a></code></li>
+<li><code><a title="divAtScale.src.helpers.dataset_helpers.read_x_process.load_fs1" href="#divAtScale.src.helpers.dataset_helpers.read_x_process.load_fs1">load_fs1</a></code></li>
+<li><code><a title="divAtScale.src.helpers.dataset_helpers.read_x_process.load_fs2_inter_condition" href="#divAtScale.src.helpers.dataset_helpers.read_x_process.load_fs2_inter_condition">load_fs2_inter_condition</a></code></li>
+<li><code><a title="divAtScale.src.helpers.dataset_helpers.read_x_process.load_session_df" href="#divAtScale.src.helpers.dataset_helpers.read_x_process.load_session_df">load_session_df</a></code></li>
+<li><code><a title="divAtScale.src.helpers.dataset_helpers.read_x_process.print_le_stats" href="#divAtScale.src.helpers.dataset_helpers.read_x_process.print_le_stats">print_le_stats</a></code></li>
+<li><code><a title="divAtScale.src.helpers.dataset_helpers.read_x_process.read_config" href="#divAtScale.src.helpers.dataset_helpers.read_x_process.read_config">read_config</a></code></li>
+<li><code><a title="divAtScale.src.helpers.dataset_helpers.read_x_process.reformat_2022" href="#divAtScale.src.helpers.dataset_helpers.read_x_process.reformat_2022">reformat_2022</a></code></li>
+<li><code><a title="divAtScale.src.helpers.dataset_helpers.read_x_process.sess_meta_data" href="#divAtScale.src.helpers.dataset_helpers.read_x_process.sess_meta_data">sess_meta_data</a></code></li>
+<li><code><a title="divAtScale.src.helpers.dataset_helpers.read_x_process.sub_sample_lh_df" href="#divAtScale.src.helpers.dataset_helpers.read_x_process.sub_sample_lh_df">sub_sample_lh_df</a></code></li>
+<li><code><a title="divAtScale.src.helpers.dataset_helpers.read_x_process.u_activity_2_sessions" href="#divAtScale.src.helpers.dataset_helpers.read_x_process.u_activity_2_sessions">u_activity_2_sessions</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

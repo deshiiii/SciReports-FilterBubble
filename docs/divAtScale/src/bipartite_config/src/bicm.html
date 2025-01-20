@@ -1,0 +1,3434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>divAtScale.src.bipartite_config.src.bicm API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>divAtScale.src.bipartite_config.src.bicm</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import ctypes
+import multiprocessing
+import scipy.optimize as opt
+import numpy as np
+from divAtScale.src.bipartite_config.src.poibin.poibin import PoiBin
+
+class BiCM(object):
+    &#34;&#34;&#34;Bipartite Configuration Model for undirected binary bipartite networks.
+
+    This class implements the Bipartite Configuration Model (BiCM), which can
+    be used as a null model for the analysis of undirected and binary bipartite
+    networks. The class provides methods for calculating the biadjacency matrix
+    of the null model and for quantifying node similarities in terms of
+    p-values.
+    &#34;&#34;&#34;
+
+    def __init__(self, bin_mat):
+        &#34;&#34;&#34;Initialize the parameters of the BiCM.
+
+        :param bin_mat: binary input matrix describing the biadjacency matrix
+                of a bipartite graph with the nodes of one layer along the rows
+                and the nodes of the other layer along the columns.
+        :type bin_mat: numpy.array
+        &#34;&#34;&#34;
+        self.bin_mat = np.array(bin_mat, dtype=np.int64)
+        self.check_input_matrix_is_binary()
+        [self.num_rows, self.num_columns] = self.bin_mat.shape
+        self.dseq = self.set_degree_seq()
+        self.dim = self.dseq.size
+        self.sol = None             # solution of the equation system
+        self.adj_matrix = None      # biadjacency matrix of the null model
+        self.input_queue = None     # queue for parallel processing
+        self.output_queue = None    # queue for parallel processing
+
+    def check_input_matrix_is_binary(self):
+        &#34;&#34;&#34;Check that the input matrix is binary, i.e. entries are 0 or 1.
+
+        :raise AssertionError: raise an error if the input matrix is not
+            binary
+        &#34;&#34;&#34;
+        assert np.all(np.logical_or(self.bin_mat == 0, self.bin_mat == 1)), \
+            &#34;Input matrix is not binary.&#34;
+
+    def set_degree_seq(self):
+        &#34;&#34;&#34;Return the node degree sequence of the input matrix.
+
+        :returns: node degree sequence [degrees row-nodes, degrees column-nodes]
+        :rtype: numpy.array
+
+        :raise AssertionError: raise an error if the length of the returned
+            degree sequence does not correspond to the total number of nodes
+        &#34;&#34;&#34;
+        dseq = np.empty(self.num_rows + self.num_columns)
+        dseq[self.num_rows:] = np.squeeze(np.sum(self.bin_mat, axis=0))
+        dseq[:self.num_rows] = np.squeeze(np.sum(self.bin_mat, axis=1))
+        assert dseq.size == (self.num_rows + self.num_columns)
+        return dseq
+
+    def make_bicm(self, x0=None, method=&#39;hybr&#39;, jac=None, tol=None,
+                  callback=None, options=None):
+        &#34;&#34;&#34;Create the biadjacency matrix of the BiCM null model.
+
+        Solve the log-likelihood maximization problem to obtain the BiCM
+        null model which respects constraints on the degree sequence of the
+        input matrix.
+
+        The problem is solved using ``scipy``&#39;s root function with the solver
+        defined by ``method``. The status of the solver after running
+        ``scipy.root``and the difference between the network and BiCM degrees
+        are printed in the console.
+
+        The default solver is the modified Powell method ``hybr``. Least-squares
+        can be chosen with ``method=&#39;lm&#39;`` for the Levenberg-Marquardt approach.
+
+        Depending on the solver, keyword arguments ``kwargs`` can be passed to
+        the solver. Please refer to the `scipy.optimize.root documentation
+        &lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+        scipy.optimize.root.html&gt;`_ for detailed descriptions.
+
+        .. note::
+
+            It can happen that the solver ``method`` used by ``scipy.root``
+            does not converge to a solution.
+            In this case, please try another ``method`` or different initial
+            conditions and refer to the `scipy.optimize.root documentation
+            &lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+            scipy.optimize.root.html&gt;`_.
+
+        :param x0: initial guesses for the solutions. The first entries are the
+            initial guesses for the row-nodes, followed by the initial guesses
+            for the column-nodes.
+        :type x0: 1d numpy.array, optional
+        :param method: type of solver, default is ‘hybr’. For other
+            solvers, see the `scipy.optimize.root documentation
+            &lt;https://docs.scipy.org/doc/
+            scipy-0.19.0/reference/generated/scipy.optimize.root.html&gt;`_.
+        :type method: str, optional
+        :param jac: Jacobian of the system
+        :type jac: bool or callable, optional
+        :param tol: tolerance for termination. For detailed control, use
+            solver-specific options.
+        :type tol: float, optional
+        :param callback: optional callback function to be called at
+            every iteration as ``callback(self.equations, x)``,
+            see ``scipy.root`` documentation
+        :type callback: function, optional
+        :param options: a dictionary of solver options, e.g. ``xtol`` or
+            ``maxiter``, see scipy.root documentation
+        :type options: dict, optional
+        :param kwargs: solver-specific options, please refer to the SciPy
+            documentation
+
+        :raise ValueError: raise an error if not enough initial conditions
+            are provided
+        &#34;&#34;&#34;
+        try:
+            self.sol = self.solve_equations(x0=x0, method=method, jac=jac, tol=tol,
+                                            callback=callback, options=options)
+            # create BiCM biadjacency matrix:
+            self.adj_matrix = self.get_biadjacency_matrix(self.sol.x)
+            # self.print_max_degree_differences()
+            # assert self.test_average_degrees(eps=1e-2)
+        except ValueError as e:
+            # Catch and handle the ValueError
+            #print(f&#34;Caught a ValueError: {e}&#34;)
+            errror_msg = True
+
+
+# ------------------------------------------------------------------------------
+# Solve coupled nonlinear equations and get BiCM biadjacency matrix
+# ------------------------------------------------------------------------------
+
+    def solve_equations(self, x0=None, method=&#39;hybr&#39;, jac=None, tol=None,
+                        callback=None, options=None):
+
+        &#34;&#34;&#34;Solve the system of equations of the maximum log-likelihood problem.
+
+        The system of equations is solved using ``scipy``&#39;s root function with
+        the solver defined by ``method``. The solutions correspond to the
+        Lagrange multipliers
+
+        .. math::
+
+            x_i = \exp(-\\theta_i).
+
+        Depending on the solver, keyword arguments ``kwargs`` can be passed to
+        the solver. Please refer to the `scipy.optimize.root documentation
+        &lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+        scipy.optimize.root.html&gt;`_ for detailed descriptions.
+
+        The default solver is the modified Powell method ``hybr``. Least-squares
+        can be chosen with ``method=&#39;lm&#39;`` for the Levenberg-Marquardt approach.
+
+        .. note::
+
+            It can happen that the solver ``method`` used by ``scipy.root``
+            does not converge to a solution.
+            In this case, please try another ``method`` or different initial
+            conditions and refer to the `scipy.optimize.root documentation
+            &lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+            scipy.optimize.root.html&gt;`_.
+
+        :param x0: initial guesses for the solutions. The first entries are the
+            initial guesses for the row-nodes, followed by the initial guesses
+            for the column-nodes.
+        :type x0: 1d numpy.array, optional
+        :param method: type of solver, default is ‘hybr’. For other
+            solvers, see the `scipy.optimize.root documentation
+            &lt;https://docs.scipy.org/doc/
+            scipy-0.19.0/reference/generated/scipy.optimize.root.html&gt;`_.
+        :type method: str, optional
+        :param jac: Jacobian of the system
+        :type jac: bool or callable, optional
+        :param tol: tolerance for termination. For detailed control, use
+            solver-specific options.
+        :type tol: float, optional
+        :param callback: optional callback function to be called at
+            every iteration as ``callback(self.equations, x)``,
+            see ``scipy.root`` documentation
+        :type callback: function, optional
+        :param options: a dictionary of solver options, e.g. ``xtol`` or
+            ``maxiter``, see scipy.root documentation
+        :type options: dict, optional
+        :param kwargs: solver-specific options, please refer to the SciPy
+            documentation
+        :returns: solution of the equation system
+        :rtype: scipy.optimize.OptimizeResult
+
+        :raise ValueError: raise an error if not enough initial conditions
+            are provided
+        &#34;&#34;&#34;
+        # use Jacobian if the hybr solver is chosen
+        if method == &#39;hybr&#39;:
+            jac = self.jacobian
+
+        # set initial conditions
+        if x0 is None:
+            x0 = self.dseq / np.sqrt(np.sum(self.dseq))
+        else:
+            if not len(x0) == self.dim:
+                msg = &#34;One initial condition for each parameter is required.&#34;
+                raise ValueError(msg)
+
+        # solve equation system
+        sol = opt.root(fun=self.equations, x0=x0, method=method, jac=jac,
+                       tol=tol, options=options, callback=callback)
+
+        # check whether system has been solved successfully
+        #print(&#34;Solver successful:&#34;, sol.success)
+        #print sol.message
+        if not sol.success:
+            errmsg = &#34;Try different initial conditions and/or a&#34; + \
+                     &#34;different solver, see documentation at &#34; + \
+                     &#34;https://docs.scipy.org/doc/scipy-0.19.0/reference/&#34; + \
+                     &#34;generated/scipy.optimize.root.html&#34;
+
+            #print(errmsg)
+        return sol
+
+    def equations(self, xx):
+        &#34;&#34;&#34;Return the equations of the log-likelihood maximization problem.
+
+        Note that the equations for the row-nodes depend only on the
+        column-nodes and vice versa, see [Saracco2015]_.
+
+        :param xx: Lagrange multipliers which have to be solved
+        :type xx: numpy.array
+        :returns: equations to be solved (:math:`f(x) = 0`)
+        :rtype: numpy.array
+        &#34;&#34;&#34;
+        eq = -self.dseq
+        for i in range(0, self.num_rows):
+            for j in range(self.num_rows, self.dim):
+                dum = xx[i] * xx[j] / (1. + xx[i] * xx[j])
+                eq[i] += dum
+                eq[j] += dum
+        return eq
+
+    def jacobian(self, xx):
+        &#34;&#34;&#34;Return a NumPy array with the Jacobian of the equation system.
+
+        :param xx: Lagrange multipliers which have to be solved
+        :type xx: numpy.array
+        :returns: Jacobian
+        :rtype: numpy.array
+        &#34;&#34;&#34;
+        jac = np.zeros((self.dim, self.dim))
+        for i in range(0, self.num_rows):
+            # df_c / df_c&#39; = 0 for all c&#39; != c
+            for j in range(self.num_rows, self.dim):
+                # df_c / dx_c != 0
+                xxi = xx[i] / (1.0 + xx[i] * xx[j]) ** 2
+                xxj = xx[j] / (1.0 + xx[i] * xx[j]) ** 2
+                jac[i, i] += xxj
+                jac[i, j] = xxi
+                jac[j, i] = xxj
+                jac[j, j] += xxi
+        return jac
+
+    def get_biadjacency_matrix(self, xx):
+        &#34;&#34;&#34; Calculate the biadjacency matrix of the null model.
+
+        The biadjacency matrix describes the BiCM null model, i.e. the optimal
+        average graph :math:`&lt;G&gt;^*` with the average link probabilities
+        :math:`&lt;G&gt;^*_{rc} = p_{rc}` ,
+        :math:`p_{rc} = \\frac{x_r \\cdot x_c}{1 + x_r\\cdot x_c}.`
+        :math:`x` are the solutions of the equation system which has to be
+        solved for the null model.
+        Note that :math:`r` and :math:`c` are taken from opposite bipartite
+        node sets, thus :math:`r \\neq c`.
+
+        :param xx: solutions of the equation system (Lagrange multipliers)
+        :type xx: numpy.array
+        :returns: biadjacency matrix of the null model
+        :rtype: numpy.array
+
+        :raises ValueError: raise an error if :math:`p_{rc} &lt; 0` or
+            :math:`p_{rc} &gt; 1` for any :math:`r, c`
+        &#34;&#34;&#34;
+        mat = np.empty((self.num_rows, self.num_columns))
+        xp = xx[range(self.num_rows, self.dim)]
+        for i in range(self.num_rows):
+            mat[i, ] = xx[i] * xp / (1 + xx[i] * xp)
+
+        # account for machine precision:
+        mat += np.finfo(np.float64).eps
+
+        #print(&#39;matrix debug:&#39;)
+        #for r in mat:
+        #    print(r)
+
+        if np.any(mat &lt; 0):
+            errmsg = &#39;Error in get_adjacency_matrix: probabilities &lt; 0 in &#39; \
+                  + str(np.where(mat &lt; 0))
+            raise ValueError(errmsg)
+        elif np.any(mat &gt; (1. + np.finfo(np.float64).eps)):
+            errmsg = &#39;Error in get_adjacency_matrix: probabilities &gt; 1 in&#39; \
+                  + str(np.where(mat &gt; 1))
+            raise ValueError(errmsg)
+        assert mat.shape == self.bin_mat.shape, \
+            &#34;Biadjacency matrix has wrong dimensions.&#34;
+        return mat
+
+# ------------------------------------------------------------------------------
+# Test correctness of results:
+# ------------------------------------------------------------------------------
+
+    def print_max_degree_differences(self):
+        &#34;&#34;&#34;Print the maximal differences between input network and BiCM degrees.
+
+        Check that the degree sequence of the solved BiCM null model graph
+        corresponds to the degree sequence of the input graph.
+        &#34;&#34;&#34;
+        ave_deg_columns =np.sum(self.adj_matrix, axis=0)
+        ave_deg_rows = np.sum(self.adj_matrix, axis=1)
+        print(&#34;Maximal degree differences between data and BiCM:&#34;)
+        print(&#34;Columns:&#34;, np.abs(np.max(
+            self.dseq[self.num_rows:] - ave_deg_columns)))
+        print(&#34;Rows:&#34;, np.abs(np.max(
+            self.dseq[:self.num_rows] - ave_deg_rows)))
+
+    def test_average_degrees(self, eps=1e-2):
+        &#34;&#34;&#34;Test the constraints on the node degrees.
+
+        Check that the degree sequence of the solved BiCM null model graph
+        corresponds to the degree sequence of the input graph.
+
+        :param eps: maximum difference between degrees of the real network
+            and the BiCM
+        :type eps: float
+        &#34;&#34;&#34;
+        ave_deg_columns = np.squeeze(np.sum(self.adj_matrix, axis=0))
+        ave_deg_rows = np.squeeze(np.sum(self.adj_matrix, axis=1))
+        c_derr = np.where(np.logical_or(
+            # average degree too small:
+            ave_deg_rows + eps &lt; self.dseq[:self.num_rows],
+            # average degree too large:
+            ave_deg_rows - eps &gt; self.dseq[:self.num_rows]))
+        p_derr = np.where(np.logical_or(
+            ave_deg_columns + eps &lt; self.dseq[self.num_rows:],
+            ave_deg_columns - eps &gt; self.dseq[self.num_rows:]))
+        # Check row-nodes degrees:
+        if not np.array_equiv(c_derr, np.array([])):
+            print(&#39;...inaccurate row-nodes degrees:&#39;)
+            for i in c_derr[0]:
+                print(&#39;Row-node &#39;, i)
+                print(&#39;input: {}, avg {}&#39;.format(self.dseq[i], ave_deg_rows[i]))
+            return False
+        # Check column-nodes degrees:
+        if not np.array_equiv(p_derr, np.array([])):
+            print(&#39;...inaccurate column-nodes degrees:&#39;)
+            for i in c_derr[0]:
+                print(&#39;Column-node &#39;, i)
+                print(&#39;input: {}, avg {}&#39;.format(self.dseq[i + self.num_rows], ave_deg_columns[i]))
+            return False
+        return True
+
+# ------------------------------------------------------------------------------
+# Lambda motifs
+# ------------------------------------------------------------------------------
+
+    def lambda_motifs(self, bip_set, parallel=True, filename=None,
+            delim=&#39;\t&#39;, binary=True, num_chunks=4):
+        &#34;&#34;&#34;Calculate and save the p-values of the :math:`\\Lambda`-motifs.
+
+        For each node couple in the bipartite layer specified by ``bip_set``,
+        calculate the p-values of the corresponding :math:`\\Lambda`-motifs
+        according to the link probabilities in the biadjacency matrix of the
+        BiCM null model.
+
+        The results can be saved either as a binary ``.npy`` or a
+        human-readable ``.csv`` file, depending on ``binary``.
+
+        .. note::
+
+            * The total number of p-values that are calculated is split into
+              ``num_chunks`` chunks, which are processed sequentially in order
+              to avoid memory allocation errors. Note that a larger value of
+              ``num_chunks`` will lead to less memory occupation, but comes at
+              the cost of slower processing speed.
+
+            * The output consists of a one-dimensional array of p-values. If
+              the bipartite layer ``bip_set`` contains ``n`` nodes, this means
+              that the array will contain :math:`\\binom{n}{2}` entries. The
+              indices ``(i, j)`` of the nodes corresponding to entry ``k`` in
+              the array can be reconstructed using the method
+              :func:`BiCM.flat2_triumat_idx`. The number of nodes ``n``
+              can be recovered from the length of the array with
+              :func:`BiCM.flat2_triumat_dim`
+
+            * If ``binary == False``, the ``filename`` should end with
+              ``.csv``. If ``binary == True``, it will be saved in binary NumPy
+              ``.npy`` format and the suffix ``.npy`` will be appended
+              automatically. By default, the file is saved in binary format.
+
+        :param bip_set: select row-nodes (``True``) or column-nodes (``False``)
+        :type bip_set: bool
+        :param parallel: select whether the calculation of the p-values should
+            be run in parallel (``True``) or not (``False``)
+        :type parallel: bool
+        :param filename: name of the output file
+        :type filename: str
+        :param delim: delimiter between entries in the ``.csv``file, default is
+            ``\\t``
+        :type delim: str
+        :param binary: if ``True``, the file will be saved in the binary
+            NumPy format ``.npy``, otherwise as ``.csv``
+        :type binary: bool
+        :param num_chunks: number of chunks of p-value calculations that are
+            performed sequentially
+        :type num_chunks: int
+        :raise ValueError: raise an error if the parameter ``bip_set`` is
+            neither ``True`` nor ``False``
+        &#34;&#34;&#34;
+        if (type(bip_set) == bool) and bip_set:
+            biad_mat = self.adj_matrix
+            bin_mat = self.bin_mat
+        elif (type(bip_set) == bool) and not bip_set:
+            biad_mat = np.transpose(self.adj_matrix)
+            bin_mat = np.transpose(self.bin_mat)
+        else:
+            errmsg = &#34;&#39;&#34; + str(bip_set) + &#34;&#39; &#34; + &#39;not supported.&#39;
+            raise NameError(errmsg)
+
+        n = int(self.get_triup_dim(bip_set)) # n. pairs..
+        pval = np.ones(shape=(n, ), dtype=&#39;float&#39;) * (-0.1)
+
+
+        # handle layers of dimension 2 separately
+        if n == 1:
+            nlam = np.dot(bin_mat[0, :], bin_mat[1, :].T)
+            plam = biad_mat[0, :] * biad_mat[1, :]
+            pb = PoiBin(plam)
+            pval[0] = pb.pval(nlam)
+        else:
+            # if the dimension of the network is too large, split the
+            # calculations # of the p-values in ``m`` intervals to avoid memory
+            # allocation errors
+
+            # correced - never bother with splitting for now
+            if n &gt; 100000:
+                kk = self.split_range(n, m=num_chunks)
+
+            else:
+                k1 = 0
+                k2 = n
+                nlam = self.get_lambda_motif_block(bin_mat, k1, k2)
+                plam = self.get_plambda_block(biad_mat, k1, k2)
+
+                pv = self.get_pvalues_q(plam, nlam, k1, k2)
+                #print(&#39;p values found:&#39;)
+                #print(pv)
+                pval[k1:] = pv
+
+            #print(&#39;pvals before:&#39;)
+            #print(pval)
+
+            ## last interval
+            #k1 = kk[len(kk) - 1]
+            #k2 = n - 1
+            #nlam = self.get_lambda_motif_block(bin_mat, k1, k2)
+            #plam = self.get_plambda_block(biad_mat, k1, k2)
+
+            # for the last entry we have to INCLUDE k2, thus k2 + 1
+            #pv = self.get_pvalues_q(plam, nlam, k1, k2 + 1)
+            #pval[k1:] = pv
+
+        # check that all p-values have been calculated
+#        assert np.all(pval &gt;= 0) and np.all(pval &lt;= 1)
+        if filename is None:
+            fname = &#39;p_values_&#39; + str(bip_set)
+            if not binary:
+                fname +=  &#39;.csv&#39;
+        else:
+            fname = filename
+
+        # account for machine precision:
+        pval += np.finfo(np.float64).eps
+        self.save_array(pval, filename=fname, delim=delim,
+                         binary=binary)
+
+    def get_lambda_motif_block(self, mm, k1, k2):
+        &#34;&#34;&#34;Return a subset of :math:`\\Lambda`-motifs as observed in ``mm``.
+
+        Given the binary input matrix ``mm``, count the number of
+        :math:`\\Lambda`-motifs for all the node couples specified by the
+        interval :math:`\\left[k_1, k_2\\right[`.
+
+
+        .. note::
+
+            * The :math:`\\Lambda`-motifs are counted between the **row-nodes**
+              of the input matrix ``mm``.
+
+            * If :math:`k_2 \equiv \\binom{mm.shape[0]}{2}`, the interval
+              becomes :math:`\\left[k_1, k_2\\right]`.
+
+        :param mm: binary matrix
+        :type mm: numpy.array
+        :param k1: lower interval limit
+        :type k1: int
+        :param k2: upper interval limit
+        :type k2: int
+        :returns: array of observed :math:`\\Lambda`-motifs
+        :rtype: numpy.array
+        &#34;&#34;&#34;
+        k1 = int(k1)
+        k2 = int(k2)
+        ndim = mm.shape[0]
+        # if the upper limit is the largest possible index, i.e. corresponds to
+        # the node couple (ndim - 2, ndim - 1), where node indices start from 0,
+        # include the result
+        if k2 == (ndim * (ndim - 1) / 2 - 1):
+            flag = 1
+        else:
+            flag = 0
+        aux = np.ones(shape=(k2 - k1 + flag, )) * (-1) # -1 as a test
+        [i1, j1] = self.flat2triumat_idx(k1, ndim)
+        [i2, j2] = self.flat2triumat_idx(k2, ndim)
+
+        # if limits have the same row index
+        if i1 == i2:
+            aux[:k2 - k1] = np.dot(mm[i1, :], mm[j1:j2, :].T)
+        # if limits have different row indices
+        else:
+            k = 0
+            #print(&#39;i1:&#39;, i1)
+            #print(&#39;j1:&#39;, j1)
+            # get values for lower limit row
+            fi = np.dot(mm[i1, :], mm[j1:, :].T)
+            aux[:len(fi)] = fi
+            k += len(fi)
+            # get values for intermediate rows
+            for i in range(i1 + 1, i2):
+                mid = np.dot(mm[i, :], mm[i + 1:, :].T)
+                aux[k : k + len(mid)] = mid
+                k += len(mid)
+            # get values for upper limit row
+            if flag == 1:
+                aux[-1] = np.dot(mm[ndim - 2, :], mm[ndim - 1, :].T)
+            else:
+                la =  np.dot(mm[i2, :], mm[i2 + 1 : j2, :].T)
+                aux[k:] = la
+        return aux
+
+    def get_plambda_block(self, biad_mat, k1, k2):
+        &#34;&#34;&#34;Return a subset of the :math:`\\Lambda` probability matrix.
+
+        Given the biadjacency matrix ``biad_mat`` with
+        :math:`\\mathbf{M}_{rc} = p_{rc}`, which describes the probabilities of
+        row-node ``r`` and column-node ``c`` being linked, the method returns
+        the matrix
+
+        :math:`P(\\Lambda)_{ij} = \\left(M_{i\\alpha_1} \\cdot M_{j\\alpha_1},
+        M_{i\\alpha_2} \\cdot M_{j\\alpha_2}, \\ldots\\right),`
+
+        for all the node couples in the interval
+        :math:`\\left[k_1, k_2\\right[`.  :math:`(i, j)` are two **row-nodes**
+        of ``biad_mat`` and :math:`\\alpha_k` runs over the nodes in the
+        opposite layer.
+
+        .. note::
+
+            * The probabilities are calculated between the **row-nodes** of the
+              input matrix ``biad_mat``.
+
+            * If :math:`k_2 \equiv \\binom{biad\\_mat.shape[0]}{2}`, the
+              interval becomes :math:`\\left[k1, k2\\right]`.
+
+        :param biad_mat: biadjacency matrix
+        :type biad_mat: numpy.array
+        :param k1: lower interval limit
+        :type k1: int
+        :param k2: upper interval limit
+        :type k2: int
+        :returns: :math:`\\Lambda`-motif probability matrix
+        :rtype: numpy.array
+        &#34;&#34;&#34;
+        [ndim1, ndim2] = biad_mat.shape
+        # if the upper limit is the largest possible index, i.e. corresponds to
+        # the node couple (ndim - 2, ndim - 1), where node indices start from 0,
+        # include the result
+        if k2 == (ndim1 * (ndim1 - 1) / 2 - 1):
+            flag = 1
+        else:
+            flag = 0
+        paux = np.ones(shape=(k2 - k1 + flag, ndim2), dtype=&#39;float&#39;) * (-0.1)
+        [i1, j1] = self.flat2triumat_idx(k1, ndim1)
+        [i2, j2] = self.flat2triumat_idx(k2, ndim1)
+
+        # if limits have the same row index
+        if i1 == i2:
+            paux[:k2 - k1, :] = biad_mat[i1, ] * biad_mat[j1:j2, :]
+        # if limits have different indices
+        else:
+            k = 0
+            # get values for lower limit row
+            fi = biad_mat[i1, :] * biad_mat[j1:, :]
+            paux[:len(fi), :] = fi
+            k += len(fi)
+            # get values for intermediate rows
+            for i in range(i1 + 1, i2):
+                mid = biad_mat[i, :] * biad_mat[i + 1:, :]
+                paux[k : k + len(mid), :] = mid
+                k += len(mid)
+            # get values for upper limit row
+            if flag == 1:
+                paux[-1, :] = biad_mat[ndim1 - 2, :] * biad_mat[ndim1 - 1, :]
+            else:
+                la = biad_mat[i2, :] * biad_mat[i2 + 1:j2, :]
+                paux[k:, :] = la
+        return paux
+
+    def get_pvalues_q(self, plam_mat, nlam_mat, k1, k2, parallel=True):
+        &#34;&#34;&#34;Calculate the p-values of the observed :math:`\\Lambda`-motifs.
+
+        For each number of :math:`\\Lambda`-motifs in ``nlam_mat`` for the node
+        interval :math:`\\left[k1, k2\\right[`, construct the Poisson Binomial
+        distribution using the corresponding
+        probabilities in ``plam_mat`` and calculate the p-value.
+
+        :param plam_mat: array containing the list of probabilities for the
+            single observations of :math:`\\Lambda`-motifs
+        :type plam_mat: numpy.array (square matrix)
+        :param nlam_mat: array containing the observations of
+            :math:`\\Lambda`-motifs
+        :type nlam_mat: numpy.array (square matrix)
+        :param k1: lower interval limit
+        :type k1: int
+        :param k2: upper interval limit
+        :type k2: int
+        :param parallel: if ``True``, the calculation is executed in parallel;
+            if ``False``, only one process is started
+        :type parallel: bool
+        &#34;&#34;&#34;
+        n = len(nlam_mat)
+        # the array must be sharable to be accessible by all processes
+        shared_array_base = multiprocessing.Array(ctypes.c_double, n)
+        pval_mat = np.frombuffer(shared_array_base.get_obj())
+
+        # number of processes running in parallel has to be tested.
+        # good guess is multiprocessing.cpu_count() +- 1
+        if parallel:
+            num_procs = multiprocessing.cpu_count() - 1
+        elif not parallel:
+            num_procs = 1
+        else:
+            num_procs = 1
+
+        # create 2 queues
+        self.input_queue = multiprocessing.Queue()
+        self.output_queue = multiprocessing.Queue()
+
+        # (1) add tuples of matrix elements and indices to the input queue
+        p_inqueue = multiprocessing.Process(target=self.add2inqueue,
+                                            args=(num_procs, plam_mat, nlam_mat,
+                                                k1, k2))
+
+
+        pval_mat = multiprocessing.Array(&#39;d&#39;, pval_mat)
+
+        #  (2) Put the results from the out-queue into the p-value array.
+        p_outqueue = multiprocessing.Process(target=self.outqueue2pval_mat,
+                                             args=(num_procs, pval_mat))
+
+        # (3) pval computer...
+        ps = [multiprocessing.Process(target=self.pval_process_worker,
+                                      args=()) for i in range(num_procs)]
+
+        # start queues
+        p_inqueue.start()
+        p_outqueue.start()
+
+        # start processes
+        for p in ps:
+            p.start()       # each process has an id, p.pid
+        p_inqueue.join()
+
+        for p in ps:
+            p.join()
+        p_outqueue.join()
+
+        #print(&#39;final matrix:&#39;)
+        pval_mat = np.frombuffer(pval_mat.get_obj(), dtype=np.float64)
+        #for i in range(len(pval_mat)):
+        #    value = pval_mat[i]
+        #    print(value)
+        #print(&#39;--------&#39;)
+        #print(pval_mat)
+        #print(&#39;-------&#39;)
+
+
+        return pval_mat
+
+    def add2inqueue(self, nprocs, plam_mat, nlam_mat, k1, k2):
+        &#34;&#34;&#34;Add elements to the in-queue to calculate the p-values.
+
+        :param nprocs: number of processes running in parallel
+        :type nprocs: int
+        :param plam_mat: array containing the list of probabilities for the
+            single observations of :math:`\\Lambda`-motifs
+        :type plam_mat: numpy.array (square matrix)
+        :param nlam_mat: array containing the observations of
+            :math:`\\Lambda`-motifs
+        :type nlam_mat: numpy.array (square matrix)
+        :param k1: lower interval limit
+        :type k1: int
+        :param k2: upper interval limit
+        :type k2: int
+        &#34;&#34;&#34;
+        n = len(plam_mat)
+        # add tuples of matrix elements and indices to the input queue
+        for k in range(k1, k2):
+            self.input_queue.put((k - k1, plam_mat[k - k1, :],
+                                  nlam_mat[k - k1]))
+
+        # add as many poison pills &#34;STOP&#34; to the queue as there are workers
+        for i in range(nprocs):
+            self.input_queue.put(&#34;STOP&#34;)
+
+    def pval_process_worker(self):
+        &#34;&#34;&#34;Calculate p-values and add them to the out-queue.&#34;&#34;&#34;
+        # take elements from the queue as long as the element is not &#34;STOP&#34;
+        for tupl in iter(self.input_queue.get, &#34;STOP&#34;):
+            pb = PoiBin(tupl[1])
+
+            pv = pb.pval(int(tupl[2]))
+            #print(&#39;loc {}, pval computed: {}&#39;.format(pb, pv))
+            # add the result to the output queue
+            self.output_queue.put((tupl[0], pv))
+        # once all the elements in the input queue have been dealt with, add a
+        # &#34;STOP&#34; to the output queue
+        self.output_queue.put(&#34;STOP&#34;)
+
+    def outqueue2pval_mat(self, nprocs, pvalmat):
+        &#34;&#34;&#34;Put the results from the out-queue into the p-value array.&#34;&#34;&#34;
+        # stop the work after having met nprocs times &#34;STOP&#34;
+        for work in range(nprocs):
+            for val in iter(self.output_queue.get, &#34;STOP&#34;):
+                k = val[0]
+                #print(&#39;popping pval from out que:&#39;, val[1])
+                pvalmat[k] = val[1]
+
+        #print(&#39;final matrix&#39;)
+        #print(pvalmat)
+
+
+    def get_triup_dim(self, bip_set):
+        &#34;&#34;&#34;Return the number of possible node couples in ``bip_set``.
+
+        :param bip_set: selects row-nodes (``True``) or column-nodes
+            (``False``)
+        :type bip_set: bool
+        :returns: return the number of node couple combinations corresponding
+            to the layer ``bip_set``
+        :rtype: int
+
+        :raise ValueError: raise an error if the parameter ``bip_set`` is
+            neither ``True`` nor ``False``
+        &#34;&#34;&#34;
+        if bip_set:
+            return self.triumat2flat_dim(self.num_rows)
+        elif not bip_set:
+            return self.triumat2flat_dim(self.num_columns)
+        else:
+            errmsg = &#34;&#39;&#34; + str(bip_set) + &#34;&#39; &#34; + &#39;not supported.&#39;
+            raise NameError(errmsg)
+
+    def split_range(self, n, m=4):
+        &#34;&#34;&#34;Split the interval :math:`\\left[0,\ldots, n\\right]` in ``m`` parts.
+
+        :param n: upper limit of the range
+        :type n: int
+        :param m: number of part in which range should be split
+        :type n: int
+        :returns: delimiter indices for the ``m`` parts
+        :rtype: list
+        &#34;&#34;&#34;
+        return [i * n / m for i in range(m)]
+
+# ------------------------------------------------------------------------------
+# Auxiliary methods
+# ------------------------------------------------------------------------------
+
+    @staticmethod
+    def triumat2flat_idx(i, j, n):
+        &#34;&#34;&#34;Convert an matrix index couple to a flattened array index.
+
+        Given a square matrix of dimension ``n`` and the index couple
+        ``(i, j)`` *of the upper triangular part* of the matrix, return the
+        index which the matrix element would have in a flattened array.
+
+        .. note::
+            * :math:`i \\in [0, ..., n - 1]`
+            * :math:`j \\in [i + 1, ..., n - 1]`
+            * returned index :math:`\\in [0,\\, n (n - 1) / 2 - 1]`
+
+        :param i: row index
+        :type i: int
+        :param j: column index
+        :type j: int
+        :param n: dimension of the square matrix
+        :type n: int
+        :returns: flattened array index
+        :rtype: int
+        &#34;&#34;&#34;
+        return int((i + 1) * n - (i + 2) * (i + 1) / 2. - (n - (j + 1)) - 1)
+
+    @staticmethod
+    def triumat2flat_dim(n):
+        &#34;&#34;&#34;Return the size of the triangular part of a ``n x n`` matrix.
+
+        :param n: the dimension of the square matrix
+        :type n: int
+        :returns: number of elements in the upper triangular part of the matrix
+            (excluding the diagonal)
+        :rtype: int
+        &#34;&#34;&#34;
+        return n * (n - 1) / 2
+
+    @staticmethod
+    def flat2triumat_dim(k):
+        &#34;&#34;&#34;Return the dimension of the matrix hosting ``k`` triangular elements.
+
+        :param k: the number of elements in the upper triangular
+            part of the corresponding square matrix, excluding the diagonal
+        :type k: int
+        :returns: dimension of the corresponding square matrix
+        :rtype: int
+        &#34;&#34;&#34;
+        return int(0.5 + np.sqrt(0.25 + 2 * k))
+
+    @staticmethod
+    def flat2triumat_idx(k, n):
+        &#34;&#34;&#34;Convert an array index into the index couple of a triangular matrix.
+
+        ``k`` is the index of an array of length :math:`\\binom{n}{2}{2}`,
+        which contains the elements of an upper triangular matrix of dimension
+        ``n`` excluding the diagonal. The function returns the index couple
+        :math:`(i, j)` that corresponds to the entry ``k`` of the flat array.
+
+        .. note::
+            * :math:`k \\in \left[0,\\ldots, \\binom{n}{2} - 1\\right]`
+            * returned indices:
+                * :math:`i \\in [0,\\ldots, n - 1]`
+                * :math:`j \\in [i + 1,\\ldots, n - 1]`
+
+        :param k: flattened array index
+        :type k: int
+        :param n: dimension of the square matrix
+        :type n: int
+        :returns: matrix index tuple (row, column)
+        :rtype: tuple
+        &#34;&#34;&#34;
+        # row index of array index k in the the upper triangular part of the
+        # square matrix
+        r = n - 2 - int(0.5 * np.sqrt(-8 * k + 4 * n * (n - 1) - 7) - 0.5)
+        # column index of array index k in the the upper triangular part of the
+        # square matrix
+        c = k + 1 + r * (3 - 2 * n + r) / 2
+        return int(r), int(c)
+
+    def save_biadjacency(self, filename, delim=&#39;\t&#39;, binary=False):
+        &#34;&#34;&#34;Save the biadjacendy matrix of the BiCM null model.
+
+        The matrix can either be saved as a binary NumPy ``.npy`` file or as a
+        human-readable ``.csv`` file.
+
+        .. note::
+
+            * The relative path has to be provided in the filename, e.g.
+              *../data/pvalue_matrix.csv*.
+
+            * If ``binary==True``, NumPy
+              automatically appends the format ending ``.npy`` to the file.
+
+        :param filename: name of the output file
+        :type filename: str
+        :param delim: delimiter between values in file
+        :type delim: str
+        :param binary: if ``True``, save as binary ``.npy``, otherwise as a
+            ``.csv`` file
+        :type binary: bool
+        &#34;&#34;&#34;
+        self.save_array(self.adj_matrix, filename, delim, binary)
+
+    @staticmethod
+    def save_array(mat, filename, delim=&#39;\t&#39;, binary=False):
+        &#34;&#34;&#34;Save the array ``mat`` in the file ``filename``.
+
+        The array can either be saved as a binary NumPy ``.npy`` file or as a
+        human-readable ``.npy`` file.
+
+        .. note::
+
+            * The relative path has to be provided in the filename, e.g.
+              *../data/pvalue_matrix.csv*.
+
+            * If ``binary==True``, NumPy
+              automatically appends the format ending ``.npy`` to the file.
+
+        :param mat: array
+        :type mat: numpy.array
+        :param filename: name of the output file
+        :type filename: str
+        :param delim: delimiter between values in file
+        :type delim: str
+        :param binary: if ``True``, save as binary ``.npy``, otherwise as a
+            ``.csv`` file
+        :type binary: bool
+        &#34;&#34;&#34;
+        if binary:
+            np.save(filename, mat)
+        else:
+            np.savetxt(filename, mat, delimiter=delim)
+
+################################################################################
+# Main
+################################################################################
+
+if __name__ == &#34;__main__&#34;:
+    pass</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM"><code class="flex name class">
+<span>class <span class="ident">BiCM</span></span>
+<span>(</span><span>bin_mat)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Bipartite Configuration Model for undirected binary bipartite networks.</p>
+<p>This class implements the Bipartite Configuration Model (BiCM), which can
+be used as a null model for the analysis of undirected and binary bipartite
+networks. The class provides methods for calculating the biadjacency matrix
+of the null model and for quantifying node similarities in terms of
+p-values.</p>
+<p>Initialize the parameters of the BiCM.</p>
+<p>:param bin_mat: binary input matrix describing the biadjacency matrix
+of a bipartite graph with the nodes of one layer along the rows
+and the nodes of the other layer along the columns.
+:type bin_mat: numpy.array</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BiCM(object):
+    &#34;&#34;&#34;Bipartite Configuration Model for undirected binary bipartite networks.
+
+    This class implements the Bipartite Configuration Model (BiCM), which can
+    be used as a null model for the analysis of undirected and binary bipartite
+    networks. The class provides methods for calculating the biadjacency matrix
+    of the null model and for quantifying node similarities in terms of
+    p-values.
+    &#34;&#34;&#34;
+
+    def __init__(self, bin_mat):
+        &#34;&#34;&#34;Initialize the parameters of the BiCM.
+
+        :param bin_mat: binary input matrix describing the biadjacency matrix
+                of a bipartite graph with the nodes of one layer along the rows
+                and the nodes of the other layer along the columns.
+        :type bin_mat: numpy.array
+        &#34;&#34;&#34;
+        self.bin_mat = np.array(bin_mat, dtype=np.int64)
+        self.check_input_matrix_is_binary()
+        [self.num_rows, self.num_columns] = self.bin_mat.shape
+        self.dseq = self.set_degree_seq()
+        self.dim = self.dseq.size
+        self.sol = None             # solution of the equation system
+        self.adj_matrix = None      # biadjacency matrix of the null model
+        self.input_queue = None     # queue for parallel processing
+        self.output_queue = None    # queue for parallel processing
+
+    def check_input_matrix_is_binary(self):
+        &#34;&#34;&#34;Check that the input matrix is binary, i.e. entries are 0 or 1.
+
+        :raise AssertionError: raise an error if the input matrix is not
+            binary
+        &#34;&#34;&#34;
+        assert np.all(np.logical_or(self.bin_mat == 0, self.bin_mat == 1)), \
+            &#34;Input matrix is not binary.&#34;
+
+    def set_degree_seq(self):
+        &#34;&#34;&#34;Return the node degree sequence of the input matrix.
+
+        :returns: node degree sequence [degrees row-nodes, degrees column-nodes]
+        :rtype: numpy.array
+
+        :raise AssertionError: raise an error if the length of the returned
+            degree sequence does not correspond to the total number of nodes
+        &#34;&#34;&#34;
+        dseq = np.empty(self.num_rows + self.num_columns)
+        dseq[self.num_rows:] = np.squeeze(np.sum(self.bin_mat, axis=0))
+        dseq[:self.num_rows] = np.squeeze(np.sum(self.bin_mat, axis=1))
+        assert dseq.size == (self.num_rows + self.num_columns)
+        return dseq
+
+    def make_bicm(self, x0=None, method=&#39;hybr&#39;, jac=None, tol=None,
+                  callback=None, options=None):
+        &#34;&#34;&#34;Create the biadjacency matrix of the BiCM null model.
+
+        Solve the log-likelihood maximization problem to obtain the BiCM
+        null model which respects constraints on the degree sequence of the
+        input matrix.
+
+        The problem is solved using ``scipy``&#39;s root function with the solver
+        defined by ``method``. The status of the solver after running
+        ``scipy.root``and the difference between the network and BiCM degrees
+        are printed in the console.
+
+        The default solver is the modified Powell method ``hybr``. Least-squares
+        can be chosen with ``method=&#39;lm&#39;`` for the Levenberg-Marquardt approach.
+
+        Depending on the solver, keyword arguments ``kwargs`` can be passed to
+        the solver. Please refer to the `scipy.optimize.root documentation
+        &lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+        scipy.optimize.root.html&gt;`_ for detailed descriptions.
+
+        .. note::
+
+            It can happen that the solver ``method`` used by ``scipy.root``
+            does not converge to a solution.
+            In this case, please try another ``method`` or different initial
+            conditions and refer to the `scipy.optimize.root documentation
+            &lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+            scipy.optimize.root.html&gt;`_.
+
+        :param x0: initial guesses for the solutions. The first entries are the
+            initial guesses for the row-nodes, followed by the initial guesses
+            for the column-nodes.
+        :type x0: 1d numpy.array, optional
+        :param method: type of solver, default is ‘hybr’. For other
+            solvers, see the `scipy.optimize.root documentation
+            &lt;https://docs.scipy.org/doc/
+            scipy-0.19.0/reference/generated/scipy.optimize.root.html&gt;`_.
+        :type method: str, optional
+        :param jac: Jacobian of the system
+        :type jac: bool or callable, optional
+        :param tol: tolerance for termination. For detailed control, use
+            solver-specific options.
+        :type tol: float, optional
+        :param callback: optional callback function to be called at
+            every iteration as ``callback(self.equations, x)``,
+            see ``scipy.root`` documentation
+        :type callback: function, optional
+        :param options: a dictionary of solver options, e.g. ``xtol`` or
+            ``maxiter``, see scipy.root documentation
+        :type options: dict, optional
+        :param kwargs: solver-specific options, please refer to the SciPy
+            documentation
+
+        :raise ValueError: raise an error if not enough initial conditions
+            are provided
+        &#34;&#34;&#34;
+        try:
+            self.sol = self.solve_equations(x0=x0, method=method, jac=jac, tol=tol,
+                                            callback=callback, options=options)
+            # create BiCM biadjacency matrix:
+            self.adj_matrix = self.get_biadjacency_matrix(self.sol.x)
+            # self.print_max_degree_differences()
+            # assert self.test_average_degrees(eps=1e-2)
+        except ValueError as e:
+            # Catch and handle the ValueError
+            #print(f&#34;Caught a ValueError: {e}&#34;)
+            errror_msg = True
+
+
+# ------------------------------------------------------------------------------
+# Solve coupled nonlinear equations and get BiCM biadjacency matrix
+# ------------------------------------------------------------------------------
+
+    def solve_equations(self, x0=None, method=&#39;hybr&#39;, jac=None, tol=None,
+                        callback=None, options=None):
+
+        &#34;&#34;&#34;Solve the system of equations of the maximum log-likelihood problem.
+
+        The system of equations is solved using ``scipy``&#39;s root function with
+        the solver defined by ``method``. The solutions correspond to the
+        Lagrange multipliers
+
+        .. math::
+
+            x_i = \exp(-\\theta_i).
+
+        Depending on the solver, keyword arguments ``kwargs`` can be passed to
+        the solver. Please refer to the `scipy.optimize.root documentation
+        &lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+        scipy.optimize.root.html&gt;`_ for detailed descriptions.
+
+        The default solver is the modified Powell method ``hybr``. Least-squares
+        can be chosen with ``method=&#39;lm&#39;`` for the Levenberg-Marquardt approach.
+
+        .. note::
+
+            It can happen that the solver ``method`` used by ``scipy.root``
+            does not converge to a solution.
+            In this case, please try another ``method`` or different initial
+            conditions and refer to the `scipy.optimize.root documentation
+            &lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+            scipy.optimize.root.html&gt;`_.
+
+        :param x0: initial guesses for the solutions. The first entries are the
+            initial guesses for the row-nodes, followed by the initial guesses
+            for the column-nodes.
+        :type x0: 1d numpy.array, optional
+        :param method: type of solver, default is ‘hybr’. For other
+            solvers, see the `scipy.optimize.root documentation
+            &lt;https://docs.scipy.org/doc/
+            scipy-0.19.0/reference/generated/scipy.optimize.root.html&gt;`_.
+        :type method: str, optional
+        :param jac: Jacobian of the system
+        :type jac: bool or callable, optional
+        :param tol: tolerance for termination. For detailed control, use
+            solver-specific options.
+        :type tol: float, optional
+        :param callback: optional callback function to be called at
+            every iteration as ``callback(self.equations, x)``,
+            see ``scipy.root`` documentation
+        :type callback: function, optional
+        :param options: a dictionary of solver options, e.g. ``xtol`` or
+            ``maxiter``, see scipy.root documentation
+        :type options: dict, optional
+        :param kwargs: solver-specific options, please refer to the SciPy
+            documentation
+        :returns: solution of the equation system
+        :rtype: scipy.optimize.OptimizeResult
+
+        :raise ValueError: raise an error if not enough initial conditions
+            are provided
+        &#34;&#34;&#34;
+        # use Jacobian if the hybr solver is chosen
+        if method == &#39;hybr&#39;:
+            jac = self.jacobian
+
+        # set initial conditions
+        if x0 is None:
+            x0 = self.dseq / np.sqrt(np.sum(self.dseq))
+        else:
+            if not len(x0) == self.dim:
+                msg = &#34;One initial condition for each parameter is required.&#34;
+                raise ValueError(msg)
+
+        # solve equation system
+        sol = opt.root(fun=self.equations, x0=x0, method=method, jac=jac,
+                       tol=tol, options=options, callback=callback)
+
+        # check whether system has been solved successfully
+        #print(&#34;Solver successful:&#34;, sol.success)
+        #print sol.message
+        if not sol.success:
+            errmsg = &#34;Try different initial conditions and/or a&#34; + \
+                     &#34;different solver, see documentation at &#34; + \
+                     &#34;https://docs.scipy.org/doc/scipy-0.19.0/reference/&#34; + \
+                     &#34;generated/scipy.optimize.root.html&#34;
+
+            #print(errmsg)
+        return sol
+
+    def equations(self, xx):
+        &#34;&#34;&#34;Return the equations of the log-likelihood maximization problem.
+
+        Note that the equations for the row-nodes depend only on the
+        column-nodes and vice versa, see [Saracco2015]_.
+
+        :param xx: Lagrange multipliers which have to be solved
+        :type xx: numpy.array
+        :returns: equations to be solved (:math:`f(x) = 0`)
+        :rtype: numpy.array
+        &#34;&#34;&#34;
+        eq = -self.dseq
+        for i in range(0, self.num_rows):
+            for j in range(self.num_rows, self.dim):
+                dum = xx[i] * xx[j] / (1. + xx[i] * xx[j])
+                eq[i] += dum
+                eq[j] += dum
+        return eq
+
+    def jacobian(self, xx):
+        &#34;&#34;&#34;Return a NumPy array with the Jacobian of the equation system.
+
+        :param xx: Lagrange multipliers which have to be solved
+        :type xx: numpy.array
+        :returns: Jacobian
+        :rtype: numpy.array
+        &#34;&#34;&#34;
+        jac = np.zeros((self.dim, self.dim))
+        for i in range(0, self.num_rows):
+            # df_c / df_c&#39; = 0 for all c&#39; != c
+            for j in range(self.num_rows, self.dim):
+                # df_c / dx_c != 0
+                xxi = xx[i] / (1.0 + xx[i] * xx[j]) ** 2
+                xxj = xx[j] / (1.0 + xx[i] * xx[j]) ** 2
+                jac[i, i] += xxj
+                jac[i, j] = xxi
+                jac[j, i] = xxj
+                jac[j, j] += xxi
+        return jac
+
+    def get_biadjacency_matrix(self, xx):
+        &#34;&#34;&#34; Calculate the biadjacency matrix of the null model.
+
+        The biadjacency matrix describes the BiCM null model, i.e. the optimal
+        average graph :math:`&lt;G&gt;^*` with the average link probabilities
+        :math:`&lt;G&gt;^*_{rc} = p_{rc}` ,
+        :math:`p_{rc} = \\frac{x_r \\cdot x_c}{1 + x_r\\cdot x_c}.`
+        :math:`x` are the solutions of the equation system which has to be
+        solved for the null model.
+        Note that :math:`r` and :math:`c` are taken from opposite bipartite
+        node sets, thus :math:`r \\neq c`.
+
+        :param xx: solutions of the equation system (Lagrange multipliers)
+        :type xx: numpy.array
+        :returns: biadjacency matrix of the null model
+        :rtype: numpy.array
+
+        :raises ValueError: raise an error if :math:`p_{rc} &lt; 0` or
+            :math:`p_{rc} &gt; 1` for any :math:`r, c`
+        &#34;&#34;&#34;
+        mat = np.empty((self.num_rows, self.num_columns))
+        xp = xx[range(self.num_rows, self.dim)]
+        for i in range(self.num_rows):
+            mat[i, ] = xx[i] * xp / (1 + xx[i] * xp)
+
+        # account for machine precision:
+        mat += np.finfo(np.float64).eps
+
+        #print(&#39;matrix debug:&#39;)
+        #for r in mat:
+        #    print(r)
+
+        if np.any(mat &lt; 0):
+            errmsg = &#39;Error in get_adjacency_matrix: probabilities &lt; 0 in &#39; \
+                  + str(np.where(mat &lt; 0))
+            raise ValueError(errmsg)
+        elif np.any(mat &gt; (1. + np.finfo(np.float64).eps)):
+            errmsg = &#39;Error in get_adjacency_matrix: probabilities &gt; 1 in&#39; \
+                  + str(np.where(mat &gt; 1))
+            raise ValueError(errmsg)
+        assert mat.shape == self.bin_mat.shape, \
+            &#34;Biadjacency matrix has wrong dimensions.&#34;
+        return mat
+
+# ------------------------------------------------------------------------------
+# Test correctness of results:
+# ------------------------------------------------------------------------------
+
+    def print_max_degree_differences(self):
+        &#34;&#34;&#34;Print the maximal differences between input network and BiCM degrees.
+
+        Check that the degree sequence of the solved BiCM null model graph
+        corresponds to the degree sequence of the input graph.
+        &#34;&#34;&#34;
+        ave_deg_columns =np.sum(self.adj_matrix, axis=0)
+        ave_deg_rows = np.sum(self.adj_matrix, axis=1)
+        print(&#34;Maximal degree differences between data and BiCM:&#34;)
+        print(&#34;Columns:&#34;, np.abs(np.max(
+            self.dseq[self.num_rows:] - ave_deg_columns)))
+        print(&#34;Rows:&#34;, np.abs(np.max(
+            self.dseq[:self.num_rows] - ave_deg_rows)))
+
+    def test_average_degrees(self, eps=1e-2):
+        &#34;&#34;&#34;Test the constraints on the node degrees.
+
+        Check that the degree sequence of the solved BiCM null model graph
+        corresponds to the degree sequence of the input graph.
+
+        :param eps: maximum difference between degrees of the real network
+            and the BiCM
+        :type eps: float
+        &#34;&#34;&#34;
+        ave_deg_columns = np.squeeze(np.sum(self.adj_matrix, axis=0))
+        ave_deg_rows = np.squeeze(np.sum(self.adj_matrix, axis=1))
+        c_derr = np.where(np.logical_or(
+            # average degree too small:
+            ave_deg_rows + eps &lt; self.dseq[:self.num_rows],
+            # average degree too large:
+            ave_deg_rows - eps &gt; self.dseq[:self.num_rows]))
+        p_derr = np.where(np.logical_or(
+            ave_deg_columns + eps &lt; self.dseq[self.num_rows:],
+            ave_deg_columns - eps &gt; self.dseq[self.num_rows:]))
+        # Check row-nodes degrees:
+        if not np.array_equiv(c_derr, np.array([])):
+            print(&#39;...inaccurate row-nodes degrees:&#39;)
+            for i in c_derr[0]:
+                print(&#39;Row-node &#39;, i)
+                print(&#39;input: {}, avg {}&#39;.format(self.dseq[i], ave_deg_rows[i]))
+            return False
+        # Check column-nodes degrees:
+        if not np.array_equiv(p_derr, np.array([])):
+            print(&#39;...inaccurate column-nodes degrees:&#39;)
+            for i in c_derr[0]:
+                print(&#39;Column-node &#39;, i)
+                print(&#39;input: {}, avg {}&#39;.format(self.dseq[i + self.num_rows], ave_deg_columns[i]))
+            return False
+        return True
+
+# ------------------------------------------------------------------------------
+# Lambda motifs
+# ------------------------------------------------------------------------------
+
+    def lambda_motifs(self, bip_set, parallel=True, filename=None,
+            delim=&#39;\t&#39;, binary=True, num_chunks=4):
+        &#34;&#34;&#34;Calculate and save the p-values of the :math:`\\Lambda`-motifs.
+
+        For each node couple in the bipartite layer specified by ``bip_set``,
+        calculate the p-values of the corresponding :math:`\\Lambda`-motifs
+        according to the link probabilities in the biadjacency matrix of the
+        BiCM null model.
+
+        The results can be saved either as a binary ``.npy`` or a
+        human-readable ``.csv`` file, depending on ``binary``.
+
+        .. note::
+
+            * The total number of p-values that are calculated is split into
+              ``num_chunks`` chunks, which are processed sequentially in order
+              to avoid memory allocation errors. Note that a larger value of
+              ``num_chunks`` will lead to less memory occupation, but comes at
+              the cost of slower processing speed.
+
+            * The output consists of a one-dimensional array of p-values. If
+              the bipartite layer ``bip_set`` contains ``n`` nodes, this means
+              that the array will contain :math:`\\binom{n}{2}` entries. The
+              indices ``(i, j)`` of the nodes corresponding to entry ``k`` in
+              the array can be reconstructed using the method
+              :func:`BiCM.flat2_triumat_idx`. The number of nodes ``n``
+              can be recovered from the length of the array with
+              :func:`BiCM.flat2_triumat_dim`
+
+            * If ``binary == False``, the ``filename`` should end with
+              ``.csv``. If ``binary == True``, it will be saved in binary NumPy
+              ``.npy`` format and the suffix ``.npy`` will be appended
+              automatically. By default, the file is saved in binary format.
+
+        :param bip_set: select row-nodes (``True``) or column-nodes (``False``)
+        :type bip_set: bool
+        :param parallel: select whether the calculation of the p-values should
+            be run in parallel (``True``) or not (``False``)
+        :type parallel: bool
+        :param filename: name of the output file
+        :type filename: str
+        :param delim: delimiter between entries in the ``.csv``file, default is
+            ``\\t``
+        :type delim: str
+        :param binary: if ``True``, the file will be saved in the binary
+            NumPy format ``.npy``, otherwise as ``.csv``
+        :type binary: bool
+        :param num_chunks: number of chunks of p-value calculations that are
+            performed sequentially
+        :type num_chunks: int
+        :raise ValueError: raise an error if the parameter ``bip_set`` is
+            neither ``True`` nor ``False``
+        &#34;&#34;&#34;
+        if (type(bip_set) == bool) and bip_set:
+            biad_mat = self.adj_matrix
+            bin_mat = self.bin_mat
+        elif (type(bip_set) == bool) and not bip_set:
+            biad_mat = np.transpose(self.adj_matrix)
+            bin_mat = np.transpose(self.bin_mat)
+        else:
+            errmsg = &#34;&#39;&#34; + str(bip_set) + &#34;&#39; &#34; + &#39;not supported.&#39;
+            raise NameError(errmsg)
+
+        n = int(self.get_triup_dim(bip_set)) # n. pairs..
+        pval = np.ones(shape=(n, ), dtype=&#39;float&#39;) * (-0.1)
+
+
+        # handle layers of dimension 2 separately
+        if n == 1:
+            nlam = np.dot(bin_mat[0, :], bin_mat[1, :].T)
+            plam = biad_mat[0, :] * biad_mat[1, :]
+            pb = PoiBin(plam)
+            pval[0] = pb.pval(nlam)
+        else:
+            # if the dimension of the network is too large, split the
+            # calculations # of the p-values in ``m`` intervals to avoid memory
+            # allocation errors
+
+            # correced - never bother with splitting for now
+            if n &gt; 100000:
+                kk = self.split_range(n, m=num_chunks)
+
+            else:
+                k1 = 0
+                k2 = n
+                nlam = self.get_lambda_motif_block(bin_mat, k1, k2)
+                plam = self.get_plambda_block(biad_mat, k1, k2)
+
+                pv = self.get_pvalues_q(plam, nlam, k1, k2)
+                #print(&#39;p values found:&#39;)
+                #print(pv)
+                pval[k1:] = pv
+
+            #print(&#39;pvals before:&#39;)
+            #print(pval)
+
+            ## last interval
+            #k1 = kk[len(kk) - 1]
+            #k2 = n - 1
+            #nlam = self.get_lambda_motif_block(bin_mat, k1, k2)
+            #plam = self.get_plambda_block(biad_mat, k1, k2)
+
+            # for the last entry we have to INCLUDE k2, thus k2 + 1
+            #pv = self.get_pvalues_q(plam, nlam, k1, k2 + 1)
+            #pval[k1:] = pv
+
+        # check that all p-values have been calculated
+#        assert np.all(pval &gt;= 0) and np.all(pval &lt;= 1)
+        if filename is None:
+            fname = &#39;p_values_&#39; + str(bip_set)
+            if not binary:
+                fname +=  &#39;.csv&#39;
+        else:
+            fname = filename
+
+        # account for machine precision:
+        pval += np.finfo(np.float64).eps
+        self.save_array(pval, filename=fname, delim=delim,
+                         binary=binary)
+
+    def get_lambda_motif_block(self, mm, k1, k2):
+        &#34;&#34;&#34;Return a subset of :math:`\\Lambda`-motifs as observed in ``mm``.
+
+        Given the binary input matrix ``mm``, count the number of
+        :math:`\\Lambda`-motifs for all the node couples specified by the
+        interval :math:`\\left[k_1, k_2\\right[`.
+
+
+        .. note::
+
+            * The :math:`\\Lambda`-motifs are counted between the **row-nodes**
+              of the input matrix ``mm``.
+
+            * If :math:`k_2 \equiv \\binom{mm.shape[0]}{2}`, the interval
+              becomes :math:`\\left[k_1, k_2\\right]`.
+
+        :param mm: binary matrix
+        :type mm: numpy.array
+        :param k1: lower interval limit
+        :type k1: int
+        :param k2: upper interval limit
+        :type k2: int
+        :returns: array of observed :math:`\\Lambda`-motifs
+        :rtype: numpy.array
+        &#34;&#34;&#34;
+        k1 = int(k1)
+        k2 = int(k2)
+        ndim = mm.shape[0]
+        # if the upper limit is the largest possible index, i.e. corresponds to
+        # the node couple (ndim - 2, ndim - 1), where node indices start from 0,
+        # include the result
+        if k2 == (ndim * (ndim - 1) / 2 - 1):
+            flag = 1
+        else:
+            flag = 0
+        aux = np.ones(shape=(k2 - k1 + flag, )) * (-1) # -1 as a test
+        [i1, j1] = self.flat2triumat_idx(k1, ndim)
+        [i2, j2] = self.flat2triumat_idx(k2, ndim)
+
+        # if limits have the same row index
+        if i1 == i2:
+            aux[:k2 - k1] = np.dot(mm[i1, :], mm[j1:j2, :].T)
+        # if limits have different row indices
+        else:
+            k = 0
+            #print(&#39;i1:&#39;, i1)
+            #print(&#39;j1:&#39;, j1)
+            # get values for lower limit row
+            fi = np.dot(mm[i1, :], mm[j1:, :].T)
+            aux[:len(fi)] = fi
+            k += len(fi)
+            # get values for intermediate rows
+            for i in range(i1 + 1, i2):
+                mid = np.dot(mm[i, :], mm[i + 1:, :].T)
+                aux[k : k + len(mid)] = mid
+                k += len(mid)
+            # get values for upper limit row
+            if flag == 1:
+                aux[-1] = np.dot(mm[ndim - 2, :], mm[ndim - 1, :].T)
+            else:
+                la =  np.dot(mm[i2, :], mm[i2 + 1 : j2, :].T)
+                aux[k:] = la
+        return aux
+
+    def get_plambda_block(self, biad_mat, k1, k2):
+        &#34;&#34;&#34;Return a subset of the :math:`\\Lambda` probability matrix.
+
+        Given the biadjacency matrix ``biad_mat`` with
+        :math:`\\mathbf{M}_{rc} = p_{rc}`, which describes the probabilities of
+        row-node ``r`` and column-node ``c`` being linked, the method returns
+        the matrix
+
+        :math:`P(\\Lambda)_{ij} = \\left(M_{i\\alpha_1} \\cdot M_{j\\alpha_1},
+        M_{i\\alpha_2} \\cdot M_{j\\alpha_2}, \\ldots\\right),`
+
+        for all the node couples in the interval
+        :math:`\\left[k_1, k_2\\right[`.  :math:`(i, j)` are two **row-nodes**
+        of ``biad_mat`` and :math:`\\alpha_k` runs over the nodes in the
+        opposite layer.
+
+        .. note::
+
+            * The probabilities are calculated between the **row-nodes** of the
+              input matrix ``biad_mat``.
+
+            * If :math:`k_2 \equiv \\binom{biad\\_mat.shape[0]}{2}`, the
+              interval becomes :math:`\\left[k1, k2\\right]`.
+
+        :param biad_mat: biadjacency matrix
+        :type biad_mat: numpy.array
+        :param k1: lower interval limit
+        :type k1: int
+        :param k2: upper interval limit
+        :type k2: int
+        :returns: :math:`\\Lambda`-motif probability matrix
+        :rtype: numpy.array
+        &#34;&#34;&#34;
+        [ndim1, ndim2] = biad_mat.shape
+        # if the upper limit is the largest possible index, i.e. corresponds to
+        # the node couple (ndim - 2, ndim - 1), where node indices start from 0,
+        # include the result
+        if k2 == (ndim1 * (ndim1 - 1) / 2 - 1):
+            flag = 1
+        else:
+            flag = 0
+        paux = np.ones(shape=(k2 - k1 + flag, ndim2), dtype=&#39;float&#39;) * (-0.1)
+        [i1, j1] = self.flat2triumat_idx(k1, ndim1)
+        [i2, j2] = self.flat2triumat_idx(k2, ndim1)
+
+        # if limits have the same row index
+        if i1 == i2:
+            paux[:k2 - k1, :] = biad_mat[i1, ] * biad_mat[j1:j2, :]
+        # if limits have different indices
+        else:
+            k = 0
+            # get values for lower limit row
+            fi = biad_mat[i1, :] * biad_mat[j1:, :]
+            paux[:len(fi), :] = fi
+            k += len(fi)
+            # get values for intermediate rows
+            for i in range(i1 + 1, i2):
+                mid = biad_mat[i, :] * biad_mat[i + 1:, :]
+                paux[k : k + len(mid), :] = mid
+                k += len(mid)
+            # get values for upper limit row
+            if flag == 1:
+                paux[-1, :] = biad_mat[ndim1 - 2, :] * biad_mat[ndim1 - 1, :]
+            else:
+                la = biad_mat[i2, :] * biad_mat[i2 + 1:j2, :]
+                paux[k:, :] = la
+        return paux
+
+    def get_pvalues_q(self, plam_mat, nlam_mat, k1, k2, parallel=True):
+        &#34;&#34;&#34;Calculate the p-values of the observed :math:`\\Lambda`-motifs.
+
+        For each number of :math:`\\Lambda`-motifs in ``nlam_mat`` for the node
+        interval :math:`\\left[k1, k2\\right[`, construct the Poisson Binomial
+        distribution using the corresponding
+        probabilities in ``plam_mat`` and calculate the p-value.
+
+        :param plam_mat: array containing the list of probabilities for the
+            single observations of :math:`\\Lambda`-motifs
+        :type plam_mat: numpy.array (square matrix)
+        :param nlam_mat: array containing the observations of
+            :math:`\\Lambda`-motifs
+        :type nlam_mat: numpy.array (square matrix)
+        :param k1: lower interval limit
+        :type k1: int
+        :param k2: upper interval limit
+        :type k2: int
+        :param parallel: if ``True``, the calculation is executed in parallel;
+            if ``False``, only one process is started
+        :type parallel: bool
+        &#34;&#34;&#34;
+        n = len(nlam_mat)
+        # the array must be sharable to be accessible by all processes
+        shared_array_base = multiprocessing.Array(ctypes.c_double, n)
+        pval_mat = np.frombuffer(shared_array_base.get_obj())
+
+        # number of processes running in parallel has to be tested.
+        # good guess is multiprocessing.cpu_count() +- 1
+        if parallel:
+            num_procs = multiprocessing.cpu_count() - 1
+        elif not parallel:
+            num_procs = 1
+        else:
+            num_procs = 1
+
+        # create 2 queues
+        self.input_queue = multiprocessing.Queue()
+        self.output_queue = multiprocessing.Queue()
+
+        # (1) add tuples of matrix elements and indices to the input queue
+        p_inqueue = multiprocessing.Process(target=self.add2inqueue,
+                                            args=(num_procs, plam_mat, nlam_mat,
+                                                k1, k2))
+
+
+        pval_mat = multiprocessing.Array(&#39;d&#39;, pval_mat)
+
+        #  (2) Put the results from the out-queue into the p-value array.
+        p_outqueue = multiprocessing.Process(target=self.outqueue2pval_mat,
+                                             args=(num_procs, pval_mat))
+
+        # (3) pval computer...
+        ps = [multiprocessing.Process(target=self.pval_process_worker,
+                                      args=()) for i in range(num_procs)]
+
+        # start queues
+        p_inqueue.start()
+        p_outqueue.start()
+
+        # start processes
+        for p in ps:
+            p.start()       # each process has an id, p.pid
+        p_inqueue.join()
+
+        for p in ps:
+            p.join()
+        p_outqueue.join()
+
+        #print(&#39;final matrix:&#39;)
+        pval_mat = np.frombuffer(pval_mat.get_obj(), dtype=np.float64)
+        #for i in range(len(pval_mat)):
+        #    value = pval_mat[i]
+        #    print(value)
+        #print(&#39;--------&#39;)
+        #print(pval_mat)
+        #print(&#39;-------&#39;)
+
+
+        return pval_mat
+
+    def add2inqueue(self, nprocs, plam_mat, nlam_mat, k1, k2):
+        &#34;&#34;&#34;Add elements to the in-queue to calculate the p-values.
+
+        :param nprocs: number of processes running in parallel
+        :type nprocs: int
+        :param plam_mat: array containing the list of probabilities for the
+            single observations of :math:`\\Lambda`-motifs
+        :type plam_mat: numpy.array (square matrix)
+        :param nlam_mat: array containing the observations of
+            :math:`\\Lambda`-motifs
+        :type nlam_mat: numpy.array (square matrix)
+        :param k1: lower interval limit
+        :type k1: int
+        :param k2: upper interval limit
+        :type k2: int
+        &#34;&#34;&#34;
+        n = len(plam_mat)
+        # add tuples of matrix elements and indices to the input queue
+        for k in range(k1, k2):
+            self.input_queue.put((k - k1, plam_mat[k - k1, :],
+                                  nlam_mat[k - k1]))
+
+        # add as many poison pills &#34;STOP&#34; to the queue as there are workers
+        for i in range(nprocs):
+            self.input_queue.put(&#34;STOP&#34;)
+
+    def pval_process_worker(self):
+        &#34;&#34;&#34;Calculate p-values and add them to the out-queue.&#34;&#34;&#34;
+        # take elements from the queue as long as the element is not &#34;STOP&#34;
+        for tupl in iter(self.input_queue.get, &#34;STOP&#34;):
+            pb = PoiBin(tupl[1])
+
+            pv = pb.pval(int(tupl[2]))
+            #print(&#39;loc {}, pval computed: {}&#39;.format(pb, pv))
+            # add the result to the output queue
+            self.output_queue.put((tupl[0], pv))
+        # once all the elements in the input queue have been dealt with, add a
+        # &#34;STOP&#34; to the output queue
+        self.output_queue.put(&#34;STOP&#34;)
+
+    def outqueue2pval_mat(self, nprocs, pvalmat):
+        &#34;&#34;&#34;Put the results from the out-queue into the p-value array.&#34;&#34;&#34;
+        # stop the work after having met nprocs times &#34;STOP&#34;
+        for work in range(nprocs):
+            for val in iter(self.output_queue.get, &#34;STOP&#34;):
+                k = val[0]
+                #print(&#39;popping pval from out que:&#39;, val[1])
+                pvalmat[k] = val[1]
+
+        #print(&#39;final matrix&#39;)
+        #print(pvalmat)
+
+
+    def get_triup_dim(self, bip_set):
+        &#34;&#34;&#34;Return the number of possible node couples in ``bip_set``.
+
+        :param bip_set: selects row-nodes (``True``) or column-nodes
+            (``False``)
+        :type bip_set: bool
+        :returns: return the number of node couple combinations corresponding
+            to the layer ``bip_set``
+        :rtype: int
+
+        :raise ValueError: raise an error if the parameter ``bip_set`` is
+            neither ``True`` nor ``False``
+        &#34;&#34;&#34;
+        if bip_set:
+            return self.triumat2flat_dim(self.num_rows)
+        elif not bip_set:
+            return self.triumat2flat_dim(self.num_columns)
+        else:
+            errmsg = &#34;&#39;&#34; + str(bip_set) + &#34;&#39; &#34; + &#39;not supported.&#39;
+            raise NameError(errmsg)
+
+    def split_range(self, n, m=4):
+        &#34;&#34;&#34;Split the interval :math:`\\left[0,\ldots, n\\right]` in ``m`` parts.
+
+        :param n: upper limit of the range
+        :type n: int
+        :param m: number of part in which range should be split
+        :type n: int
+        :returns: delimiter indices for the ``m`` parts
+        :rtype: list
+        &#34;&#34;&#34;
+        return [i * n / m for i in range(m)]
+
+# ------------------------------------------------------------------------------
+# Auxiliary methods
+# ------------------------------------------------------------------------------
+
+    @staticmethod
+    def triumat2flat_idx(i, j, n):
+        &#34;&#34;&#34;Convert an matrix index couple to a flattened array index.
+
+        Given a square matrix of dimension ``n`` and the index couple
+        ``(i, j)`` *of the upper triangular part* of the matrix, return the
+        index which the matrix element would have in a flattened array.
+
+        .. note::
+            * :math:`i \\in [0, ..., n - 1]`
+            * :math:`j \\in [i + 1, ..., n - 1]`
+            * returned index :math:`\\in [0,\\, n (n - 1) / 2 - 1]`
+
+        :param i: row index
+        :type i: int
+        :param j: column index
+        :type j: int
+        :param n: dimension of the square matrix
+        :type n: int
+        :returns: flattened array index
+        :rtype: int
+        &#34;&#34;&#34;
+        return int((i + 1) * n - (i + 2) * (i + 1) / 2. - (n - (j + 1)) - 1)
+
+    @staticmethod
+    def triumat2flat_dim(n):
+        &#34;&#34;&#34;Return the size of the triangular part of a ``n x n`` matrix.
+
+        :param n: the dimension of the square matrix
+        :type n: int
+        :returns: number of elements in the upper triangular part of the matrix
+            (excluding the diagonal)
+        :rtype: int
+        &#34;&#34;&#34;
+        return n * (n - 1) / 2
+
+    @staticmethod
+    def flat2triumat_dim(k):
+        &#34;&#34;&#34;Return the dimension of the matrix hosting ``k`` triangular elements.
+
+        :param k: the number of elements in the upper triangular
+            part of the corresponding square matrix, excluding the diagonal
+        :type k: int
+        :returns: dimension of the corresponding square matrix
+        :rtype: int
+        &#34;&#34;&#34;
+        return int(0.5 + np.sqrt(0.25 + 2 * k))
+
+    @staticmethod
+    def flat2triumat_idx(k, n):
+        &#34;&#34;&#34;Convert an array index into the index couple of a triangular matrix.
+
+        ``k`` is the index of an array of length :math:`\\binom{n}{2}{2}`,
+        which contains the elements of an upper triangular matrix of dimension
+        ``n`` excluding the diagonal. The function returns the index couple
+        :math:`(i, j)` that corresponds to the entry ``k`` of the flat array.
+
+        .. note::
+            * :math:`k \\in \left[0,\\ldots, \\binom{n}{2} - 1\\right]`
+            * returned indices:
+                * :math:`i \\in [0,\\ldots, n - 1]`
+                * :math:`j \\in [i + 1,\\ldots, n - 1]`
+
+        :param k: flattened array index
+        :type k: int
+        :param n: dimension of the square matrix
+        :type n: int
+        :returns: matrix index tuple (row, column)
+        :rtype: tuple
+        &#34;&#34;&#34;
+        # row index of array index k in the the upper triangular part of the
+        # square matrix
+        r = n - 2 - int(0.5 * np.sqrt(-8 * k + 4 * n * (n - 1) - 7) - 0.5)
+        # column index of array index k in the the upper triangular part of the
+        # square matrix
+        c = k + 1 + r * (3 - 2 * n + r) / 2
+        return int(r), int(c)
+
+    def save_biadjacency(self, filename, delim=&#39;\t&#39;, binary=False):
+        &#34;&#34;&#34;Save the biadjacendy matrix of the BiCM null model.
+
+        The matrix can either be saved as a binary NumPy ``.npy`` file or as a
+        human-readable ``.csv`` file.
+
+        .. note::
+
+            * The relative path has to be provided in the filename, e.g.
+              *../data/pvalue_matrix.csv*.
+
+            * If ``binary==True``, NumPy
+              automatically appends the format ending ``.npy`` to the file.
+
+        :param filename: name of the output file
+        :type filename: str
+        :param delim: delimiter between values in file
+        :type delim: str
+        :param binary: if ``True``, save as binary ``.npy``, otherwise as a
+            ``.csv`` file
+        :type binary: bool
+        &#34;&#34;&#34;
+        self.save_array(self.adj_matrix, filename, delim, binary)
+
+    @staticmethod
+    def save_array(mat, filename, delim=&#39;\t&#39;, binary=False):
+        &#34;&#34;&#34;Save the array ``mat`` in the file ``filename``.
+
+        The array can either be saved as a binary NumPy ``.npy`` file or as a
+        human-readable ``.npy`` file.
+
+        .. note::
+
+            * The relative path has to be provided in the filename, e.g.
+              *../data/pvalue_matrix.csv*.
+
+            * If ``binary==True``, NumPy
+              automatically appends the format ending ``.npy`` to the file.
+
+        :param mat: array
+        :type mat: numpy.array
+        :param filename: name of the output file
+        :type filename: str
+        :param delim: delimiter between values in file
+        :type delim: str
+        :param binary: if ``True``, save as binary ``.npy``, otherwise as a
+            ``.csv`` file
+        :type binary: bool
+        &#34;&#34;&#34;
+        if binary:
+            np.save(filename, mat)
+        else:
+            np.savetxt(filename, mat, delimiter=delim)</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.flat2triumat_dim"><code class="name flex">
+<span>def <span class="ident">flat2triumat_dim</span></span>(<span>k)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the dimension of the matrix hosting <code>k</code> triangular elements.</p>
+<p>:param k: the number of elements in the upper triangular
+part of the corresponding square matrix, excluding the diagonal
+:type k: int
+:returns: dimension of the corresponding square matrix
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def flat2triumat_dim(k):
+    &#34;&#34;&#34;Return the dimension of the matrix hosting ``k`` triangular elements.
+
+    :param k: the number of elements in the upper triangular
+        part of the corresponding square matrix, excluding the diagonal
+    :type k: int
+    :returns: dimension of the corresponding square matrix
+    :rtype: int
+    &#34;&#34;&#34;
+    return int(0.5 + np.sqrt(0.25 + 2 * k))</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.flat2triumat_idx"><code class="name flex">
+<span>def <span class="ident">flat2triumat_idx</span></span>(<span>k, n)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert an array index into the index couple of a triangular matrix.</p>
+<p><code>k</code> is the index of an array of length :math:<code>\binom{n}{2}{2}</code>,
+which contains the elements of an upper triangular matrix of dimension
+<code>n</code> excluding the diagonal. The function returns the index couple
+:math:<code>(i, j)</code> that corresponds to the entry <code>k</code> of the flat array.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>:math:<code>k \in \left[0,\ldots, \binom{n}{2} - 1\right]</code></li>
+<li>returned indices:<ul>
+<li>:math:<code>i \in [0,\ldots, n - 1]</code></li>
+<li>:math:<code>j \in [i + 1,\ldots, n - 1]</code></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>:param k: flattened array index
+:type k: int
+:param n: dimension of the square matrix
+:type n: int
+:returns: matrix index tuple (row, column)
+:rtype: tuple</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def flat2triumat_idx(k, n):
+    &#34;&#34;&#34;Convert an array index into the index couple of a triangular matrix.
+
+    ``k`` is the index of an array of length :math:`\\binom{n}{2}{2}`,
+    which contains the elements of an upper triangular matrix of dimension
+    ``n`` excluding the diagonal. The function returns the index couple
+    :math:`(i, j)` that corresponds to the entry ``k`` of the flat array.
+
+    .. note::
+        * :math:`k \\in \left[0,\\ldots, \\binom{n}{2} - 1\\right]`
+        * returned indices:
+            * :math:`i \\in [0,\\ldots, n - 1]`
+            * :math:`j \\in [i + 1,\\ldots, n - 1]`
+
+    :param k: flattened array index
+    :type k: int
+    :param n: dimension of the square matrix
+    :type n: int
+    :returns: matrix index tuple (row, column)
+    :rtype: tuple
+    &#34;&#34;&#34;
+    # row index of array index k in the the upper triangular part of the
+    # square matrix
+    r = n - 2 - int(0.5 * np.sqrt(-8 * k + 4 * n * (n - 1) - 7) - 0.5)
+    # column index of array index k in the the upper triangular part of the
+    # square matrix
+    c = k + 1 + r * (3 - 2 * n + r) / 2
+    return int(r), int(c)</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.save_array"><code class="name flex">
+<span>def <span class="ident">save_array</span></span>(<span>mat, filename, delim='\t', binary=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Save the array <code>mat</code> in the file <code>filename</code>.</p>
+<p>The array can either be saved as a binary NumPy <code>.npy</code> file or as a
+human-readable <code>.npy</code> file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>
+<p>The relative path has to be provided in the filename, e.g.
+<em>../data/pvalue_matrix.csv</em>.</p>
+</li>
+<li>
+<p>If <code>binary==True</code>, NumPy
+automatically appends the format ending <code>.npy</code> to the file.</p>
+</li>
+</ul>
+</div>
+<p>:param mat: array
+:type mat: numpy.array
+:param filename: name of the output file
+:type filename: str
+:param delim: delimiter between values in file
+:type delim: str
+:param binary: if <code>True</code>, save as binary <code>.npy</code>, otherwise as a
+<code>.csv</code> file
+:type binary: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def save_array(mat, filename, delim=&#39;\t&#39;, binary=False):
+    &#34;&#34;&#34;Save the array ``mat`` in the file ``filename``.
+
+    The array can either be saved as a binary NumPy ``.npy`` file or as a
+    human-readable ``.npy`` file.
+
+    .. note::
+
+        * The relative path has to be provided in the filename, e.g.
+          *../data/pvalue_matrix.csv*.
+
+        * If ``binary==True``, NumPy
+          automatically appends the format ending ``.npy`` to the file.
+
+    :param mat: array
+    :type mat: numpy.array
+    :param filename: name of the output file
+    :type filename: str
+    :param delim: delimiter between values in file
+    :type delim: str
+    :param binary: if ``True``, save as binary ``.npy``, otherwise as a
+        ``.csv`` file
+    :type binary: bool
+    &#34;&#34;&#34;
+    if binary:
+        np.save(filename, mat)
+    else:
+        np.savetxt(filename, mat, delimiter=delim)</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.triumat2flat_dim"><code class="name flex">
+<span>def <span class="ident">triumat2flat_dim</span></span>(<span>n)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the size of the triangular part of a <code>n x n</code> matrix.</p>
+<p>:param n: the dimension of the square matrix
+:type n: int
+:returns: number of elements in the upper triangular part of the matrix
+(excluding the diagonal)
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def triumat2flat_dim(n):
+    &#34;&#34;&#34;Return the size of the triangular part of a ``n x n`` matrix.
+
+    :param n: the dimension of the square matrix
+    :type n: int
+    :returns: number of elements in the upper triangular part of the matrix
+        (excluding the diagonal)
+    :rtype: int
+    &#34;&#34;&#34;
+    return n * (n - 1) / 2</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.triumat2flat_idx"><code class="name flex">
+<span>def <span class="ident">triumat2flat_idx</span></span>(<span>i, j, n)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert an matrix index couple to a flattened array index.</p>
+<p>Given a square matrix of dimension <code>n</code> and the index couple
+<code>(i, j)</code> <em>of the upper triangular part</em> of the matrix, return the
+index which the matrix element would have in a flattened array.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>:math:<code>i \in [0, ..., n - 1]</code></li>
+<li>:math:<code>j \in [i + 1, ..., n - 1]</code></li>
+<li>returned index :math:<code>\in [0,\, n (n - 1) / 2 - 1]</code></li>
+</ul>
+</div>
+<p>:param i: row index
+:type i: int
+:param j: column index
+:type j: int
+:param n: dimension of the square matrix
+:type n: int
+:returns: flattened array index
+:rtype: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def triumat2flat_idx(i, j, n):
+    &#34;&#34;&#34;Convert an matrix index couple to a flattened array index.
+
+    Given a square matrix of dimension ``n`` and the index couple
+    ``(i, j)`` *of the upper triangular part* of the matrix, return the
+    index which the matrix element would have in a flattened array.
+
+    .. note::
+        * :math:`i \\in [0, ..., n - 1]`
+        * :math:`j \\in [i + 1, ..., n - 1]`
+        * returned index :math:`\\in [0,\\, n (n - 1) / 2 - 1]`
+
+    :param i: row index
+    :type i: int
+    :param j: column index
+    :type j: int
+    :param n: dimension of the square matrix
+    :type n: int
+    :returns: flattened array index
+    :rtype: int
+    &#34;&#34;&#34;
+    return int((i + 1) * n - (i + 2) * (i + 1) / 2. - (n - (j + 1)) - 1)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.add2inqueue"><code class="name flex">
+<span>def <span class="ident">add2inqueue</span></span>(<span>self, nprocs, plam_mat, nlam_mat, k1, k2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add elements to the in-queue to calculate the p-values.</p>
+<p>:param nprocs: number of processes running in parallel
+:type nprocs: int
+:param plam_mat: array containing the list of probabilities for the
+single observations of :math:<code>\Lambda</code>-motifs
+:type plam_mat: numpy.array (square matrix)
+:param nlam_mat: array containing the observations of
+:math:<code>\Lambda</code>-motifs
+:type nlam_mat: numpy.array (square matrix)
+:param k1: lower interval limit
+:type k1: int
+:param k2: upper interval limit
+:type k2: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add2inqueue(self, nprocs, plam_mat, nlam_mat, k1, k2):
+    &#34;&#34;&#34;Add elements to the in-queue to calculate the p-values.
+
+    :param nprocs: number of processes running in parallel
+    :type nprocs: int
+    :param plam_mat: array containing the list of probabilities for the
+        single observations of :math:`\\Lambda`-motifs
+    :type plam_mat: numpy.array (square matrix)
+    :param nlam_mat: array containing the observations of
+        :math:`\\Lambda`-motifs
+    :type nlam_mat: numpy.array (square matrix)
+    :param k1: lower interval limit
+    :type k1: int
+    :param k2: upper interval limit
+    :type k2: int
+    &#34;&#34;&#34;
+    n = len(plam_mat)
+    # add tuples of matrix elements and indices to the input queue
+    for k in range(k1, k2):
+        self.input_queue.put((k - k1, plam_mat[k - k1, :],
+                              nlam_mat[k - k1]))
+
+    # add as many poison pills &#34;STOP&#34; to the queue as there are workers
+    for i in range(nprocs):
+        self.input_queue.put(&#34;STOP&#34;)</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.check_input_matrix_is_binary"><code class="name flex">
+<span>def <span class="ident">check_input_matrix_is_binary</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check that the input matrix is binary, i.e. entries are 0 or 1.</p>
+<p>:raise AssertionError: raise an error if the input matrix is not
+binary</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def check_input_matrix_is_binary(self):
+    &#34;&#34;&#34;Check that the input matrix is binary, i.e. entries are 0 or 1.
+
+    :raise AssertionError: raise an error if the input matrix is not
+        binary
+    &#34;&#34;&#34;
+    assert np.all(np.logical_or(self.bin_mat == 0, self.bin_mat == 1)), \
+        &#34;Input matrix is not binary.&#34;</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.equations"><code class="name flex">
+<span>def <span class="ident">equations</span></span>(<span>self, xx)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the equations of the log-likelihood maximization problem.</p>
+<p>Note that the equations for the row-nodes depend only on the
+column-nodes and vice versa, see [Saracco2015]_.</p>
+<p>:param xx: Lagrange multipliers which have to be solved
+:type xx: numpy.array
+:returns: equations to be solved (:math:<code>f(x) = 0</code>)
+:rtype: numpy.array</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def equations(self, xx):
+    &#34;&#34;&#34;Return the equations of the log-likelihood maximization problem.
+
+    Note that the equations for the row-nodes depend only on the
+    column-nodes and vice versa, see [Saracco2015]_.
+
+    :param xx: Lagrange multipliers which have to be solved
+    :type xx: numpy.array
+    :returns: equations to be solved (:math:`f(x) = 0`)
+    :rtype: numpy.array
+    &#34;&#34;&#34;
+    eq = -self.dseq
+    for i in range(0, self.num_rows):
+        for j in range(self.num_rows, self.dim):
+            dum = xx[i] * xx[j] / (1. + xx[i] * xx[j])
+            eq[i] += dum
+            eq[j] += dum
+    return eq</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.get_biadjacency_matrix"><code class="name flex">
+<span>def <span class="ident">get_biadjacency_matrix</span></span>(<span>self, xx)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculate the biadjacency matrix of the null model.</p>
+<p>The biadjacency matrix describes the BiCM null model, i.e. the optimal
+average graph :math:<code>&lt;G&gt;^*</code> with the average link probabilities
+:math:<code>&lt;G&gt;^*_{rc} = p_{rc}</code> ,
+:math:<code>p_{rc} = \frac{x_r \cdot x_c}{1 + x_r\cdot x_c}.</code>
+:math:<code>x</code> are the solutions of the equation system which has to be
+solved for the null model.
+Note that :math:<code>r</code> and :math:<code>c</code> are taken from opposite bipartite
+node sets, thus :math:<code>r \neq c</code>.</p>
+<p>:param xx: solutions of the equation system (Lagrange multipliers)
+:type xx: numpy.array
+:returns: biadjacency matrix of the null model
+:rtype: numpy.array</p>
+<p>:raises ValueError: raise an error if :math:<code>p_{rc} &lt; 0</code> or
+:math:<code>p_{rc} &gt; 1</code> for any :math:<code>r, c</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_biadjacency_matrix(self, xx):
+    &#34;&#34;&#34; Calculate the biadjacency matrix of the null model.
+
+    The biadjacency matrix describes the BiCM null model, i.e. the optimal
+    average graph :math:`&lt;G&gt;^*` with the average link probabilities
+    :math:`&lt;G&gt;^*_{rc} = p_{rc}` ,
+    :math:`p_{rc} = \\frac{x_r \\cdot x_c}{1 + x_r\\cdot x_c}.`
+    :math:`x` are the solutions of the equation system which has to be
+    solved for the null model.
+    Note that :math:`r` and :math:`c` are taken from opposite bipartite
+    node sets, thus :math:`r \\neq c`.
+
+    :param xx: solutions of the equation system (Lagrange multipliers)
+    :type xx: numpy.array
+    :returns: biadjacency matrix of the null model
+    :rtype: numpy.array
+
+    :raises ValueError: raise an error if :math:`p_{rc} &lt; 0` or
+        :math:`p_{rc} &gt; 1` for any :math:`r, c`
+    &#34;&#34;&#34;
+    mat = np.empty((self.num_rows, self.num_columns))
+    xp = xx[range(self.num_rows, self.dim)]
+    for i in range(self.num_rows):
+        mat[i, ] = xx[i] * xp / (1 + xx[i] * xp)
+
+    # account for machine precision:
+    mat += np.finfo(np.float64).eps
+
+    #print(&#39;matrix debug:&#39;)
+    #for r in mat:
+    #    print(r)
+
+    if np.any(mat &lt; 0):
+        errmsg = &#39;Error in get_adjacency_matrix: probabilities &lt; 0 in &#39; \
+              + str(np.where(mat &lt; 0))
+        raise ValueError(errmsg)
+    elif np.any(mat &gt; (1. + np.finfo(np.float64).eps)):
+        errmsg = &#39;Error in get_adjacency_matrix: probabilities &gt; 1 in&#39; \
+              + str(np.where(mat &gt; 1))
+        raise ValueError(errmsg)
+    assert mat.shape == self.bin_mat.shape, \
+        &#34;Biadjacency matrix has wrong dimensions.&#34;
+    return mat</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.get_lambda_motif_block"><code class="name flex">
+<span>def <span class="ident">get_lambda_motif_block</span></span>(<span>self, mm, k1, k2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a subset of :math:<code>\Lambda</code>-motifs as observed in <code>mm</code>.</p>
+<p>Given the binary input matrix <code>mm</code>, count the number of
+:math:<code>\Lambda</code>-motifs for all the node couples specified by the
+interval :math:<code>\left[k_1, k_2\right[</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>
+<p>The :math:<code>\Lambda</code>-motifs are counted between the <strong>row-nodes</strong>
+of the input matrix <code>mm</code>.</p>
+</li>
+<li>
+<p>If :math:<code>k_2 \equiv \binom{mm.shape[0]}{2}</code>, the interval
+becomes :math:<code>\left[k_1, k_2\right]</code>.</p>
+</li>
+</ul>
+</div>
+<p>:param mm: binary matrix
+:type mm: numpy.array
+:param k1: lower interval limit
+:type k1: int
+:param k2: upper interval limit
+:type k2: int
+:returns: array of observed :math:<code>\Lambda</code>-motifs
+:rtype: numpy.array</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_lambda_motif_block(self, mm, k1, k2):
+    &#34;&#34;&#34;Return a subset of :math:`\\Lambda`-motifs as observed in ``mm``.
+
+    Given the binary input matrix ``mm``, count the number of
+    :math:`\\Lambda`-motifs for all the node couples specified by the
+    interval :math:`\\left[k_1, k_2\\right[`.
+
+
+    .. note::
+
+        * The :math:`\\Lambda`-motifs are counted between the **row-nodes**
+          of the input matrix ``mm``.
+
+        * If :math:`k_2 \equiv \\binom{mm.shape[0]}{2}`, the interval
+          becomes :math:`\\left[k_1, k_2\\right]`.
+
+    :param mm: binary matrix
+    :type mm: numpy.array
+    :param k1: lower interval limit
+    :type k1: int
+    :param k2: upper interval limit
+    :type k2: int
+    :returns: array of observed :math:`\\Lambda`-motifs
+    :rtype: numpy.array
+    &#34;&#34;&#34;
+    k1 = int(k1)
+    k2 = int(k2)
+    ndim = mm.shape[0]
+    # if the upper limit is the largest possible index, i.e. corresponds to
+    # the node couple (ndim - 2, ndim - 1), where node indices start from 0,
+    # include the result
+    if k2 == (ndim * (ndim - 1) / 2 - 1):
+        flag = 1
+    else:
+        flag = 0
+    aux = np.ones(shape=(k2 - k1 + flag, )) * (-1) # -1 as a test
+    [i1, j1] = self.flat2triumat_idx(k1, ndim)
+    [i2, j2] = self.flat2triumat_idx(k2, ndim)
+
+    # if limits have the same row index
+    if i1 == i2:
+        aux[:k2 - k1] = np.dot(mm[i1, :], mm[j1:j2, :].T)
+    # if limits have different row indices
+    else:
+        k = 0
+        #print(&#39;i1:&#39;, i1)
+        #print(&#39;j1:&#39;, j1)
+        # get values for lower limit row
+        fi = np.dot(mm[i1, :], mm[j1:, :].T)
+        aux[:len(fi)] = fi
+        k += len(fi)
+        # get values for intermediate rows
+        for i in range(i1 + 1, i2):
+            mid = np.dot(mm[i, :], mm[i + 1:, :].T)
+            aux[k : k + len(mid)] = mid
+            k += len(mid)
+        # get values for upper limit row
+        if flag == 1:
+            aux[-1] = np.dot(mm[ndim - 2, :], mm[ndim - 1, :].T)
+        else:
+            la =  np.dot(mm[i2, :], mm[i2 + 1 : j2, :].T)
+            aux[k:] = la
+    return aux</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.get_plambda_block"><code class="name flex">
+<span>def <span class="ident">get_plambda_block</span></span>(<span>self, biad_mat, k1, k2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a subset of the :math:<code>\Lambda</code> probability matrix.</p>
+<p>Given the biadjacency matrix <code>biad_mat</code> with
+:math:<code>\mathbf{M}_{rc} = p_{rc}</code>, which describes the probabilities of
+row-node <code>r</code> and column-node <code>c</code> being linked, the method returns
+the matrix</p>
+<p>:math:<code>P(\Lambda)_{ij} = \left(M_{i\alpha_1} \cdot M_{j\alpha_1},
+M_{i\alpha_2} \cdot M_{j\alpha_2}, \ldots\right),</code></p>
+<p>for all the node couples in the interval
+:math:<code>\left[k_1, k_2\right[</code>.
+:math:<code>(i, j)</code> are two <strong>row-nodes</strong>
+of <code>biad_mat</code> and :math:<code>\alpha_k</code> runs over the nodes in the
+opposite layer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>
+<p>The probabilities are calculated between the <strong>row-nodes</strong> of the
+input matrix <code>biad_mat</code>.</p>
+</li>
+<li>
+<p>If :math:<code>k_2 \equiv \binom{biad\_mat.shape[0]}{2}</code>, the
+interval becomes :math:<code>\left[k1, k2\right]</code>.</p>
+</li>
+</ul>
+</div>
+<p>:param biad_mat: biadjacency matrix
+:type biad_mat: numpy.array
+:param k1: lower interval limit
+:type k1: int
+:param k2: upper interval limit
+:type k2: int
+:returns: :math:<code>\Lambda</code>-motif probability matrix
+:rtype: numpy.array</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_plambda_block(self, biad_mat, k1, k2):
+    &#34;&#34;&#34;Return a subset of the :math:`\\Lambda` probability matrix.
+
+    Given the biadjacency matrix ``biad_mat`` with
+    :math:`\\mathbf{M}_{rc} = p_{rc}`, which describes the probabilities of
+    row-node ``r`` and column-node ``c`` being linked, the method returns
+    the matrix
+
+    :math:`P(\\Lambda)_{ij} = \\left(M_{i\\alpha_1} \\cdot M_{j\\alpha_1},
+    M_{i\\alpha_2} \\cdot M_{j\\alpha_2}, \\ldots\\right),`
+
+    for all the node couples in the interval
+    :math:`\\left[k_1, k_2\\right[`.  :math:`(i, j)` are two **row-nodes**
+    of ``biad_mat`` and :math:`\\alpha_k` runs over the nodes in the
+    opposite layer.
+
+    .. note::
+
+        * The probabilities are calculated between the **row-nodes** of the
+          input matrix ``biad_mat``.
+
+        * If :math:`k_2 \equiv \\binom{biad\\_mat.shape[0]}{2}`, the
+          interval becomes :math:`\\left[k1, k2\\right]`.
+
+    :param biad_mat: biadjacency matrix
+    :type biad_mat: numpy.array
+    :param k1: lower interval limit
+    :type k1: int
+    :param k2: upper interval limit
+    :type k2: int
+    :returns: :math:`\\Lambda`-motif probability matrix
+    :rtype: numpy.array
+    &#34;&#34;&#34;
+    [ndim1, ndim2] = biad_mat.shape
+    # if the upper limit is the largest possible index, i.e. corresponds to
+    # the node couple (ndim - 2, ndim - 1), where node indices start from 0,
+    # include the result
+    if k2 == (ndim1 * (ndim1 - 1) / 2 - 1):
+        flag = 1
+    else:
+        flag = 0
+    paux = np.ones(shape=(k2 - k1 + flag, ndim2), dtype=&#39;float&#39;) * (-0.1)
+    [i1, j1] = self.flat2triumat_idx(k1, ndim1)
+    [i2, j2] = self.flat2triumat_idx(k2, ndim1)
+
+    # if limits have the same row index
+    if i1 == i2:
+        paux[:k2 - k1, :] = biad_mat[i1, ] * biad_mat[j1:j2, :]
+    # if limits have different indices
+    else:
+        k = 0
+        # get values for lower limit row
+        fi = biad_mat[i1, :] * biad_mat[j1:, :]
+        paux[:len(fi), :] = fi
+        k += len(fi)
+        # get values for intermediate rows
+        for i in range(i1 + 1, i2):
+            mid = biad_mat[i, :] * biad_mat[i + 1:, :]
+            paux[k : k + len(mid), :] = mid
+            k += len(mid)
+        # get values for upper limit row
+        if flag == 1:
+            paux[-1, :] = biad_mat[ndim1 - 2, :] * biad_mat[ndim1 - 1, :]
+        else:
+            la = biad_mat[i2, :] * biad_mat[i2 + 1:j2, :]
+            paux[k:, :] = la
+    return paux</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.get_pvalues_q"><code class="name flex">
+<span>def <span class="ident">get_pvalues_q</span></span>(<span>self, plam_mat, nlam_mat, k1, k2, parallel=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculate the p-values of the observed :math:<code>\Lambda</code>-motifs.</p>
+<p>For each number of :math:<code>\Lambda</code>-motifs in <code>nlam_mat</code> for the node
+interval :math:<code>\left[k1, k2\right[</code>, construct the Poisson Binomial
+distribution using the corresponding
+probabilities in <code>plam_mat</code> and calculate the p-value.</p>
+<p>:param plam_mat: array containing the list of probabilities for the
+single observations of :math:<code>\Lambda</code>-motifs
+:type plam_mat: numpy.array (square matrix)
+:param nlam_mat: array containing the observations of
+:math:<code>\Lambda</code>-motifs
+:type nlam_mat: numpy.array (square matrix)
+:param k1: lower interval limit
+:type k1: int
+:param k2: upper interval limit
+:type k2: int
+:param parallel: if <code>True</code>, the calculation is executed in parallel;
+if <code>False</code>, only one process is started
+:type parallel: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_pvalues_q(self, plam_mat, nlam_mat, k1, k2, parallel=True):
+    &#34;&#34;&#34;Calculate the p-values of the observed :math:`\\Lambda`-motifs.
+
+    For each number of :math:`\\Lambda`-motifs in ``nlam_mat`` for the node
+    interval :math:`\\left[k1, k2\\right[`, construct the Poisson Binomial
+    distribution using the corresponding
+    probabilities in ``plam_mat`` and calculate the p-value.
+
+    :param plam_mat: array containing the list of probabilities for the
+        single observations of :math:`\\Lambda`-motifs
+    :type plam_mat: numpy.array (square matrix)
+    :param nlam_mat: array containing the observations of
+        :math:`\\Lambda`-motifs
+    :type nlam_mat: numpy.array (square matrix)
+    :param k1: lower interval limit
+    :type k1: int
+    :param k2: upper interval limit
+    :type k2: int
+    :param parallel: if ``True``, the calculation is executed in parallel;
+        if ``False``, only one process is started
+    :type parallel: bool
+    &#34;&#34;&#34;
+    n = len(nlam_mat)
+    # the array must be sharable to be accessible by all processes
+    shared_array_base = multiprocessing.Array(ctypes.c_double, n)
+    pval_mat = np.frombuffer(shared_array_base.get_obj())
+
+    # number of processes running in parallel has to be tested.
+    # good guess is multiprocessing.cpu_count() +- 1
+    if parallel:
+        num_procs = multiprocessing.cpu_count() - 1
+    elif not parallel:
+        num_procs = 1
+    else:
+        num_procs = 1
+
+    # create 2 queues
+    self.input_queue = multiprocessing.Queue()
+    self.output_queue = multiprocessing.Queue()
+
+    # (1) add tuples of matrix elements and indices to the input queue
+    p_inqueue = multiprocessing.Process(target=self.add2inqueue,
+                                        args=(num_procs, plam_mat, nlam_mat,
+                                            k1, k2))
+
+
+    pval_mat = multiprocessing.Array(&#39;d&#39;, pval_mat)
+
+    #  (2) Put the results from the out-queue into the p-value array.
+    p_outqueue = multiprocessing.Process(target=self.outqueue2pval_mat,
+                                         args=(num_procs, pval_mat))
+
+    # (3) pval computer...
+    ps = [multiprocessing.Process(target=self.pval_process_worker,
+                                  args=()) for i in range(num_procs)]
+
+    # start queues
+    p_inqueue.start()
+    p_outqueue.start()
+
+    # start processes
+    for p in ps:
+        p.start()       # each process has an id, p.pid
+    p_inqueue.join()
+
+    for p in ps:
+        p.join()
+    p_outqueue.join()
+
+    #print(&#39;final matrix:&#39;)
+    pval_mat = np.frombuffer(pval_mat.get_obj(), dtype=np.float64)
+    #for i in range(len(pval_mat)):
+    #    value = pval_mat[i]
+    #    print(value)
+    #print(&#39;--------&#39;)
+    #print(pval_mat)
+    #print(&#39;-------&#39;)
+
+
+    return pval_mat</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.get_triup_dim"><code class="name flex">
+<span>def <span class="ident">get_triup_dim</span></span>(<span>self, bip_set)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the number of possible node couples in <code>bip_set</code>.</p>
+<p>:param bip_set: selects row-nodes (<code>True</code>) or column-nodes
+(<code>False</code>)
+:type bip_set: bool
+:returns: return the number of node couple combinations corresponding
+to the layer <code>bip_set</code>
+:rtype: int</p>
+<p>:raise ValueError: raise an error if the parameter <code>bip_set</code> is
+neither <code>True</code> nor <code>False</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_triup_dim(self, bip_set):
+    &#34;&#34;&#34;Return the number of possible node couples in ``bip_set``.
+
+    :param bip_set: selects row-nodes (``True``) or column-nodes
+        (``False``)
+    :type bip_set: bool
+    :returns: return the number of node couple combinations corresponding
+        to the layer ``bip_set``
+    :rtype: int
+
+    :raise ValueError: raise an error if the parameter ``bip_set`` is
+        neither ``True`` nor ``False``
+    &#34;&#34;&#34;
+    if bip_set:
+        return self.triumat2flat_dim(self.num_rows)
+    elif not bip_set:
+        return self.triumat2flat_dim(self.num_columns)
+    else:
+        errmsg = &#34;&#39;&#34; + str(bip_set) + &#34;&#39; &#34; + &#39;not supported.&#39;
+        raise NameError(errmsg)</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.jacobian"><code class="name flex">
+<span>def <span class="ident">jacobian</span></span>(<span>self, xx)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a NumPy array with the Jacobian of the equation system.</p>
+<p>:param xx: Lagrange multipliers which have to be solved
+:type xx: numpy.array
+:returns: Jacobian
+:rtype: numpy.array</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def jacobian(self, xx):
+    &#34;&#34;&#34;Return a NumPy array with the Jacobian of the equation system.
+
+    :param xx: Lagrange multipliers which have to be solved
+    :type xx: numpy.array
+    :returns: Jacobian
+    :rtype: numpy.array
+    &#34;&#34;&#34;
+    jac = np.zeros((self.dim, self.dim))
+    for i in range(0, self.num_rows):
+        # df_c / df_c&#39; = 0 for all c&#39; != c
+        for j in range(self.num_rows, self.dim):
+            # df_c / dx_c != 0
+            xxi = xx[i] / (1.0 + xx[i] * xx[j]) ** 2
+            xxj = xx[j] / (1.0 + xx[i] * xx[j]) ** 2
+            jac[i, i] += xxj
+            jac[i, j] = xxi
+            jac[j, i] = xxj
+            jac[j, j] += xxi
+    return jac</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.lambda_motifs"><code class="name flex">
+<span>def <span class="ident">lambda_motifs</span></span>(<span>self, bip_set, parallel=True, filename=None, delim='\t', binary=True, num_chunks=4)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculate and save the p-values of the :math:<code>\Lambda</code>-motifs.</p>
+<p>For each node couple in the bipartite layer specified by <code>bip_set</code>,
+calculate the p-values of the corresponding :math:<code>\Lambda</code>-motifs
+according to the link probabilities in the biadjacency matrix of the
+BiCM null model.</p>
+<p>The results can be saved either as a binary <code>.npy</code> or a
+human-readable <code>.csv</code> file, depending on <code>binary</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>
+<p>The total number of p-values that are calculated is split into
+<code>num_chunks</code> chunks, which are processed sequentially in order
+to avoid memory allocation errors. Note that a larger value of
+<code>num_chunks</code> will lead to less memory occupation, but comes at
+the cost of slower processing speed.</p>
+</li>
+<li>
+<p>The output consists of a one-dimensional array of p-values. If
+the bipartite layer <code>bip_set</code> contains <code>n</code> nodes, this means
+that the array will contain :math:<code>\binom{n}{2}</code> entries. The
+indices <code>(i, j)</code> of the nodes corresponding to entry <code>k</code> in
+the array can be reconstructed using the method
+:func:<code>BiCM.flat2_triumat_idx</code>. The number of nodes <code>n</code>
+can be recovered from the length of the array with
+:func:<code>BiCM.flat2_triumat_dim</code></p>
+</li>
+<li>
+<p>If <code>binary == False</code>, the <code>filename</code> should end with
+<code>.csv</code>. If <code>binary == True</code>, it will be saved in binary NumPy
+<code>.npy</code> format and the suffix <code>.npy</code> will be appended
+automatically. By default, the file is saved in binary format.</p>
+</li>
+</ul>
+</div>
+<p>:param bip_set: select row-nodes (<code>True</code>) or column-nodes (<code>False</code>)
+:type bip_set: bool
+:param parallel: select whether the calculation of the p-values should
+be run in parallel (<code>True</code>) or not (<code>False</code>)
+:type parallel: bool
+:param filename: name of the output file
+:type filename: str
+:param delim: delimiter between entries in the <code>.csv</code>file, default is
+<code>\t</code>
+:type delim: str
+:param binary: if <code>True</code>, the file will be saved in the binary
+NumPy format <code>.npy</code>, otherwise as <code>.csv</code>
+:type binary: bool
+:param num_chunks: number of chunks of p-value calculations that are
+performed sequentially
+:type num_chunks: int
+:raise ValueError: raise an error if the parameter <code>bip_set</code> is
+neither <code>True</code> nor <code>False</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">    def lambda_motifs(self, bip_set, parallel=True, filename=None,
+            delim=&#39;\t&#39;, binary=True, num_chunks=4):
+        &#34;&#34;&#34;Calculate and save the p-values of the :math:`\\Lambda`-motifs.
+
+        For each node couple in the bipartite layer specified by ``bip_set``,
+        calculate the p-values of the corresponding :math:`\\Lambda`-motifs
+        according to the link probabilities in the biadjacency matrix of the
+        BiCM null model.
+
+        The results can be saved either as a binary ``.npy`` or a
+        human-readable ``.csv`` file, depending on ``binary``.
+
+        .. note::
+
+            * The total number of p-values that are calculated is split into
+              ``num_chunks`` chunks, which are processed sequentially in order
+              to avoid memory allocation errors. Note that a larger value of
+              ``num_chunks`` will lead to less memory occupation, but comes at
+              the cost of slower processing speed.
+
+            * The output consists of a one-dimensional array of p-values. If
+              the bipartite layer ``bip_set`` contains ``n`` nodes, this means
+              that the array will contain :math:`\\binom{n}{2}` entries. The
+              indices ``(i, j)`` of the nodes corresponding to entry ``k`` in
+              the array can be reconstructed using the method
+              :func:`BiCM.flat2_triumat_idx`. The number of nodes ``n``
+              can be recovered from the length of the array with
+              :func:`BiCM.flat2_triumat_dim`
+
+            * If ``binary == False``, the ``filename`` should end with
+              ``.csv``. If ``binary == True``, it will be saved in binary NumPy
+              ``.npy`` format and the suffix ``.npy`` will be appended
+              automatically. By default, the file is saved in binary format.
+
+        :param bip_set: select row-nodes (``True``) or column-nodes (``False``)
+        :type bip_set: bool
+        :param parallel: select whether the calculation of the p-values should
+            be run in parallel (``True``) or not (``False``)
+        :type parallel: bool
+        :param filename: name of the output file
+        :type filename: str
+        :param delim: delimiter between entries in the ``.csv``file, default is
+            ``\\t``
+        :type delim: str
+        :param binary: if ``True``, the file will be saved in the binary
+            NumPy format ``.npy``, otherwise as ``.csv``
+        :type binary: bool
+        :param num_chunks: number of chunks of p-value calculations that are
+            performed sequentially
+        :type num_chunks: int
+        :raise ValueError: raise an error if the parameter ``bip_set`` is
+            neither ``True`` nor ``False``
+        &#34;&#34;&#34;
+        if (type(bip_set) == bool) and bip_set:
+            biad_mat = self.adj_matrix
+            bin_mat = self.bin_mat
+        elif (type(bip_set) == bool) and not bip_set:
+            biad_mat = np.transpose(self.adj_matrix)
+            bin_mat = np.transpose(self.bin_mat)
+        else:
+            errmsg = &#34;&#39;&#34; + str(bip_set) + &#34;&#39; &#34; + &#39;not supported.&#39;
+            raise NameError(errmsg)
+
+        n = int(self.get_triup_dim(bip_set)) # n. pairs..
+        pval = np.ones(shape=(n, ), dtype=&#39;float&#39;) * (-0.1)
+
+
+        # handle layers of dimension 2 separately
+        if n == 1:
+            nlam = np.dot(bin_mat[0, :], bin_mat[1, :].T)
+            plam = biad_mat[0, :] * biad_mat[1, :]
+            pb = PoiBin(plam)
+            pval[0] = pb.pval(nlam)
+        else:
+            # if the dimension of the network is too large, split the
+            # calculations # of the p-values in ``m`` intervals to avoid memory
+            # allocation errors
+
+            # correced - never bother with splitting for now
+            if n &gt; 100000:
+                kk = self.split_range(n, m=num_chunks)
+
+            else:
+                k1 = 0
+                k2 = n
+                nlam = self.get_lambda_motif_block(bin_mat, k1, k2)
+                plam = self.get_plambda_block(biad_mat, k1, k2)
+
+                pv = self.get_pvalues_q(plam, nlam, k1, k2)
+                #print(&#39;p values found:&#39;)
+                #print(pv)
+                pval[k1:] = pv
+
+            #print(&#39;pvals before:&#39;)
+            #print(pval)
+
+            ## last interval
+            #k1 = kk[len(kk) - 1]
+            #k2 = n - 1
+            #nlam = self.get_lambda_motif_block(bin_mat, k1, k2)
+            #plam = self.get_plambda_block(biad_mat, k1, k2)
+
+            # for the last entry we have to INCLUDE k2, thus k2 + 1
+            #pv = self.get_pvalues_q(plam, nlam, k1, k2 + 1)
+            #pval[k1:] = pv
+
+        # check that all p-values have been calculated
+#        assert np.all(pval &gt;= 0) and np.all(pval &lt;= 1)
+        if filename is None:
+            fname = &#39;p_values_&#39; + str(bip_set)
+            if not binary:
+                fname +=  &#39;.csv&#39;
+        else:
+            fname = filename
+
+        # account for machine precision:
+        pval += np.finfo(np.float64).eps
+        self.save_array(pval, filename=fname, delim=delim,
+                         binary=binary)</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.make_bicm"><code class="name flex">
+<span>def <span class="ident">make_bicm</span></span>(<span>self, x0=None, method='hybr', jac=None, tol=None, callback=None, options=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create the biadjacency matrix of the BiCM null model.</p>
+<p>Solve the log-likelihood maximization problem to obtain the BiCM
+null model which respects constraints on the degree sequence of the
+input matrix.</p>
+<p>The problem is solved using <code>scipy</code>'s root function with the solver
+defined by <code>method</code>. The status of the solver after running
+<code>scipy.root</code>and the difference between the network and BiCM degrees
+are printed in the console.</p>
+<p>The default solver is the modified Powell method <code>hybr</code>. Least-squares
+can be chosen with <code>method='lm'</code> for the Levenberg-Marquardt approach.</p>
+<p>Depending on the solver, keyword arguments <code>kwargs</code> can be passed to
+the solver. Please refer to the <code>scipy.optimize.root documentation
+&lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+scipy.optimize.root.html&gt;</code>_ for detailed descriptions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It can happen that the solver <code>method</code> used by <code>scipy.root</code>
+does not converge to a solution.
+In this case, please try another <code>method</code> or different initial
+conditions and refer to the <code>scipy.optimize.root documentation
+&lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+scipy.optimize.root.html&gt;</code>_.</p>
+</div>
+<p>:param x0: initial guesses for the solutions. The first entries are the
+initial guesses for the row-nodes, followed by the initial guesses
+for the column-nodes.
+:type x0: 1d numpy.array, optional
+:param method: type of solver, default is ‘hybr’. For other
+solvers, see the <code>scipy.optimize.root documentation
+&lt;https://docs.scipy.org/doc/
+scipy-0.19.0/reference/generated/scipy.optimize.root.html&gt;</code>_.
+:type method: str, optional
+:param jac: Jacobian of the system
+:type jac: bool or callable, optional
+:param tol: tolerance for termination. For detailed control, use
+solver-specific options.
+:type tol: float, optional
+:param callback: optional callback function to be called at
+every iteration as <code>callback(self.equations, x)</code>,
+see <code>scipy.root</code> documentation
+:type callback: function, optional
+:param options: a dictionary of solver options, e.g. <code>xtol</code> or
+<code>maxiter</code>, see scipy.root documentation
+:type options: dict, optional
+:param kwargs: solver-specific options, please refer to the SciPy
+documentation</p>
+<p>:raise ValueError: raise an error if not enough initial conditions
+are provided</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_bicm(self, x0=None, method=&#39;hybr&#39;, jac=None, tol=None,
+              callback=None, options=None):
+    &#34;&#34;&#34;Create the biadjacency matrix of the BiCM null model.
+
+    Solve the log-likelihood maximization problem to obtain the BiCM
+    null model which respects constraints on the degree sequence of the
+    input matrix.
+
+    The problem is solved using ``scipy``&#39;s root function with the solver
+    defined by ``method``. The status of the solver after running
+    ``scipy.root``and the difference between the network and BiCM degrees
+    are printed in the console.
+
+    The default solver is the modified Powell method ``hybr``. Least-squares
+    can be chosen with ``method=&#39;lm&#39;`` for the Levenberg-Marquardt approach.
+
+    Depending on the solver, keyword arguments ``kwargs`` can be passed to
+    the solver. Please refer to the `scipy.optimize.root documentation
+    &lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+    scipy.optimize.root.html&gt;`_ for detailed descriptions.
+
+    .. note::
+
+        It can happen that the solver ``method`` used by ``scipy.root``
+        does not converge to a solution.
+        In this case, please try another ``method`` or different initial
+        conditions and refer to the `scipy.optimize.root documentation
+        &lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+        scipy.optimize.root.html&gt;`_.
+
+    :param x0: initial guesses for the solutions. The first entries are the
+        initial guesses for the row-nodes, followed by the initial guesses
+        for the column-nodes.
+    :type x0: 1d numpy.array, optional
+    :param method: type of solver, default is ‘hybr’. For other
+        solvers, see the `scipy.optimize.root documentation
+        &lt;https://docs.scipy.org/doc/
+        scipy-0.19.0/reference/generated/scipy.optimize.root.html&gt;`_.
+    :type method: str, optional
+    :param jac: Jacobian of the system
+    :type jac: bool or callable, optional
+    :param tol: tolerance for termination. For detailed control, use
+        solver-specific options.
+    :type tol: float, optional
+    :param callback: optional callback function to be called at
+        every iteration as ``callback(self.equations, x)``,
+        see ``scipy.root`` documentation
+    :type callback: function, optional
+    :param options: a dictionary of solver options, e.g. ``xtol`` or
+        ``maxiter``, see scipy.root documentation
+    :type options: dict, optional
+    :param kwargs: solver-specific options, please refer to the SciPy
+        documentation
+
+    :raise ValueError: raise an error if not enough initial conditions
+        are provided
+    &#34;&#34;&#34;
+    try:
+        self.sol = self.solve_equations(x0=x0, method=method, jac=jac, tol=tol,
+                                        callback=callback, options=options)
+        # create BiCM biadjacency matrix:
+        self.adj_matrix = self.get_biadjacency_matrix(self.sol.x)
+        # self.print_max_degree_differences()
+        # assert self.test_average_degrees(eps=1e-2)
+    except ValueError as e:
+        # Catch and handle the ValueError
+        #print(f&#34;Caught a ValueError: {e}&#34;)
+        errror_msg = True</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.outqueue2pval_mat"><code class="name flex">
+<span>def <span class="ident">outqueue2pval_mat</span></span>(<span>self, nprocs, pvalmat)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Put the results from the out-queue into the p-value array.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def outqueue2pval_mat(self, nprocs, pvalmat):
+    &#34;&#34;&#34;Put the results from the out-queue into the p-value array.&#34;&#34;&#34;
+    # stop the work after having met nprocs times &#34;STOP&#34;
+    for work in range(nprocs):
+        for val in iter(self.output_queue.get, &#34;STOP&#34;):
+            k = val[0]
+            #print(&#39;popping pval from out que:&#39;, val[1])
+            pvalmat[k] = val[1]
+
+    #print(&#39;final matrix&#39;)
+    #print(pvalmat)</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.print_max_degree_differences"><code class="name flex">
+<span>def <span class="ident">print_max_degree_differences</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Print the maximal differences between input network and BiCM degrees.</p>
+<p>Check that the degree sequence of the solved BiCM null model graph
+corresponds to the degree sequence of the input graph.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_max_degree_differences(self):
+    &#34;&#34;&#34;Print the maximal differences between input network and BiCM degrees.
+
+    Check that the degree sequence of the solved BiCM null model graph
+    corresponds to the degree sequence of the input graph.
+    &#34;&#34;&#34;
+    ave_deg_columns =np.sum(self.adj_matrix, axis=0)
+    ave_deg_rows = np.sum(self.adj_matrix, axis=1)
+    print(&#34;Maximal degree differences between data and BiCM:&#34;)
+    print(&#34;Columns:&#34;, np.abs(np.max(
+        self.dseq[self.num_rows:] - ave_deg_columns)))
+    print(&#34;Rows:&#34;, np.abs(np.max(
+        self.dseq[:self.num_rows] - ave_deg_rows)))</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.pval_process_worker"><code class="name flex">
+<span>def <span class="ident">pval_process_worker</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculate p-values and add them to the out-queue.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pval_process_worker(self):
+    &#34;&#34;&#34;Calculate p-values and add them to the out-queue.&#34;&#34;&#34;
+    # take elements from the queue as long as the element is not &#34;STOP&#34;
+    for tupl in iter(self.input_queue.get, &#34;STOP&#34;):
+        pb = PoiBin(tupl[1])
+
+        pv = pb.pval(int(tupl[2]))
+        #print(&#39;loc {}, pval computed: {}&#39;.format(pb, pv))
+        # add the result to the output queue
+        self.output_queue.put((tupl[0], pv))
+    # once all the elements in the input queue have been dealt with, add a
+    # &#34;STOP&#34; to the output queue
+    self.output_queue.put(&#34;STOP&#34;)</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.save_biadjacency"><code class="name flex">
+<span>def <span class="ident">save_biadjacency</span></span>(<span>self, filename, delim='\t', binary=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Save the biadjacendy matrix of the BiCM null model.</p>
+<p>The matrix can either be saved as a binary NumPy <code>.npy</code> file or as a
+human-readable <code>.csv</code> file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>
+<p>The relative path has to be provided in the filename, e.g.
+<em>../data/pvalue_matrix.csv</em>.</p>
+</li>
+<li>
+<p>If <code>binary==True</code>, NumPy
+automatically appends the format ending <code>.npy</code> to the file.</p>
+</li>
+</ul>
+</div>
+<p>:param filename: name of the output file
+:type filename: str
+:param delim: delimiter between values in file
+:type delim: str
+:param binary: if <code>True</code>, save as binary <code>.npy</code>, otherwise as a
+<code>.csv</code> file
+:type binary: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_biadjacency(self, filename, delim=&#39;\t&#39;, binary=False):
+    &#34;&#34;&#34;Save the biadjacendy matrix of the BiCM null model.
+
+    The matrix can either be saved as a binary NumPy ``.npy`` file or as a
+    human-readable ``.csv`` file.
+
+    .. note::
+
+        * The relative path has to be provided in the filename, e.g.
+          *../data/pvalue_matrix.csv*.
+
+        * If ``binary==True``, NumPy
+          automatically appends the format ending ``.npy`` to the file.
+
+    :param filename: name of the output file
+    :type filename: str
+    :param delim: delimiter between values in file
+    :type delim: str
+    :param binary: if ``True``, save as binary ``.npy``, otherwise as a
+        ``.csv`` file
+    :type binary: bool
+    &#34;&#34;&#34;
+    self.save_array(self.adj_matrix, filename, delim, binary)</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.set_degree_seq"><code class="name flex">
+<span>def <span class="ident">set_degree_seq</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the node degree sequence of the input matrix.</p>
+<p>:returns: node degree sequence [degrees row-nodes, degrees column-nodes]
+:rtype: numpy.array</p>
+<p>:raise AssertionError: raise an error if the length of the returned
+degree sequence does not correspond to the total number of nodes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_degree_seq(self):
+    &#34;&#34;&#34;Return the node degree sequence of the input matrix.
+
+    :returns: node degree sequence [degrees row-nodes, degrees column-nodes]
+    :rtype: numpy.array
+
+    :raise AssertionError: raise an error if the length of the returned
+        degree sequence does not correspond to the total number of nodes
+    &#34;&#34;&#34;
+    dseq = np.empty(self.num_rows + self.num_columns)
+    dseq[self.num_rows:] = np.squeeze(np.sum(self.bin_mat, axis=0))
+    dseq[:self.num_rows] = np.squeeze(np.sum(self.bin_mat, axis=1))
+    assert dseq.size == (self.num_rows + self.num_columns)
+    return dseq</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.solve_equations"><code class="name flex">
+<span>def <span class="ident">solve_equations</span></span>(<span>self, x0=None, method='hybr', jac=None, tol=None, callback=None, options=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Solve the system of equations of the maximum log-likelihood problem.</p>
+<p>The system of equations is solved using <code>scipy</code>'s root function with
+the solver defined by <code>method</code>. The solutions correspond to the
+Lagrange multipliers</p>
+<p>[ x_i = \exp(-\theta_i). ]
+Depending on the solver, keyword arguments <code>kwargs</code> can be passed to
+the solver. Please refer to the <code>scipy.optimize.root documentation
+&lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+scipy.optimize.root.html&gt;</code>_ for detailed descriptions.</p>
+<p>The default solver is the modified Powell method <code>hybr</code>. Least-squares
+can be chosen with <code>method='lm'</code> for the Levenberg-Marquardt approach.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It can happen that the solver <code>method</code> used by <code>scipy.root</code>
+does not converge to a solution.
+In this case, please try another <code>method</code> or different initial
+conditions and refer to the <code>scipy.optimize.root documentation
+&lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+scipy.optimize.root.html&gt;</code>_.</p>
+</div>
+<p>:param x0: initial guesses for the solutions. The first entries are the
+initial guesses for the row-nodes, followed by the initial guesses
+for the column-nodes.
+:type x0: 1d numpy.array, optional
+:param method: type of solver, default is ‘hybr’. For other
+solvers, see the <code>scipy.optimize.root documentation
+&lt;https://docs.scipy.org/doc/
+scipy-0.19.0/reference/generated/scipy.optimize.root.html&gt;</code>_.
+:type method: str, optional
+:param jac: Jacobian of the system
+:type jac: bool or callable, optional
+:param tol: tolerance for termination. For detailed control, use
+solver-specific options.
+:type tol: float, optional
+:param callback: optional callback function to be called at
+every iteration as <code>callback(self.equations, x)</code>,
+see <code>scipy.root</code> documentation
+:type callback: function, optional
+:param options: a dictionary of solver options, e.g. <code>xtol</code> or
+<code>maxiter</code>, see scipy.root documentation
+:type options: dict, optional
+:param kwargs: solver-specific options, please refer to the SciPy
+documentation
+:returns: solution of the equation system
+:rtype: scipy.optimize.OptimizeResult</p>
+<p>:raise ValueError: raise an error if not enough initial conditions
+are provided</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def solve_equations(self, x0=None, method=&#39;hybr&#39;, jac=None, tol=None,
+                    callback=None, options=None):
+
+    &#34;&#34;&#34;Solve the system of equations of the maximum log-likelihood problem.
+
+    The system of equations is solved using ``scipy``&#39;s root function with
+    the solver defined by ``method``. The solutions correspond to the
+    Lagrange multipliers
+
+    .. math::
+
+        x_i = \exp(-\\theta_i).
+
+    Depending on the solver, keyword arguments ``kwargs`` can be passed to
+    the solver. Please refer to the `scipy.optimize.root documentation
+    &lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+    scipy.optimize.root.html&gt;`_ for detailed descriptions.
+
+    The default solver is the modified Powell method ``hybr``. Least-squares
+    can be chosen with ``method=&#39;lm&#39;`` for the Levenberg-Marquardt approach.
+
+    .. note::
+
+        It can happen that the solver ``method`` used by ``scipy.root``
+        does not converge to a solution.
+        In this case, please try another ``method`` or different initial
+        conditions and refer to the `scipy.optimize.root documentation
+        &lt;https://docs.scipy.org/doc/scipy-0.19.0/reference/generated/
+        scipy.optimize.root.html&gt;`_.
+
+    :param x0: initial guesses for the solutions. The first entries are the
+        initial guesses for the row-nodes, followed by the initial guesses
+        for the column-nodes.
+    :type x0: 1d numpy.array, optional
+    :param method: type of solver, default is ‘hybr’. For other
+        solvers, see the `scipy.optimize.root documentation
+        &lt;https://docs.scipy.org/doc/
+        scipy-0.19.0/reference/generated/scipy.optimize.root.html&gt;`_.
+    :type method: str, optional
+    :param jac: Jacobian of the system
+    :type jac: bool or callable, optional
+    :param tol: tolerance for termination. For detailed control, use
+        solver-specific options.
+    :type tol: float, optional
+    :param callback: optional callback function to be called at
+        every iteration as ``callback(self.equations, x)``,
+        see ``scipy.root`` documentation
+    :type callback: function, optional
+    :param options: a dictionary of solver options, e.g. ``xtol`` or
+        ``maxiter``, see scipy.root documentation
+    :type options: dict, optional
+    :param kwargs: solver-specific options, please refer to the SciPy
+        documentation
+    :returns: solution of the equation system
+    :rtype: scipy.optimize.OptimizeResult
+
+    :raise ValueError: raise an error if not enough initial conditions
+        are provided
+    &#34;&#34;&#34;
+    # use Jacobian if the hybr solver is chosen
+    if method == &#39;hybr&#39;:
+        jac = self.jacobian
+
+    # set initial conditions
+    if x0 is None:
+        x0 = self.dseq / np.sqrt(np.sum(self.dseq))
+    else:
+        if not len(x0) == self.dim:
+            msg = &#34;One initial condition for each parameter is required.&#34;
+            raise ValueError(msg)
+
+    # solve equation system
+    sol = opt.root(fun=self.equations, x0=x0, method=method, jac=jac,
+                   tol=tol, options=options, callback=callback)
+
+    # check whether system has been solved successfully
+    #print(&#34;Solver successful:&#34;, sol.success)
+    #print sol.message
+    if not sol.success:
+        errmsg = &#34;Try different initial conditions and/or a&#34; + \
+                 &#34;different solver, see documentation at &#34; + \
+                 &#34;https://docs.scipy.org/doc/scipy-0.19.0/reference/&#34; + \
+                 &#34;generated/scipy.optimize.root.html&#34;
+
+        #print(errmsg)
+    return sol</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.split_range"><code class="name flex">
+<span>def <span class="ident">split_range</span></span>(<span>self, n, m=4)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Split the interval :math:<code>\left[0,\ldots, n\right]</code> in <code>m</code> parts.</p>
+<p>:param n: upper limit of the range
+:type n: int
+:param m: number of part in which range should be split
+:type n: int
+:returns: delimiter indices for the <code>m</code> parts
+:rtype: list</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def split_range(self, n, m=4):
+    &#34;&#34;&#34;Split the interval :math:`\\left[0,\ldots, n\\right]` in ``m`` parts.
+
+    :param n: upper limit of the range
+    :type n: int
+    :param m: number of part in which range should be split
+    :type n: int
+    :returns: delimiter indices for the ``m`` parts
+    :rtype: list
+    &#34;&#34;&#34;
+    return [i * n / m for i in range(m)]</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.bipartite_config.src.bicm.BiCM.test_average_degrees"><code class="name flex">
+<span>def <span class="ident">test_average_degrees</span></span>(<span>self, eps=0.01)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Test the constraints on the node degrees.</p>
+<p>Check that the degree sequence of the solved BiCM null model graph
+corresponds to the degree sequence of the input graph.</p>
+<p>:param eps: maximum difference between degrees of the real network
+and the BiCM
+:type eps: float</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_average_degrees(self, eps=1e-2):
+    &#34;&#34;&#34;Test the constraints on the node degrees.
+
+    Check that the degree sequence of the solved BiCM null model graph
+    corresponds to the degree sequence of the input graph.
+
+    :param eps: maximum difference between degrees of the real network
+        and the BiCM
+    :type eps: float
+    &#34;&#34;&#34;
+    ave_deg_columns = np.squeeze(np.sum(self.adj_matrix, axis=0))
+    ave_deg_rows = np.squeeze(np.sum(self.adj_matrix, axis=1))
+    c_derr = np.where(np.logical_or(
+        # average degree too small:
+        ave_deg_rows + eps &lt; self.dseq[:self.num_rows],
+        # average degree too large:
+        ave_deg_rows - eps &gt; self.dseq[:self.num_rows]))
+    p_derr = np.where(np.logical_or(
+        ave_deg_columns + eps &lt; self.dseq[self.num_rows:],
+        ave_deg_columns - eps &gt; self.dseq[self.num_rows:]))
+    # Check row-nodes degrees:
+    if not np.array_equiv(c_derr, np.array([])):
+        print(&#39;...inaccurate row-nodes degrees:&#39;)
+        for i in c_derr[0]:
+            print(&#39;Row-node &#39;, i)
+            print(&#39;input: {}, avg {}&#39;.format(self.dseq[i], ave_deg_rows[i]))
+        return False
+    # Check column-nodes degrees:
+    if not np.array_equiv(p_derr, np.array([])):
+        print(&#39;...inaccurate column-nodes degrees:&#39;)
+        for i in c_derr[0]:
+            print(&#39;Column-node &#39;, i)
+            print(&#39;input: {}, avg {}&#39;.format(self.dseq[i + self.num_rows], ave_deg_columns[i]))
+        return False
+    return True</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="divAtScale.src.bipartite_config.src" href="index.html">divAtScale.src.bipartite_config.src</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM" href="#divAtScale.src.bipartite_config.src.bicm.BiCM">BiCM</a></code></h4>
+<ul class="">
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.add2inqueue" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.add2inqueue">add2inqueue</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.check_input_matrix_is_binary" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.check_input_matrix_is_binary">check_input_matrix_is_binary</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.equations" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.equations">equations</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.flat2triumat_dim" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.flat2triumat_dim">flat2triumat_dim</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.flat2triumat_idx" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.flat2triumat_idx">flat2triumat_idx</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.get_biadjacency_matrix" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.get_biadjacency_matrix">get_biadjacency_matrix</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.get_lambda_motif_block" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.get_lambda_motif_block">get_lambda_motif_block</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.get_plambda_block" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.get_plambda_block">get_plambda_block</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.get_pvalues_q" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.get_pvalues_q">get_pvalues_q</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.get_triup_dim" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.get_triup_dim">get_triup_dim</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.jacobian" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.jacobian">jacobian</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.lambda_motifs" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.lambda_motifs">lambda_motifs</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.make_bicm" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.make_bicm">make_bicm</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.outqueue2pval_mat" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.outqueue2pval_mat">outqueue2pval_mat</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.print_max_degree_differences" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.print_max_degree_differences">print_max_degree_differences</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.pval_process_worker" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.pval_process_worker">pval_process_worker</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.save_array" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.save_array">save_array</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.save_biadjacency" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.save_biadjacency">save_biadjacency</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.set_degree_seq" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.set_degree_seq">set_degree_seq</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.solve_equations" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.solve_equations">solve_equations</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.split_range" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.split_range">split_range</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.test_average_degrees" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.test_average_degrees">test_average_degrees</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.triumat2flat_dim" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.triumat2flat_dim">triumat2flat_dim</a></code></li>
+<li><code><a title="divAtScale.src.bipartite_config.src.bicm.BiCM.triumat2flat_idx" href="#divAtScale.src.bipartite_config.src.bicm.BiCM.triumat2flat_idx">triumat2flat_idx</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

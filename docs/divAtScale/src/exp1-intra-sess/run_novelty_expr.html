@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>divAtScale.src.exp1-intra-sess.run_novelty_expr API documentation</title>
+<meta name="description" content="RELEASE …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>divAtScale.src.exp1-intra-sess.run_novelty_expr</code></h1>
+</header>
+<section id="section-intro">
+<p>RELEASE</p>
+<ul>
+<li>scale: intra-session</li>
+<li>div type: novelty</li>
+<li>extra info: Redundancy computations will yield slightly different results since log_binning for percentile
+normalisation computed on multi-affordance users not the whole affordance centric dataset.</li>
+</ul>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+RELEASE
+
+* scale: intra-session
+* div type: novelty
+* extra info: Redundancy computations will yield slightly different results since log_binning for percentile
+              normalisation computed on multi-affordance users not the whole affordance centric dataset.
+
+
+&#34;&#34;&#34;
+
+import numpy as np
+from divAtScale.src.helpers.dataset_helpers.read_x_process import load_fs1, read_config, grab_sess, \
+    sess_meta_data, sub_sample_lh_df
+from sklearn.preprocessing import KBinsDiscretizer
+from divAtScale.src.helpers.set_helpers.diversity_measures import comp_R, compute_percentile_score
+from itertools import chain
+import pandas as pd
+from tqdm import tqdm
+
+
+def grab_fandom_and_multiA_lh(S):
+    &#34;&#34;&#34;
+    From listening hist df divide sessions into fandom &amp; multi-artist versions
+
+    Args:
+        S (pandas.DataFrame): a listening history df
+
+    Returns:
+        list : fandom sessions
+        list : multi-artist sessions
+    &#34;&#34;&#34;
+    S_meta = sess_meta_data(S)
+    fandom_df_S = S_meta[S_meta.n_a == 1]
+    non_fandom_df_S = S_meta[S_meta.n_a &gt; 1]
+    fandom_df_S.set_index([&#39;anon_user_id&#39;, &#39;session_n&#39;], inplace=True)
+    non_fandom_df_S.set_index([&#39;anon_user_id&#39;, &#39;session_n&#39;], inplace=True)
+    S.set_index([&#39;anon_user_id&#39;, &#39;session_n&#39;], inplace=True)
+    fandom_df = S.loc[fandom_df_S.index].reset_index()
+    non_fandom_df = S.loc[non_fandom_df_S.index].reset_index()
+    return grab_sess(fandom_df), grab_sess(non_fandom_df)
+
+
+def compute_users_p_fandom_and_len_fandom(fandom_sess, multiA_sess):
+    &#34;&#34;&#34;
+    Devise some meta data about fandom sessions
+
+    Args:
+        fandom_sess (list): sessions with only 1 artist
+        multiA_sess (list): sessions with multiple artists
+
+    Return:
+        float : p(fandom)
+        float : avg length of fandom sessions
+    &#34;&#34;&#34;
+
+    n_sess_in_aff = len(fandom_sess) + len(multiA_sess)
+    p_fandom = len(fandom_sess) / n_sess_in_aff
+    if len(fandom_sess) &gt; 0:
+        l = np.mean([len(s) for s in fandom_sess])
+    else:
+        l = -1 # invalid option
+    return p_fandom, l
+
+
+def compute_p_fandom_and_len_fandom_per_u(fandom_vs_multiA):
+    &#34;&#34;&#34;
+    Top level function to call fandom meta function per. user
+
+    Args:
+        fandom_vs_multiA (list): 2D per user (fandom, multiA)
+
+    Returns:
+        list : p(fandom) per. user
+        list : len fandom per. user
+    &#34;&#34;&#34;
+    P_sess_fandom = []
+    avg_len_fandom = []
+    for fandom_sess, multiA_sess in fandom_vs_multiA:
+        p_fandom, fandom_l = compute_users_p_fandom_and_len_fandom(fandom_sess, multiA_sess)
+        P_sess_fandom.append(p_fandom)
+        if fandom_l != -1:
+            avg_len_fandom.append(fandom_l)
+    return P_sess_fandom, avg_len_fandom
+
+def print_fandom_stats(aff, p_sess_fandom, avg_len_fandom):
+    &#34;&#34;&#34;
+    Print &amp; stats about fandom sessions
+
+    Args:
+        aff (str): affordance-type
+        p_sess_fandom (float) : to print...
+        avg_len_fandom (float) : to print...
+    &#34;&#34;&#34;
+    print(&#34;* avg p fandom {}: {}, {}&#34;.format(aff, np.mean(p_sess_fandom), np.std(p_sess_fandom)))
+    print(&#34;** avg len fandom sess {}: {}, {}&#34;.format(aff, np.mean(avg_len_fandom), np.std(avg_len_fandom)))
+
+
+def get_fs2_users_fandom_vs_multiA_sess(lh_df):
+    &#34;&#34;&#34;
+    Split users listening histories into fandom vs mutiA sets
+
+    Args:
+        lh_df (pandas.DataFrame) : users&#39; listening history df
+
+    Returns:
+        list : fandom_vs_multiA_P
+        list : fandom_vs_multiA_Q
+        list : fandom_vs_multiA_A
+        list : fandom_vs_multiA_E
+    &#34;&#34;&#34;
+    fandom_vs_multiA_P = grab_fandom_and_multiA_lh(lh_df[lh_df.affordance == &#34;o_pl&#34;])
+    fandom_vs_multiA_Q = grab_fandom_and_multiA_lh(lh_df[lh_df.affordance == &#34;o_s&#34;])
+    fandom_vs_multiA_A = grab_fandom_and_multiA_lh(lh_df[lh_df.affordance == &#34;a&#34;])
+    fandom_vs_multiA_E = grab_fandom_and_multiA_lh(lh_df[lh_df.affordance == &#34;e&#34;])
+    return fandom_vs_multiA_P, fandom_vs_multiA_Q, fandom_vs_multiA_A, fandom_vs_multiA_E
+
+
+def get_fandom_fs2(lh_df, uid):
+    &#34;&#34;&#34;
+    Query per. affordance fandom and length data for a given user.
+
+    Args:
+        lh_df (pandas.DataFrame): listening history df
+        uid (str) : hashed user id
+
+    Returns:
+        list : p(fandom) whereby elements correspond to P,Q,A,E affordances
+        list : avg len fandom whereby elements correspond to P,Q,A,E affordances
+    &#34;&#34;&#34;
+    lh_df = lh_df[lh_df.anon_user_id == uid]
+    fandom_vs_multiA_P, fandom_vs_multiA_Q, fandom_vs_multiA_A, fandom_vs_multiA_E = get_fs2_users_fandom_vs_multiA_sess(lh_df)
+
+    P_sess_fandom_P, fandom_avg_len_P = compute_users_p_fandom_and_len_fandom(fandom_vs_multiA_P[0], fandom_vs_multiA_P[1])
+    P_sess_fandom_Q, fandom_avg_len_Q = compute_users_p_fandom_and_len_fandom(fandom_vs_multiA_Q[0], fandom_vs_multiA_Q[1])
+    P_sess_fandom_A, fandom_avg_len_A = compute_users_p_fandom_and_len_fandom(fandom_vs_multiA_A[0], fandom_vs_multiA_A[1])
+    P_sess_fandom_E, fandom_avg_len_E = compute_users_p_fandom_and_len_fandom(fandom_vs_multiA_E[0], fandom_vs_multiA_E[1])
+
+    p_fandom_vec = [P_sess_fandom_P, P_sess_fandom_Q, P_sess_fandom_A, P_sess_fandom_E]
+    l_fandom_vec = [fandom_avg_len_P, fandom_avg_len_Q, fandom_avg_len_A, fandom_avg_len_E]
+    return p_fandom_vec, l_fandom_vec
+
+
+
+def compute_adjusted_R(S, binned_data, aff_labels, n_sess_per_user_P, n_sess_per_user_Q,
+                       n_sess_per_user_A, n_sess_per_user_E, n_bins=5):
+    &#34;&#34;&#34;
+    Compute Redundancy scores adjusted using log-binning and percentile ranking
+
+    Args:
+        S (int) : list of all sessions
+        binned_data (list): bin assignment for each session.
+        aff_labels (list): indicates which affordance was used for each session 
+        n_sess_per_user_P (list): used to chop S per user
+        n_sess_per_user_Q (list): used to chop S per user
+        n_sess_per_user_A (list): used to chop S per user
+        n_sess_per_user_E (list): used to chop S per user
+        n_bins (int): number bins for log binning
+
+    Returns:
+        list : $R_P$ over all users
+        list : $R_Q$ over all users
+        list : $R_A$ over all users
+        list : $R_E$ over all users
+    &#34;&#34;&#34;
+    N = len(S)
+    percentile_rank_scores = np.zeros(N)
+
+    for bin_l in range(n_bins):
+        sess_binned = [S[i] for i in np.argwhere(binned_data == bin_l).flatten()]
+        R_sess = np.array([comp_R(s) for s in sess_binned])
+        percentile_rank_bin = compute_percentile_score(R_sess)
+        percentile_rank_scores[binned_data == bin_l] = percentile_rank_bin
+
+    # split back into P, Q, A, E
+    R_P = percentile_rank_scores[aff_labels == &#34;P&#34;]
+    R_Q = percentile_rank_scores[aff_labels == &#34;Q&#34;]
+    R_A = percentile_rank_scores[aff_labels == &#34;A&#34;]
+    R_E = percentile_rank_scores[aff_labels == &#34;E&#34;]
+
+    # compute averages per user...
+    R_P = [np.mean(R_P[n_sess_per_user_P[i] : n_sess_per_user_P[i+1]]) for i in range(len(n_sess_per_user_P)-1)]
+    R_Q = [np.mean(R_Q[n_sess_per_user_Q[i] : n_sess_per_user_Q[i+1]]) for i in range(len(n_sess_per_user_Q)-1)]
+    R_A = [np.mean(R_A[n_sess_per_user_A[i] : n_sess_per_user_A[i+1]]) for i in range(len(n_sess_per_user_A)-1)]
+    R_E = [np.mean(R_E[n_sess_per_user_E[i] : n_sess_per_user_E[i+1]]) for i in range(len(n_sess_per_user_E)-1)]
+
+    return R_P, R_Q, R_A, R_E
+
+
+
+
+if __name__ == &#34;__main__&#34;:
+    print(&#34;starting monad experiments&#34;)
+
+    aff = [&#39;P&#39;, &#39;Q&#39;, &#39;A&#39;, &#39;E&#39;]
+    config = read_config(&#39;./expr_config.json&#39;)
+    YEAR = config[&#39;year&#39;]
+    N_SAMPLE = config[&#39;n_sample&#39;]
+    SEED = config[&#39;r_seed&#39;]
+    data_dir = &#34;./data/&#34; + str(YEAR) + &#34;_release&#34;
+    fig_dir = data_dir + &#34;/Figs&#34;
+    res_dir = data_dir + &#34;/res&#34;
+
+    print(&#34;\n*** Experiment 1.2.: intra-sess novelty&#34;)
+    fs2 = pd.read_csv(data_dir + &#34;/FS2/PQAE&#34;, index_col=0)
+    fs2_uids = fs2.anon_user_id.unique()
+
+    # (1) fandom analysis
+    pfandom_x_len = [get_fandom_fs2(fs2, uid) for uid in tqdm(fs2_uids)]
+    pfandom = [v[0] for v in pfandom_x_len] # extract fandom
+    pfandom_avg = np.mean(pfandom, axis=0)
+
+    fandom_len = [v[1] for v in pfandom_x_len]
+    avg_len_P = np.mean([v[0] for v in fandom_len if v != -1])
+    avg_len_Q = np.mean([v[1] for v in fandom_len if v != -1])
+    avg_len_A = np.mean([v[2] for v in fandom_len if v != -1])
+    avg_len_E = np.mean([v[3] for v in fandom_len if v != -1])
+
+    # (2) R analysis
+    print(&#34;** computing R for FS2 user set&#34;)
+    multiA_P_all = []
+    multiA_Q_all = []
+    multiA_A_all = []
+    multiA_E_all = []
+
+    uids_keep = []
+    for uid in tqdm(fs2_uids):
+        lh_df = fs2[fs2.anon_user_id == uid]
+
+        fandom_vs_multiA_P, fandom_vs_multiA_Q, \
+            fandom_vs_multiA_A, fandom_vs_multiA_E = get_fs2_users_fandom_vs_multiA_sess(lh_df)
+        multi_A_P = fandom_vs_multiA_P[1]
+        multi_A_Q = fandom_vs_multiA_Q[1]
+        multi_A_A = fandom_vs_multiA_A[1]
+        multi_A_E = fandom_vs_multiA_E[1]
+
+        if (len(multi_A_P) &gt; 0) &amp; (len(multi_A_Q) &gt; 0) &amp; (len(multi_A_A) &gt; 0) &amp; (len(multi_A_E) &gt; 0):
+            multiA_P_all.append(multi_A_P)
+            multiA_Q_all.append(multi_A_Q)
+            multiA_A_all.append(multi_A_A)
+            multiA_E_all.append(multi_A_E)
+            uids_keep.append(uid)
+
+
+    n_sess_per_user_P = np.cumsum([0] + [len(S) for S in multiA_P_all])
+    multiA_P_all = list(chain(*multiA_P_all))
+
+    n_sess_per_user_Q = np.cumsum([0] + [len(S) for S in multiA_Q_all])
+    multiA_Q_all = list(chain(*multiA_Q_all))
+
+    n_sess_per_user_A = np.cumsum([0] + [len(S) for S in multiA_A_all])
+    multiA_A_all = list(chain(*multiA_A_all))
+
+    n_sess_per_user_E = np.cumsum([0] + [len(S) for S in multiA_E_all])
+    multiA_E_all = list(chain(*multiA_E_all))
+
+    aff_labels = np.array([&#39;P&#39;] * len(multiA_P_all) + [&#39;Q&#39;] * len(multiA_Q_all) +
+                          [&#39;A&#39;] * len(multiA_A_all) + [&#39;E&#39;] * len(multiA_E_all))
+
+    S = multiA_P_all + multiA_Q_all + multiA_A_all + multiA_E_all
+    N = len(S)
+
+    S_len = np.array([len(x) for x in S])
+    S_len_log = np.log10(S_len)
+    X_len = np.array([[x] for x in S_len_log])
+
+
+    # note: will give slightly different results to paper since computed on multi-affordance users&#39; sessions alone.
+    #       principal remains the same.
+    kbins = KBinsDiscretizer(n_bins=5, strategy=&#39;uniform&#39;, encode=&#39;ordinal&#39;)
+    kbins.fit(X_len)
+    binned_data = kbins.transform(X_len).flatten()
+
+    R_P, R_Q, R_A, R_E = compute_adjusted_R(S, binned_data, aff_labels, n_sess_per_user_P, n_sess_per_user_Q,
+                                            n_sess_per_user_A, n_sess_per_user_E, n_bins=5)
+
+    print(&#34;\n* n uids kept:&#34;, len(uids_keep))
+    print(len(R_P))
+    print(len(R_Q))
+    print(len(R_A))
+    print(&#39;--------&#39;)
+
+    # znorm per user...
+    R_all = [np.array([x1,x2,x3,x4]) for x1,x2,x3,x4 in zip(R_P, R_Q, R_A, R_E)]
+    R_all = [(x-np.mean(x)) / np.std(x) if np.std(x) != 0 else x-np.mean(x) for x in R_all]
+    R_avg = np.mean(R_all, axis=0)
+    R_std = np.std(R_all, axis=0)
+
+    pd.DataFrame({&#34;uids&#34;:uids_keep,&#34;R_P&#34;:R_P, &#34;R_Q&#34;:R_Q, &#34;R_A&#34;:R_A, &#34;R_E&#34;:R_E}).to_csv(&#34;./R_for_all_u&#34;)
+
+    ### save all experiments :
+    fandom_df = pd.DataFrame({&#34;affordance&#34;:[&#34;P&#34;,&#34;Q&#34;,&#34;A&#34;,&#34;E&#34;],
+                              &#34;p_fandom&#34;: [pfandom_avg[0],  pfandom_avg[1],  pfandom_avg[2],  pfandom_avg[3]],
+                              &#34;avg_len_of_fandom&#34;: [avg_len_P, avg_len_Q, avg_len_A, avg_len_E],
+                              &#34;R_avg_without_no_rep_znormed:&#34;: [R_avg[0], R_avg[1], R_avg[2], R_avg[3]],
+                              &#34;R_std_without_no_rep_znormed:&#34;: [R_std[0], R_std[1], R_std[2], R_std[3]]})
+    print(fandom_df)
+    fandom_df.to_csv(res_dir + &#34;/intra_set_fs2&#34;)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="divAtScale.src.exp1-intra-sess.run_novelty_expr.compute_adjusted_R"><code class="name flex">
+<span>def <span class="ident">compute_adjusted_R</span></span>(<span>S, binned_data, aff_labels, n_sess_per_user_P, n_sess_per_user_Q, n_sess_per_user_A, n_sess_per_user_E, n_bins=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute Redundancy scores adjusted using log-binning and percentile ranking</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt>S (int) : list of all sessions</dt>
+<dt><strong><code>binned_data</code></strong> :&ensp;<code>list</code></dt>
+<dd>bin assignment for each session.</dd>
+<dt><strong><code>aff_labels</code></strong> :&ensp;<code>list</code></dt>
+<dd>indicates which affordance was used for each session </dd>
+<dt><strong><code>n_sess_per_user_P</code></strong> :&ensp;<code>list</code></dt>
+<dd>used to chop S per user</dd>
+<dt><strong><code>n_sess_per_user_Q</code></strong> :&ensp;<code>list</code></dt>
+<dd>used to chop S per user</dd>
+<dt><strong><code>n_sess_per_user_A</code></strong> :&ensp;<code>list</code></dt>
+<dd>used to chop S per user</dd>
+<dt><strong><code>n_sess_per_user_E</code></strong> :&ensp;<code>list</code></dt>
+<dd>used to chop S per user</dd>
+<dt><strong><code>n_bins</code></strong> :&ensp;<code>int</code></dt>
+<dd>number bins for log binning</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list </code></dt>
+<dd>$R_P$ over all users</dd>
+<dt><code>list </code></dt>
+<dd>$R_Q$ over all users</dd>
+<dt><code>list </code></dt>
+<dd>$R_A$ over all users</dd>
+<dt><code>list </code></dt>
+<dd>$R_E$ over all users</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compute_adjusted_R(S, binned_data, aff_labels, n_sess_per_user_P, n_sess_per_user_Q,
+                       n_sess_per_user_A, n_sess_per_user_E, n_bins=5):
+    &#34;&#34;&#34;
+    Compute Redundancy scores adjusted using log-binning and percentile ranking
+
+    Args:
+        S (int) : list of all sessions
+        binned_data (list): bin assignment for each session.
+        aff_labels (list): indicates which affordance was used for each session 
+        n_sess_per_user_P (list): used to chop S per user
+        n_sess_per_user_Q (list): used to chop S per user
+        n_sess_per_user_A (list): used to chop S per user
+        n_sess_per_user_E (list): used to chop S per user
+        n_bins (int): number bins for log binning
+
+    Returns:
+        list : $R_P$ over all users
+        list : $R_Q$ over all users
+        list : $R_A$ over all users
+        list : $R_E$ over all users
+    &#34;&#34;&#34;
+    N = len(S)
+    percentile_rank_scores = np.zeros(N)
+
+    for bin_l in range(n_bins):
+        sess_binned = [S[i] for i in np.argwhere(binned_data == bin_l).flatten()]
+        R_sess = np.array([comp_R(s) for s in sess_binned])
+        percentile_rank_bin = compute_percentile_score(R_sess)
+        percentile_rank_scores[binned_data == bin_l] = percentile_rank_bin
+
+    # split back into P, Q, A, E
+    R_P = percentile_rank_scores[aff_labels == &#34;P&#34;]
+    R_Q = percentile_rank_scores[aff_labels == &#34;Q&#34;]
+    R_A = percentile_rank_scores[aff_labels == &#34;A&#34;]
+    R_E = percentile_rank_scores[aff_labels == &#34;E&#34;]
+
+    # compute averages per user...
+    R_P = [np.mean(R_P[n_sess_per_user_P[i] : n_sess_per_user_P[i+1]]) for i in range(len(n_sess_per_user_P)-1)]
+    R_Q = [np.mean(R_Q[n_sess_per_user_Q[i] : n_sess_per_user_Q[i+1]]) for i in range(len(n_sess_per_user_Q)-1)]
+    R_A = [np.mean(R_A[n_sess_per_user_A[i] : n_sess_per_user_A[i+1]]) for i in range(len(n_sess_per_user_A)-1)]
+    R_E = [np.mean(R_E[n_sess_per_user_E[i] : n_sess_per_user_E[i+1]]) for i in range(len(n_sess_per_user_E)-1)]
+
+    return R_P, R_Q, R_A, R_E</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.exp1-intra-sess.run_novelty_expr.compute_p_fandom_and_len_fandom_per_u"><code class="name flex">
+<span>def <span class="ident">compute_p_fandom_and_len_fandom_per_u</span></span>(<span>fandom_vs_multiA)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Top level function to call fandom meta function per. user</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>fandom_vs_multiA</code></strong> :&ensp;<code>list</code></dt>
+<dd>2D per user (fandom, multiA)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list </code></dt>
+<dd>p(fandom) per. user</dd>
+<dt><code>list </code></dt>
+<dd>len fandom per. user</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compute_p_fandom_and_len_fandom_per_u(fandom_vs_multiA):
+    &#34;&#34;&#34;
+    Top level function to call fandom meta function per. user
+
+    Args:
+        fandom_vs_multiA (list): 2D per user (fandom, multiA)
+
+    Returns:
+        list : p(fandom) per. user
+        list : len fandom per. user
+    &#34;&#34;&#34;
+    P_sess_fandom = []
+    avg_len_fandom = []
+    for fandom_sess, multiA_sess in fandom_vs_multiA:
+        p_fandom, fandom_l = compute_users_p_fandom_and_len_fandom(fandom_sess, multiA_sess)
+        P_sess_fandom.append(p_fandom)
+        if fandom_l != -1:
+            avg_len_fandom.append(fandom_l)
+    return P_sess_fandom, avg_len_fandom</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.exp1-intra-sess.run_novelty_expr.compute_users_p_fandom_and_len_fandom"><code class="name flex">
+<span>def <span class="ident">compute_users_p_fandom_and_len_fandom</span></span>(<span>fandom_sess, multiA_sess)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Devise some meta data about fandom sessions</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>fandom_sess</code></strong> :&ensp;<code>list</code></dt>
+<dd>sessions with only 1 artist</dd>
+<dt><strong><code>multiA_sess</code></strong> :&ensp;<code>list</code></dt>
+<dd>sessions with multiple artists</dd>
+</dl>
+<h2 id="return">Return</h2>
+<p>float : p(fandom)
+float : avg length of fandom sessions</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compute_users_p_fandom_and_len_fandom(fandom_sess, multiA_sess):
+    &#34;&#34;&#34;
+    Devise some meta data about fandom sessions
+
+    Args:
+        fandom_sess (list): sessions with only 1 artist
+        multiA_sess (list): sessions with multiple artists
+
+    Return:
+        float : p(fandom)
+        float : avg length of fandom sessions
+    &#34;&#34;&#34;
+
+    n_sess_in_aff = len(fandom_sess) + len(multiA_sess)
+    p_fandom = len(fandom_sess) / n_sess_in_aff
+    if len(fandom_sess) &gt; 0:
+        l = np.mean([len(s) for s in fandom_sess])
+    else:
+        l = -1 # invalid option
+    return p_fandom, l</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.exp1-intra-sess.run_novelty_expr.get_fandom_fs2"><code class="name flex">
+<span>def <span class="ident">get_fandom_fs2</span></span>(<span>lh_df, uid)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Query per. affordance fandom and length data for a given user.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>lh_df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>listening history df</dd>
+</dl>
+<p>uid (str) : hashed user id</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list </code></dt>
+<dd>p(fandom) whereby elements correspond to P,Q,A,E affordances</dd>
+<dt><code>list </code></dt>
+<dd>avg len fandom whereby elements correspond to P,Q,A,E affordances</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_fandom_fs2(lh_df, uid):
+    &#34;&#34;&#34;
+    Query per. affordance fandom and length data for a given user.
+
+    Args:
+        lh_df (pandas.DataFrame): listening history df
+        uid (str) : hashed user id
+
+    Returns:
+        list : p(fandom) whereby elements correspond to P,Q,A,E affordances
+        list : avg len fandom whereby elements correspond to P,Q,A,E affordances
+    &#34;&#34;&#34;
+    lh_df = lh_df[lh_df.anon_user_id == uid]
+    fandom_vs_multiA_P, fandom_vs_multiA_Q, fandom_vs_multiA_A, fandom_vs_multiA_E = get_fs2_users_fandom_vs_multiA_sess(lh_df)
+
+    P_sess_fandom_P, fandom_avg_len_P = compute_users_p_fandom_and_len_fandom(fandom_vs_multiA_P[0], fandom_vs_multiA_P[1])
+    P_sess_fandom_Q, fandom_avg_len_Q = compute_users_p_fandom_and_len_fandom(fandom_vs_multiA_Q[0], fandom_vs_multiA_Q[1])
+    P_sess_fandom_A, fandom_avg_len_A = compute_users_p_fandom_and_len_fandom(fandom_vs_multiA_A[0], fandom_vs_multiA_A[1])
+    P_sess_fandom_E, fandom_avg_len_E = compute_users_p_fandom_and_len_fandom(fandom_vs_multiA_E[0], fandom_vs_multiA_E[1])
+
+    p_fandom_vec = [P_sess_fandom_P, P_sess_fandom_Q, P_sess_fandom_A, P_sess_fandom_E]
+    l_fandom_vec = [fandom_avg_len_P, fandom_avg_len_Q, fandom_avg_len_A, fandom_avg_len_E]
+    return p_fandom_vec, l_fandom_vec</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.exp1-intra-sess.run_novelty_expr.get_fs2_users_fandom_vs_multiA_sess"><code class="name flex">
+<span>def <span class="ident">get_fs2_users_fandom_vs_multiA_sess</span></span>(<span>lh_df)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Split users listening histories into fandom vs mutiA sets</p>
+<h2 id="args">Args</h2>
+<p>lh_df (pandas.DataFrame) : users' listening history df</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list </code></dt>
+<dd>fandom_vs_multiA_P</dd>
+<dt><code>list </code></dt>
+<dd>fandom_vs_multiA_Q</dd>
+<dt><code>list </code></dt>
+<dd>fandom_vs_multiA_A</dd>
+<dt><code>list </code></dt>
+<dd>fandom_vs_multiA_E</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_fs2_users_fandom_vs_multiA_sess(lh_df):
+    &#34;&#34;&#34;
+    Split users listening histories into fandom vs mutiA sets
+
+    Args:
+        lh_df (pandas.DataFrame) : users&#39; listening history df
+
+    Returns:
+        list : fandom_vs_multiA_P
+        list : fandom_vs_multiA_Q
+        list : fandom_vs_multiA_A
+        list : fandom_vs_multiA_E
+    &#34;&#34;&#34;
+    fandom_vs_multiA_P = grab_fandom_and_multiA_lh(lh_df[lh_df.affordance == &#34;o_pl&#34;])
+    fandom_vs_multiA_Q = grab_fandom_and_multiA_lh(lh_df[lh_df.affordance == &#34;o_s&#34;])
+    fandom_vs_multiA_A = grab_fandom_and_multiA_lh(lh_df[lh_df.affordance == &#34;a&#34;])
+    fandom_vs_multiA_E = grab_fandom_and_multiA_lh(lh_df[lh_df.affordance == &#34;e&#34;])
+    return fandom_vs_multiA_P, fandom_vs_multiA_Q, fandom_vs_multiA_A, fandom_vs_multiA_E</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.exp1-intra-sess.run_novelty_expr.grab_fandom_and_multiA_lh"><code class="name flex">
+<span>def <span class="ident">grab_fandom_and_multiA_lh</span></span>(<span>S)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>From listening hist df divide sessions into fandom &amp; multi-artist versions</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>S</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>a listening history df</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list </code></dt>
+<dd>fandom sessions</dd>
+<dt><code>list </code></dt>
+<dd>multi-artist sessions</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def grab_fandom_and_multiA_lh(S):
+    &#34;&#34;&#34;
+    From listening hist df divide sessions into fandom &amp; multi-artist versions
+
+    Args:
+        S (pandas.DataFrame): a listening history df
+
+    Returns:
+        list : fandom sessions
+        list : multi-artist sessions
+    &#34;&#34;&#34;
+    S_meta = sess_meta_data(S)
+    fandom_df_S = S_meta[S_meta.n_a == 1]
+    non_fandom_df_S = S_meta[S_meta.n_a &gt; 1]
+    fandom_df_S.set_index([&#39;anon_user_id&#39;, &#39;session_n&#39;], inplace=True)
+    non_fandom_df_S.set_index([&#39;anon_user_id&#39;, &#39;session_n&#39;], inplace=True)
+    S.set_index([&#39;anon_user_id&#39;, &#39;session_n&#39;], inplace=True)
+    fandom_df = S.loc[fandom_df_S.index].reset_index()
+    non_fandom_df = S.loc[non_fandom_df_S.index].reset_index()
+    return grab_sess(fandom_df), grab_sess(non_fandom_df)</code></pre>
+</details>
+</dd>
+<dt id="divAtScale.src.exp1-intra-sess.run_novelty_expr.print_fandom_stats"><code class="name flex">
+<span>def <span class="ident">print_fandom_stats</span></span>(<span>aff, p_sess_fandom, avg_len_fandom)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Print &amp; stats about fandom sessions</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>aff</code></strong> :&ensp;<code>str</code></dt>
+<dd>affordance-type</dd>
+</dl>
+<p>p_sess_fandom (float) : to print&hellip;
+avg_len_fandom (float) : to print&hellip;</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_fandom_stats(aff, p_sess_fandom, avg_len_fandom):
+    &#34;&#34;&#34;
+    Print &amp; stats about fandom sessions
+
+    Args:
+        aff (str): affordance-type
+        p_sess_fandom (float) : to print...
+        avg_len_fandom (float) : to print...
+    &#34;&#34;&#34;
+    print(&#34;* avg p fandom {}: {}, {}&#34;.format(aff, np.mean(p_sess_fandom), np.std(p_sess_fandom)))
+    print(&#34;** avg len fandom sess {}: {}, {}&#34;.format(aff, np.mean(avg_len_fandom), np.std(avg_len_fandom)))</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="divAtScale.src.exp1-intra-sess" href="index.html">divAtScale.src.exp1-intra-sess</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="divAtScale.src.exp1-intra-sess.run_novelty_expr.compute_adjusted_R" href="#divAtScale.src.exp1-intra-sess.run_novelty_expr.compute_adjusted_R">compute_adjusted_R</a></code></li>
+<li><code><a title="divAtScale.src.exp1-intra-sess.run_novelty_expr.compute_p_fandom_and_len_fandom_per_u" href="#divAtScale.src.exp1-intra-sess.run_novelty_expr.compute_p_fandom_and_len_fandom_per_u">compute_p_fandom_and_len_fandom_per_u</a></code></li>
+<li><code><a title="divAtScale.src.exp1-intra-sess.run_novelty_expr.compute_users_p_fandom_and_len_fandom" href="#divAtScale.src.exp1-intra-sess.run_novelty_expr.compute_users_p_fandom_and_len_fandom">compute_users_p_fandom_and_len_fandom</a></code></li>
+<li><code><a title="divAtScale.src.exp1-intra-sess.run_novelty_expr.get_fandom_fs2" href="#divAtScale.src.exp1-intra-sess.run_novelty_expr.get_fandom_fs2">get_fandom_fs2</a></code></li>
+<li><code><a title="divAtScale.src.exp1-intra-sess.run_novelty_expr.get_fs2_users_fandom_vs_multiA_sess" href="#divAtScale.src.exp1-intra-sess.run_novelty_expr.get_fs2_users_fandom_vs_multiA_sess">get_fs2_users_fandom_vs_multiA_sess</a></code></li>
+<li><code><a title="divAtScale.src.exp1-intra-sess.run_novelty_expr.grab_fandom_and_multiA_lh" href="#divAtScale.src.exp1-intra-sess.run_novelty_expr.grab_fandom_and_multiA_lh">grab_fandom_and_multiA_lh</a></code></li>
+<li><code><a title="divAtScale.src.exp1-intra-sess.run_novelty_expr.print_fandom_stats" href="#divAtScale.src.exp1-intra-sess.run_novelty_expr.print_fandom_stats">print_fandom_stats</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
