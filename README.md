@@ -7,7 +7,7 @@ Link to publication preprint: todo :)
 
 
 ## Dataset Availability
-* Download dataset from - todo :)
+* Download dataset from [link](https://kaggle.com/datasets/4b70ea10861ed6cad92277d498ccaf3d621a766b3d982bdba0321b1038ac29a4)
 * Unzip `2023_release.zip` into `./divAtscale/data/`
 
 
