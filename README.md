@@ -9,7 +9,7 @@ Link to publication preprint: todo :)
 
 ## Dataset Availability
 * Download dataset from - todo :)
-* Unzip `2023_release.zip` into `./div@scale-release/data/`
+* Unzip `2023_release.zip` into `./divAtscale/data/`
 
 
 ## Running the Code
