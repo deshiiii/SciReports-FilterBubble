@@ -12,7 +12,6 @@ Link to publication preprint: todo :)
 
 
 ## Running the Code
-* To reproduce the experiements from our paper please first clone in this project, `cd` into that project dir and install packages via: `pip install -r requirements.txt`
 * run experiments by calling `run_expr.sh`
 * To modify experiments settings edit expr_config.json 
 
