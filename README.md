@@ -1,9 +1,8 @@
-![header](figs/header.png)
-
 # Reframing the Filter Bubble: Suporting Code
 
 Repo to acompany the Scientific Reports publication: "Reframing the filter bubble through diverse scale effects in online music consumption"
 
+![header](figs/header.png)
 
 
 ## Dataset Availability
