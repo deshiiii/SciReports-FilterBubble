@@ -26,5 +26,16 @@ https://github.com/tsakim/bicm
 All credits for this code go to these authors. 
 
 ## Citing 
-If you make use of this project please cite the follow article: <mark>todo</mark>:
+If you make use of this project please cite the follow article: 
+
+```bibtex
+@article{Shakespeare2025,
+  author = {Shakespeare, D. and Chareyron, V. and Roth, C.},
+  title = {Reframing the filter bubble through diverse scale effects in online music consumption},
+  journal = {Scientific Reports},
+  volume = {15},
+  pages = {4071},
+  year = {2025},
+  doi = {10.1038/s41598-024-75967-0}
+}
 
