@@ -1,9 +1,5 @@
-# Reframing the Filter Bubble: Suporting Code
-
-Repo to acompany the Scientific Reports publication: "Reframing the filter bubble through diverse scale effects in online music consumption"
-
 ![header](figs/header.png)
-
+Repo to acompany the Scientific Reports publication: "Reframing the filter bubble through diverse scale effects in online music consumption"
 
 ## Dataset Availability
 * Download dataset from [link](https://kaggle.com/datasets/4b70ea10861ed6cad92277d498ccaf3d621a766b3d982bdba0321b1038ac29a4)
