@@ -1,4 +1,4 @@
-![header](figs/img.png)
+![header](figs/header.png)
 
 # Reframing the Filter Bubble: Suporting Code
 
