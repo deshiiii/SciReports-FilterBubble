@@ -1,8 +1,6 @@
 # Reframing the Filter Bubble: Suporting Code
 
-Repo to acompany the Scientific Reports publication: "Reframing the filter bubble through diverse scale effects in online music consumption".
-
-Link to publication preprint: <mark>todo</mark>
+Repo to acompany the Scientific Reports publication: "Reframing the filter bubble through diverse scale effects in online music consumption"
 
 
 
